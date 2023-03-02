@@ -1,20 +1,22 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'Screens/home_page.dart';
-import 'Screens/login_page.dart';
-import 'Screens/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'Screens/res.dart';
+
 
 class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: "login",
       routes: {
         "login":(context)=>LoginPage(),
         "Signup":(context)=>SignUp(),
-        "Homepage":(context)=>HomePage()
+        "Homepage":(context)=>HomePage(),
+        "ViewData":(context)=>ViewData(),
       },
     );
   }
@@ -24,5 +26,5 @@ class Myapp extends StatelessWidget {
 Future main()async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(Myapp());
+  runApp(const Myapp());
 }
