@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:databse_auth/Screens/Home_page/Home_screen.dart';
 import 'package:databse_auth/Screens/reuse_widget/pass_text_field.dart';
 import 'package:databse_auth/Screens/reuse_widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'res.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

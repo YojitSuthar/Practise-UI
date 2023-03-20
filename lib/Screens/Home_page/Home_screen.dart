@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:databse_auth/Screens/res.dart';
+import 'package:databse_auth/Screens/Project_resources/res.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController textNameCtrl = TextEditingController();
-
   TextEditingController textAddressCtrl = TextEditingController();
 
   TextEditingController textPhoneCtrl = TextEditingController();
