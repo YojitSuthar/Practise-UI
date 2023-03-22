@@ -1,8 +1,7 @@
-import 'package:database_auth/Screens/project_resources/project_resources.dart';
 import 'package:flutter/material.dart';
+import 'package:database_auth/Screens/project_resources/project_resources.dart';
+import 'package:database_auth/screens/project_resources/import_resources.dart';
 import 'package:database_auth/resources/resources.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class GetStartPage extends StatelessWidget {
   static const String id = "GetStartPage";
 
@@ -11,7 +10,7 @@ class GetStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+      backgroundColor: RGBColorManager.rgbWhiteColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -19,11 +18,11 @@ class GetStartPage extends StatelessWidget {
               height: 350.h,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: const Color.fromRGBO(17, 17, 17, 1),
-                  boxShadow: const [
+                  color: RGBColorManager.rgbBlackColor,
+                  boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(
+                      color: ColorManager.greyColor,
+                      offset: const Offset(
                         5.0,
                         5.0,
                       ),
@@ -38,28 +37,34 @@ class GetStartPage extends StatelessWidget {
                   Image.asset(ProjectImage.comapny_logo, fit: BoxFit.scaleDown),
             ),
             Padding(
-              padding: const EdgeInsets.all(40.0).w,
-              child: Container(
-                child: Text(
-                  "Academia Products",
-                  style: TextStyle(fontFamily: "academia", fontSize: 40.sp),
-                ),
+              padding: const EdgeInsets.all(35.0).w,
+              child: Text(
+                StringManager.companyName,
+                style: fontSizeFamilyTextStyle(40, "academia"),
               ),
             ),
-            Container(
-              child: Text("A Platform You can get yours Favourite",
-                  style: TextStyle(
-                      fontSize: 16.sp,
-                      fontFamily: "Gruppo",
-                      fontWeight: FontWeightManager.bold)),
-            ),
+            Text(StringManager.companySlogan,
+                style: fontSizeFamilyWeightTextStyle(
+                    16, "Gruppo", FontWeightManager.bold)),
             Container(
                 margin: const EdgeInsets.only(top: 80).r,
-                child: Button(
-                  label: "Get Start Shopping  >",
-                  createPage: LoginScreen(),
-                  width: 200,height: 50,
-                ))
+                child: ElevatedButton(
+                    onPressed: () {
+                      Get.to(LoginScreen(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 700));
+                      debugPrint("Button pressed");
+                    },
+                    style: ElevatedButton.styleFrom(
+                        fixedSize:  Size(200.w, 50.h),
+                        backgroundColor: RGBColorManager.rgbNeonColor,
+
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40).w)),
+                    child: Text(
+                      StringManager.getStartPageButtonLabel,
+                      style: fontSizeColorTextStyle(17,ColorManager.blackColor),
+                    )))
           ],
         ),
       ),

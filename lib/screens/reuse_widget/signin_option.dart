@@ -1,6 +1,6 @@
-import 'package:database_auth/resources/style_manager.dart';
+import 'package:database_auth/resources/resources.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:database_auth/screens/project_resources/import_resources.dart';
 
 class SignInOption extends StatelessWidget {
   
@@ -12,7 +12,7 @@ class SignInOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.withOpacity(0.7)),
+          border: Border.all(color: ColorManager.greyOpacityColor),
           borderRadius: BorderRadius.circular(30).w),
       height: 45.h,
       child: Row(
@@ -26,7 +26,7 @@ class SignInOption extends StatelessWidget {
               margin: const EdgeInsets.only(left: 10),
               child:  Text(
                 label!,
-                style: const TextStyle(fontSize: 15,fontWeight: FontWeightManager.bold),
+                style: fontSizeWeightTextStyle(15,FontWeightManager.bold),
               ))
         ],
       ),

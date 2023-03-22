@@ -1,7 +1,7 @@
 import 'package:database_auth/Screens/Project_resources/project_resources.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
+import 'package:database_auth/screens/project_resources/import_resources.dart';
+
 
 class SplashScreen extends StatefulWidget {
   static const String id = "_SplashScreenState";
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(17, 17, 17, 1),
       body: Center(
-        child: Lottie.asset(AnimationAssets.splash1_screen),
+        child: Lottie.asset(AnimationAssets.splash1_animation),
       ),
     );
   }

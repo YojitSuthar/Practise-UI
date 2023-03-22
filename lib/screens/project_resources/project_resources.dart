@@ -6,3 +6,5 @@ export 'package:database_auth/screens/Splash_Page/splash_screen.dart';
 export 'package:database_auth/screens/reuse_widget/text_field.dart';
 export 'package:database_auth/screens/reuse_widget/signin_option.dart';
 export 'package:database_auth/screens/Reuse_widget/pass_text_field.dart';
+export 'package:database_auth/screens/reuse_widget/company_design.dart';
+export 'package:database_auth/screens/signup_page/signup_screen.dart';
