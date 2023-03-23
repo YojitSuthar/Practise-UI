@@ -38,6 +38,7 @@ class Button extends StatelessWidget {
   }
 
    void Onpressed(BuildContext context) {
+
     final signIn = Provider.of<SignInValidation>(context, listen: false);
     final signUp = Provider.of<SignUpValidation>(context, listen: false);
     if (label == StringManager.signIn) {

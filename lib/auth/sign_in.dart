@@ -20,10 +20,10 @@ class Signin{
     try {
       await db
           .collection("Users")
-          .doc(textEmailCtrl.text.toString())
+          .doc(textEmailCtrl.text.toString().trim())
           .get()
           .then((value) {
-        if (value["Email"] == textEmailCtrl.text &&
+        if (value["Email"] == textEmailCtrl.text.trim() &&
             value["Password"] == textPassCtrl.text) {
           Get.offAll(const HomeScreen());
         } else {
