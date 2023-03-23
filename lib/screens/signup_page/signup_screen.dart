@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
 import 'package:database_auth/screens/project_resources/project_resources.dart';
@@ -5,12 +6,14 @@ import 'package:database_auth/resources/resources.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
+
   final TextEditingController textUserNameCtrl = TextEditingController();
   final TextEditingController textEmailCtrl = TextEditingController();
   final TextEditingController textPassCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final signUp = Provider.of<SignUpValidation>(context, listen: false);
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -23,20 +26,45 @@ class SignUpScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              children:  [
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 const CompanyDesign(),
                 NormalTextField(
                     textCtrl: textUserNameCtrl,
                     hintText: StringManager.enterUserName,
                     label: StringManager.userName),
+                Consumer<SignUpValidation>(builder: (context, value, child) {
+                  return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        value.signUpUserNameValidation,
+                        style: TextStyle(color: ColorManager.redColor),
+                      ));
+                }),
                 NormalTextField(
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
+                Consumer<SignUpValidation>(builder: (context, value, child) {
+                  return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        value.signUpEmailValidation,
+                        style: TextStyle(color: ColorManager.redColor),
+                      ));
+                }),
                 PassField(
                     hintText: StringManager.password,
                     textPassCtrl: textPassCtrl,
                     labelText: StringManager.password),
+                Consumer<SignUpValidation>(builder: (context, value, child) {
+                  return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        value.signUpPassValidation,
+                        style: TextStyle(color: ColorManager.redColor),
+                      ));
+                }),
                 Container(
                   margin: const EdgeInsets.only(
                     top: 5,

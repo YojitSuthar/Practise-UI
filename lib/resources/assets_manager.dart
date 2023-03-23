@@ -5,7 +5,7 @@ const String ICONS_PATH = "assets/icons";
 
 class AnimationAssets {
   static const String splash1_animation = "$ANIMATION_PATH/spash_screen.json";
-  static const String loading2_animation = "$ANIMATION_PATH/loading.json";
+  static const String loading_animation = "$ANIMATION_PATH/loading.json";
 }
 
 class ProjectImage {

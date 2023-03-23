@@ -9,7 +9,9 @@ class Loading extends StatelessWidget {
     return Container(
       color: RGBColorManager.rgbNeonColor.withOpacity(0.4),
       child: Center(
-        child: Lottie.asset(AnimationAssets.loading2_animation),
+        child: SizedBox(
+          height: 100.h,
+            child: Lottie.asset(AnimationAssets.loading_animation)),
       ),
     );
   }

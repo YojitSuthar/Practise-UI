@@ -1,4 +1,3 @@
-import 'package:database_auth/provider/validation_provider/validation.dart';
 import 'package:database_auth/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
@@ -12,11 +11,10 @@ class NormalTextField extends StatelessWidget {
       {super.key,
       required this.textCtrl,
       required this.hintText,
-      required this.label});
+     required this.label});
 
   @override
   Widget build(BuildContext context) {
-    final validate=Provider.of<Validation>(context,listen: false);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -42,13 +40,6 @@ class NormalTextField extends StatelessWidget {
                 contentPadding: const EdgeInsets.only(left: 10).r),
           )),
         ),
-       Consumer<Validation>(builder: (context,value,child){
-         return  Container(
-             margin: const EdgeInsets.only(left: 10),
-             child: Text(value.emailValidation,
-               style: TextStyle(color: ColorManager.redColor),
-             ));
-       })
       ],
     );
   }

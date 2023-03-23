@@ -8,8 +8,11 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController textEmailCtrl = TextEditingController();
   final TextEditingController textPassCtrl = TextEditingController();
   LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final validate = Provider.of<SignInValidation>(context, listen: false);
+    print("build");
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -30,21 +33,38 @@ class LoginScreen extends StatelessWidget {
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
+                Consumer<SignInValidation>(builder: (context, value, child) {
+                  return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Text(value.emailValidation,
+                        style: TextStyle(color: ColorManager.redColor),
+                      ));
+                }),
                 PassField(
-                    hintText: StringManager.password,
+                    hintText: StringManager.enterPassword,
                     textPassCtrl: textPassCtrl,
                     labelText: StringManager.password),
-                Container(
-                  margin: const EdgeInsets.only(
-                    top: 5,
-                  ).r,
-                  child: Button(
-                    label: StringManager.signIn,
-                    createPage: null,
-                    width: 450,
-                    height: 45,
-                    textEmailCtrl: textEmailCtrl,
-                    textPassCtrl: textPassCtrl,
+                Consumer<SignInValidation>(builder: (context, value, child) {
+                  return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Text(value.passValidation,
+                        style: TextStyle(color: ColorManager.redColor),
+                      ));
+                }),
+                AbsorbPointer(
+                  absorbing: false,
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                      top: 5,
+                    ).r,
+                    child: Button(
+                      label: StringManager.signIn,
+                      createPage: null,
+                      width: 450,
+                      height: 45,
+                      textEmailCtrl: textEmailCtrl,
+                      textPassCtrl: textPassCtrl,
+                    ),
                   ),
                 ),
                 Row(children: [
@@ -85,8 +105,8 @@ class LoginScreen extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () {
                         Get.to(SignUpScreen(),
-                                transition: Transition.fade,
-                                duration: const Duration(milliseconds: 700));
+                            transition: Transition.fade,
+                            duration: const Duration(milliseconds: 700));
                         debugPrint("SignIn");
                       },
                       child: RichText(
@@ -117,5 +137,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-

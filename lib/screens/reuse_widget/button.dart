@@ -1,13 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:database_auth/Screens/Home_page/Home_screen.dart';
-import 'package:database_auth/provider/validation_provider/validation.dart';
+import 'package:database_auth/auth/sign_in.dart';
+import 'package:database_auth/auth/sing_up.dart';
+import 'package:database_auth/provider/validation_provider/signup_validation.dart';
+import 'package:database_auth/provider/validation_provider/singin_validation.dart';
 import 'package:database_auth/resources/resources.dart';
-import 'package:database_auth/screens/reuse_widget/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Button extends StatelessWidget {
   final db = FirebaseFirestore.instance;
+  final signup = Signup();
+  final signin = Signin();
   final Widget? createPage;
   final String? label;
   final double? width;
@@ -27,59 +31,42 @@ class Button extends StatelessWidget {
       this.textPassCtrl});
 
 
-  void signUP() {
-    debugPrint("Button pressed");
-    final userData = <String, dynamic>{
-      "UserName": textUserNameCtrl!.text,
-      "Email": textEmailCtrl!.text,
-      "Password": textPassCtrl!.text
-    };
-    db.collection("Users").doc(textEmailCtrl!.text.toString()).get().then((value) {
-      if (value.exists) {
-        debugPrint(value["Email"]);
+  void setData(String userEmail,String userPassword) async{
+    final SharedPreferences userCredentials=await SharedPreferences.getInstance();
+    userCredentials.setString("Email", userEmail);
+    userCredentials.setString("Password", userPassword);
+  }
+
+   void Onpressed(BuildContext context) {
+    final signIn = Provider.of<SignInValidation>(context, listen: false);
+    final signUp = Provider.of<SignUpValidation>(context, listen: false);
+    if (label == StringManager.signIn) {
+      signIn.emailSignInValidate(textEmailCtrl!);
+      signIn.passSignInValidate(textPassCtrl!);
+      if (signIn.checkEmail && signIn.checkPass) {
+        setData(textEmailCtrl!.text,textPassCtrl!.text);
+        signin.signIN(context, textEmailCtrl!, textPassCtrl!);
       } else {
-        debugPrint("No email");
-        db.collection("Users").doc(textEmailCtrl!.text.toString()).set(userData).then((value) {
-          Get.back();
-        });
+        debugPrint("not sign in ");
       }
-    });
-  }
-
-  void signIN(BuildContext context) async {
-    debugPrint("Button pressed");
-    showDialog(context: context, builder: (context){
-      return const Center(child: Loading());
-    });
-    try{
-      await db.collection("Users").doc(textEmailCtrl!.text.toString()).get().then((value) {
-
-        if(value["Email"]==textEmailCtrl!.text && value["Password"]==textPassCtrl!.text){
-          Get.offAll(const HomeScreen());
-        }
-        else{
-          debugPrint("invalid caredentials");
-        }
-      });
-    }
-    catch (e) {
-      debugPrint("Account already exists");
+    } else if (label == StringManager.signUp) {
+      signUp.emailSignUpValidate(textEmailCtrl!);
+      signUp.passSignUpValidate(textPassCtrl!);
+      signUp.userNameSignUpValidate(textUserNameCtrl!);
+      if (signUp.checkEmail && signUp.checkPass && signUp.checkUserName) {
+        signup.signUP(
+            context, textEmailCtrl!, textPassCtrl!, textUserNameCtrl!);
+      } else {
+        debugPrint("not sign in ");
+      }
     }
   }
+
   @override
   Widget build(BuildContext context) {
-    final validate = Provider.of<Validation>(context, listen: false);
     return ElevatedButton(
-        onPressed: () async {
-          if (label == StringManager.signIn) {
-            validate.emailValidate(textEmailCtrl!);
-            validate.passValidate(textPassCtrl!);
-            signIN(context);
-          }
-          else if (label == StringManager.signUp)
-          {
-            signUP();
-          }
+        onPressed: (){
+          Onpressed(context);
         },
         style: ElevatedButton.styleFrom(
             fixedSize: Size(width!.w, height!.h),

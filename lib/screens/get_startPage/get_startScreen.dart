@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:database_auth/Screens/project_resources/project_resources.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
 import 'package:database_auth/resources/resources.dart';
+
+
 class GetStartPage extends StatelessWidget {
   static const String id = "GetStartPage";
 

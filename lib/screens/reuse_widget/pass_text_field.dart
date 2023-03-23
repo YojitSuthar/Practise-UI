@@ -1,24 +1,28 @@
-import 'package:database_auth/provider/validation_provider/validation.dart';
+import 'package:database_auth/provider/validation_provider/singin_validation.dart';
 import 'package:database_auth/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
-
-
 
 class PassField extends StatefulWidget {
   TextEditingController textPassCtrl;
   String? hintText;
   final String? labelText;
-  PassField({required this.hintText, required this.textPassCtrl,required this.labelText});
+
+  PassField(
+      {required this.hintText,
+      required this.textPassCtrl,
+      required this.labelText});
+
   @override
   State<PassField> createState() => _PassFieldState();
 }
 
 class _PassFieldState extends State<PassField> {
   bool obSure = true;
+
   @override
   Widget build(BuildContext context) {
-    final validate=Provider.of<Validation>(context,listen: false);
+    final validate = Provider.of<SignInValidation>(context, listen: false);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -31,8 +35,7 @@ class _PassFieldState extends State<PassField> {
           margin: const EdgeInsets.only(top: 5).r,
           decoration: BoxDecoration(
               border: Border.all(color: Colors.grey.withOpacity(0.7)),
-              borderRadius: BorderRadius.circular(30).w
-          ),
+              borderRadius: BorderRadius.circular(30).w),
           child: Row(
             children: [
               Expanded(
@@ -62,14 +65,6 @@ class _PassFieldState extends State<PassField> {
             ],
           ),
         ),
-        Consumer<Validation>(builder: (context,value,child){
-          return  Container(
-              margin: const EdgeInsets.only(left: 10),
-              child: Text(value.passValidation,
-                style: TextStyle(color: ColorManager.redColor),
-              ));
-        })
-        
       ],
     );
   }
