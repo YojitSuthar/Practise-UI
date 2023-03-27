@@ -1,4 +1,5 @@
 
+import 'package:database_auth/screens/reuse_widget/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
 import 'package:database_auth/screens/project_resources/project_resources.dart';
@@ -28,6 +29,7 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const BackIconButton(),
                 const CompanyDesign(),
                 NormalTextField(
                     textCtrl: textUserNameCtrl,

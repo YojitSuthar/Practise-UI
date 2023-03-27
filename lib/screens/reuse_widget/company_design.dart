@@ -12,7 +12,7 @@ class CompanyDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
-          left: 45, right: 4, top: 100, bottom: 100)
+          left: 45, right: 4, top:20, bottom: 80)
           .r,
       width: 250.w,
       child: Column(
@@ -22,7 +22,7 @@ class CompanyDesign extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                IconsAssets.shoppingbag_logo,
+                IconsAssets.shoppingbaglogo,
                 height: 30,
               ),
               Container(

@@ -1,12 +1,13 @@
-
 import 'package:database_auth/resources/resources.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
 import 'package:database_auth/screens/project_resources/project_resources.dart';
+import 'package:database_auth/screens/reuse_widget/back_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController textEmailCtrl = TextEditingController();
   final TextEditingController textPassCtrl = TextEditingController();
+
   LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -28,6 +29,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const BackIconButton(),
                 const CompanyDesign(),
                 NormalTextField(
                     textCtrl: textEmailCtrl,
@@ -36,7 +38,8 @@ class LoginScreen extends StatelessWidget {
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),
-                      child: Text(value.emailValidation,
+                      child: Text(
+                        value.emailValidation,
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
@@ -47,7 +50,8 @@ class LoginScreen extends StatelessWidget {
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),
-                      child: Text(value.passValidation,
+                      child: Text(
+                        value.passValidation,
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
@@ -85,28 +89,24 @@ class LoginScreen extends StatelessWidget {
                         child: Divider(
                           color: ColorManager.blackColor,
                           height: 50.h,
-                        )),
-                  ),
+                        )),),
                 ]),
                 SignInOption(
                   label: StringManager.googleSignIn,
-                  icon_image: IconsAssets.google_logo,
+                  icon_image: IconsAssets.googleLogo,
                 ),
-                SizedBox(
-                  height: 10.h,
+                SizedBox(height:10.h,
                 ),
                 SignInOption(
                   label: StringManager.appleSignIn,
-                  icon_image: IconsAssets.apple_logo,
+                  icon_image: IconsAssets.appleLogo,
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 10).r,
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(SignUpScreen(),
-                            transition: Transition.fade,
-                            duration: const Duration(milliseconds: 700));
+                        Get.toNamed("/SignUp");
                         debugPrint("SignIn");
                       },
                       child: RichText(

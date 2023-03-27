@@ -12,10 +12,10 @@ class GetStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: RGBColorManager.rgbWhiteColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             Container(
               height: 350.h,
               width: double.infinity,
@@ -36,7 +36,7 @@ class GetStartPage extends StatelessWidget {
                       bottomLeft: const Radius.circular(150).w,
                       bottomRight: const Radius.circular(150).w)),
               child:
-                  Image.asset(ProjectImage.comapny_logo, fit: BoxFit.scaleDown),
+                  Image.asset(ProjectImage.companyLogo, fit: BoxFit.scaleDown),
             ),
             Padding(
               padding: const EdgeInsets.all(35.0).w,
@@ -52,9 +52,7 @@ class GetStartPage extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 80).r,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(LoginScreen(),
-                          transition: Transition.rightToLeft,
-                          duration: const Duration(milliseconds: 700));
+                      Get.toNamed("/LoginPage");
                       debugPrint("Button pressed");
                     },
                     style: ElevatedButton.styleFrom(

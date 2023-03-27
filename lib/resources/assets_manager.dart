@@ -9,11 +9,16 @@ class AnimationAssets {
 }
 
 class ProjectImage {
-  static const String comapny_logo = "$IMAGES_PATH/comapny_logo.jpg";
+  static const String companyLogo = "$IMAGES_PATH/comapny_logo.jpg";
 }
 
 class IconsAssets {
-  static const String shoppingbag_logo = "$ICONS_PATH/shopping-bag.png";
-  static const String google_logo = "$ICONS_PATH/google.png";
-  static const String apple_logo = "$ICONS_PATH/apple.png";
+  static const String shoppingbaglogo = "$ICONS_PATH/shopping-bag.png";
+  static const String googleLogo = "$ICONS_PATH/google.png";
+  static const String appleLogo = "$ICONS_PATH/apple.png";
+  static const String userLogo = "$ICONS_PATH/user.png";
+  static const String dashboardLogo = "$ICONS_PATH/dashboard.png";
+  static const String filterLogo = "$ICONS_PATH/filter.png";
+  static const String searchLogo = "$ICONS_PATH/search.png";
+  static const String likeLogo = "$ICONS_PATH/heart.png";
 }

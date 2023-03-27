@@ -12,7 +12,7 @@ class WarningBar{
             fontSize: 15,
             fontWeight: FontWeightManager.semiBold),
       ),
-      backgroundColor: Colors.red,
+      backgroundColor: ColorManager.redColor,
       behavior: SnackBarBehavior.floating,
       action: SnackBarAction(
         label: '',

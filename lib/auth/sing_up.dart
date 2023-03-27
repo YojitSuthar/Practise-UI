@@ -41,7 +41,7 @@ class Signup {
               .doc(textEmailCtrl.text.toString())
               .set(userData)
               .then((value) {
-            Get.offAll(const HomeScreen());
+            Get.offAll( HomeScreen());
           });
         }
       });

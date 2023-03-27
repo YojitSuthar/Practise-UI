@@ -2,64 +2,58 @@ import 'package:flutter/cupertino.dart';
 
 class SignUpValidation with ChangeNotifier{
 
-  String _signUpEmailValidation="";
-  String get signUpEmailValidation=>_signUpEmailValidation;
-  bool _checkEmail=false;
-  bool get checkEmail=>_checkEmail;
+  String signUpEmailValidation="";
+  bool checkEmail=false;
 
-  String _signUpPassValidation="";
-  String get signUpPassValidation=>_signUpPassValidation;
-  bool _checkPass=false;
-  bool get checkPass=>_checkPass;
+  String signUpPassValidation="";
+  bool checkPass=false;
 
-  String _signUpUserNameValidation="";
-  String get signUpUserNameValidation=>_signUpUserNameValidation;
-  bool _checkUserName=false;
-  bool get checkUserName=>_checkUserName;
+  String signUpUserNameValidation="";
+  bool checkUserName=false;
 
   void userNameSignUpValidate(TextEditingController textCtrl){
     if(textCtrl.text==""){
-      _signUpUserNameValidation="Enter User Name";
-      _checkUserName=false;
+      signUpUserNameValidation="Enter User Name";
+      checkUserName=false;
     }
     else{
-      _signUpUserNameValidation="";
-      _checkUserName=true;
+      signUpUserNameValidation="";
+      checkUserName=true;
     }
     notifyListeners();
   }
 
   void emailSignUpValidate(TextEditingController textCtrl){
     if(textCtrl.text==""){
-      _signUpEmailValidation="Enter Email(signup)";
-      _checkEmail=false;
+      signUpEmailValidation="Enter Email";
+      checkEmail=false;
     }
     else if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(textCtrl.text)) {
-      _signUpEmailValidation= 'Please enter a valid email address';
-      _checkEmail=false;
+      signUpEmailValidation= 'Please enter a valid email address';
+      checkEmail=false;
     }
     else{
-      _signUpEmailValidation="";
-      _checkEmail=true;
+      signUpEmailValidation="";
+      checkEmail=true;
     }
     notifyListeners();
   }
 
   void passSignUpValidate(TextEditingController textCtrl){
     if(textCtrl.text==""){
-      _signUpPassValidation="Enter Password(signup)";
-      _checkPass=false;
+      signUpPassValidation="Enter Password";
+      checkPass=false;
     }else if(textCtrl.text.length<8){
-      _signUpPassValidation="Enter 8 character password";
-      _checkPass=false;
+      signUpPassValidation="Enter 8 character password";
+      checkPass=false;
     }
     else if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(textCtrl.text)){
-      _signUpPassValidation="Enter Strong  password";
-      _checkPass=false;
+      signUpPassValidation="Enter Strong  password";
+      checkPass=false;
     }
     else{
-      _signUpPassValidation="";
-      _checkPass=true;
+      signUpPassValidation="";
+      checkPass=true;
     }
     notifyListeners();
   }

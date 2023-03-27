@@ -1,15 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:database_auth/auth/sign_in.dart';
 import 'package:database_auth/auth/sing_up.dart';
 import 'package:database_auth/provider/validation_provider/signup_validation.dart';
 import 'package:database_auth/provider/validation_provider/singin_validation.dart';
 import 'package:database_auth/resources/resources.dart';
+import 'package:database_auth/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:database_auth/screens/project_resources/import_resources.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Button extends StatelessWidget {
-  final db = FirebaseFirestore.instance;
   final signup = Signup();
   final signin = Signin();
   final Widget? createPage;
@@ -19,7 +17,7 @@ class Button extends StatelessWidget {
   final TextEditingController? textEmailCtrl;
   final TextEditingController? textPassCtrl;
   final TextEditingController? textUserNameCtrl;
-
+  final userPreferences=UserPreferences();
   Button(
       {super.key,
       required this.label,
@@ -31,21 +29,14 @@ class Button extends StatelessWidget {
       this.textPassCtrl});
 
 
-  void setData(String userEmail,String userPassword) async{
-    final SharedPreferences userCredentials=await SharedPreferences.getInstance();
-    userCredentials.setString("Email", userEmail);
-    userCredentials.setString("Password", userPassword);
-  }
-
    void Onpressed(BuildContext context) {
-
     final signIn = Provider.of<SignInValidation>(context, listen: false);
     final signUp = Provider.of<SignUpValidation>(context, listen: false);
     if (label == StringManager.signIn) {
       signIn.emailSignInValidate(textEmailCtrl!);
       signIn.passSignInValidate(textPassCtrl!);
       if (signIn.checkEmail && signIn.checkPass) {
-        setData(textEmailCtrl!.text,textPassCtrl!.text);
+        userPreferences.saveLoginUserInfo(textEmailCtrl!.text,textPassCtrl!.text);
         signin.signIN(context, textEmailCtrl!, textPassCtrl!);
       } else {
         debugPrint("not sign in ");
