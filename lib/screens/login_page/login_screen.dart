@@ -1,7 +1,4 @@
-import 'package:database_auth/resources/resources.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
-import 'package:database_auth/screens/project_resources/project_resources.dart';
-import 'package:database_auth/screens/reuse_widget/back_button.dart';
+import 'login_resources.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +10,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final validate = Provider.of<SignInValidation>(context, listen: false);
-    print("build");
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);

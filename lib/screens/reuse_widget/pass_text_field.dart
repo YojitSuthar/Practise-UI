@@ -1,7 +1,7 @@
-import 'package:database_auth/provider/validation_provider/singin_validation.dart';
-import 'package:database_auth/resources/resources.dart';
+import 'package:ecommerce/screens/login_page/provider/singin_validation.dart';
+import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
 
 class PassField extends StatefulWidget {
   TextEditingController textPassCtrl;

@@ -1,14 +1,14 @@
-import 'package:database_auth/provider/button_color/button_color.dart';
-import 'package:database_auth/resources/color_manager.dart';
-import 'package:database_auth/resources/resources.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
+import 'package:ecommerce/resources/color_manager.dart';
+import 'package:ecommerce/resources/resources.dart';
+import 'package:ecommerce/screens/home_screen/provider/button_color/button_color.dart';
+import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
+class CategoryButton extends StatelessWidget {
   final String label;
   final int index;
 
-  Button({Key? key, required this.label,required this.index}) : super(key: key);
+  CategoryButton({Key? key, required this.label,required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

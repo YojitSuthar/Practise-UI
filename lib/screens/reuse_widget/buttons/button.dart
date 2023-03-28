@@ -1,11 +1,11 @@
-import 'package:database_auth/auth/sign_in.dart';
-import 'package:database_auth/auth/sing_up.dart';
-import 'package:database_auth/provider/validation_provider/signup_validation.dart';
-import 'package:database_auth/provider/validation_provider/singin_validation.dart';
-import 'package:database_auth/resources/resources.dart';
-import 'package:database_auth/user_preferences/user_preferences.dart';
+import 'package:ecommerce/auth/sign_in.dart';
+import 'package:ecommerce/auth/sing_up.dart';
+import 'package:ecommerce/screens/signup_page/provider/signup_validation.dart';
+import 'package:ecommerce/screens/login_page/provider/singin_validation.dart';
+import 'package:ecommerce/resources/resources.dart';
+import 'package:ecommerce/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
 
 class Button extends StatelessWidget {
   final signup = Signup();

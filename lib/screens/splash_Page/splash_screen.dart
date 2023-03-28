@@ -1,7 +1,5 @@
-import 'package:database_auth/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
-import '../project_resources/project_resources.dart';
+import 'splash_resources.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = "_SplashScreenState";

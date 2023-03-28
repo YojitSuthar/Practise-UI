@@ -1,4 +1,4 @@
-name: database_auth
+name: ecommerce
 description: A new Flutter project.
 version: 1.0.0+1
 environment:
@@ -16,7 +16,6 @@ dependencies:
   flutter_screenutil: ^5.7.0
   get: ^4.6.5
   fluentui_icons: ^1.0.0
-  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_test:

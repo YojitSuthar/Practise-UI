@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
+// we create the singin validation to user login in app
 class SignInValidation with ChangeNotifier{
 
   String emailValidation="";

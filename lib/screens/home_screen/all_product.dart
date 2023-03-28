@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:ecommerce/resources/resources.dart';
 
-import 'resources/assets_manager.dart';
-import 'resources/style_manager.dart';
+class AllProduct extends StatelessWidget {
 
-
-class ok extends StatelessWidget {
-
+  //its will give the list of all product which is available in store and purchasable
   @override
   Widget build(BuildContext context) {
 
     return  Scaffold(
       body: GridView.builder(
         itemCount: 20,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 24,
@@ -41,12 +39,12 @@ class ok extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "Roller Rabit",
                 style: TextStyle(fontFamily: "Varela",fontWeight: FontWeightManager.bold),
               ),
-              Text("Vado Odells Dress"),
-              Text("&198.00")
+              const Text("Vado Odells Dress"),
+              const Text("&198.00")
             ],
           );
         },

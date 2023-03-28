@@ -17,8 +17,15 @@ class IconsAssets {
   static const String googleLogo = "$ICONS_PATH/google.png";
   static const String appleLogo = "$ICONS_PATH/apple.png";
   static const String userLogo = "$ICONS_PATH/user.png";
+  static const String userUnfilledLogo = "$ICONS_PATH/user-unfilled.png";
   static const String dashboardLogo = "$ICONS_PATH/dashboard.png";
   static const String filterLogo = "$ICONS_PATH/filter.png";
   static const String searchLogo = "$ICONS_PATH/search.png";
-  static const String likeLogo = "$ICONS_PATH/heart.png";
+  static const String likeLogo = "$ICONS_PATH/like.png";
+  static const String cartLogo = "$ICONS_PATH/wishlist.png";
+  static const String cartUnfilledLogo = "$ICONS_PATH/wishlist-unfilled.png";
+  static const String homeLogo = "$ICONS_PATH/home.png";
+  static const String homeUnfilledLogo = "$ICONS_PATH/home-unfilled.png";
+  static const String wishListLogo = "$ICONS_PATH/heart.png";
+  static const String wishListUnfilledLogo = "$ICONS_PATH/heart-unfilled.png";
 }

@@ -1,7 +1,8 @@
-import 'package:database_auth/screens/project_resources/import_resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
+import '../screens/login_page/login_screen.dart';
+import '../screens/reuse_widget/loading.dart';
 
-import '../Screens/Project_resources/project_resources.dart';
 
 class UserPreferences{
   String? email;

@@ -1,5 +1,3 @@
-
-
 class ProductCategory {
   final List category = [
     "smartphones",

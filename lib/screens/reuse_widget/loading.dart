@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:database_auth/screens/project_resources/import_resources.dart';
-import 'package:database_auth/resources/resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
+import 'package:ecommerce/resources/resources.dart';
 class Loading extends StatelessWidget {
   const Loading({Key? key}) : super(key: key);
 

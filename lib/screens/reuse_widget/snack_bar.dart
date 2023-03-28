@@ -1,5 +1,5 @@
-import 'package:database_auth/resources/color_manager.dart';
-import 'package:database_auth/resources/style_manager.dart';
+import 'package:ecommerce/resources/color_manager.dart';
+import 'package:ecommerce/resources/style_manager.dart';
 import 'package:flutter/material.dart';
 
 class WarningBar{
@@ -14,12 +14,6 @@ class WarningBar{
       ),
       backgroundColor: ColorManager.redColor,
       behavior: SnackBarBehavior.floating,
-      action: SnackBarAction(
-        label: '',
-        onPressed: () {
-          //Do whatever you want
-        },
-      ),
     );
   }
 }
