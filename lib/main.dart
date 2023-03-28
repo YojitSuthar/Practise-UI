@@ -3,7 +3,6 @@ import 'main_resources.dart';
 
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

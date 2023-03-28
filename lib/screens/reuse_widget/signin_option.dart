@@ -20,13 +20,13 @@ class SignInOption extends StatelessWidget {
         children: [
           Image.asset(
             icon_image!,
-            height: 30,
+            height: 25,
           ),
           Container(
               margin: const EdgeInsets.only(left: 10),
               child:  Text(
                 label!,
-                style: fontSizeWeightTextStyle(15,FontWeightManager.bold),
+                style: fontSizeWeightTextStyle(15,FontWeightManager.medium),
               ))
         ],
       ),

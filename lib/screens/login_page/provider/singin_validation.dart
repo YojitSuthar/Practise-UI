@@ -8,13 +8,13 @@ class SignInValidation with ChangeNotifier{
   String passValidation="";
   bool checkPass=false;
 
-  void emailSignInValidate(TextEditingController textCtrl){
-    if(textCtrl.text==""){
+  void emailSignInValidate(String textCtrl){
+    if(textCtrl==""){
       emailValidation="Enter Email";
       checkEmail=false;
     }
-    else if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(textCtrl.text)) {
-      emailValidation= 'Please enter a valid email address';
+    else if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(textCtrl)) {
+      emailValidation= 'Enter a valid email address';
       checkEmail=false;
     }
     else{

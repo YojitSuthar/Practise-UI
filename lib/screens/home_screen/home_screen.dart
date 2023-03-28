@@ -9,9 +9,8 @@ class HomeScreen extends StatelessWidget {
     AllProduct(),
     const ShoppingCart(),
     const Wishlist(),
-    const UserProfile(),
+    UserProfile(),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       },
       child: Scaffold(
           body: Padding(
-            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
             child: Container(
               margin: const EdgeInsets.only(top: 45),
               child: Column(

@@ -33,7 +33,7 @@ class Button extends StatelessWidget {
     final signIn = Provider.of<SignInValidation>(context, listen: false);
     final signUp = Provider.of<SignUpValidation>(context, listen: false);
     if (label == StringManager.signIn) {
-      signIn.emailSignInValidate(textEmailCtrl!);
+      signIn.emailSignInValidate(textEmailCtrl!.text);
       signIn.passSignInValidate(textPassCtrl!);
       if (signIn.checkEmail && signIn.checkPass) {
         userPreferences.saveLoginUserInfo(textEmailCtrl!.text,textPassCtrl!.text);

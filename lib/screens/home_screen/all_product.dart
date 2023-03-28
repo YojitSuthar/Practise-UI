@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/resources.dart';
 
 class AllProduct extends StatelessWidget {
-
   //its will give the list of all product which is available in store and purchasable
   @override
   Widget build(BuildContext context) {
-
-    return  Scaffold(
+    return Scaffold(
       body: GridView.builder(
         itemCount: 20,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -17,11 +15,13 @@ class AllProduct extends StatelessWidget {
           // width / height: fixed for *all* items
           childAspectRatio: 0.6,
         ),
-        itemBuilder: (BuildContext context, int index){
-          return  Column(
+        itemBuilder: (BuildContext context, int index) {
+          return Column(
             children: [
               GestureDetector(
-                onTap: (){debugPrint("Product Category");},
+                onTap: () {
+                  debugPrint("Product Category");
+                },
                 child: Container(
                   height: 200,
                   width: 170,
@@ -41,7 +41,8 @@ class AllProduct extends StatelessWidget {
               ),
               const Text(
                 "Roller Rabit",
-                style: TextStyle(fontFamily: "Varela",fontWeight: FontWeightManager.bold),
+                style: TextStyle(
+                    fontFamily: "Varela", fontWeight: FontWeightManager.bold),
               ),
               const Text("Vado Odells Dress"),
               const Text("&198.00")
@@ -50,6 +51,5 @@ class AllProduct extends StatelessWidget {
         },
       ),
     );
-
   }
 }
