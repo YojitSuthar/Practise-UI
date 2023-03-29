@@ -34,10 +34,11 @@ class CategoryButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15.0).w)),
           child: Text(
             label,
-            style: fontWeightColorSizeTextStyle(
+            style: fontWeightSizeColorTextStyle(
                 FontWeightManager.bold,
+                12.sp,
                 value.data.contains(index) ? ColorManager.whiteColor : ColorManager.blackColor,
-                12.sp),
+                ),
           ),
         );
       },)

@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
+        backgroundColor: ColorManager.whiteColor,
           body: Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
             child: Container(
@@ -97,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () {
                                     debugPrint("search icon");
                                   },
-                                  icon: Container(
+                                  icon: SizedBox(
                                     height: 25,
                                     child: Image.asset(
                                       IconsAssets.searchLogo,
@@ -140,8 +141,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 13).r,
-                    child: Container(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(
+                        "Categories",
+                        style: fontWeightSizeColorTextStyle(
+                            FontWeightManager.bold, 20, Colors.black),
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8).r,
+                    child: SizedBox(
                       height: 25.h,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -155,14 +163,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 10.h,
                   ),
-                 Consumer<BottumNavigation>(builder: (context, value,child){
-                   return  Expanded(
-                     child: pages[value.selected],
-                   );
-                 })
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text("Top Dresses",style: TextStyle(fontSize: 18,fontWeight: FontWeightManager.bold),),
+                      Text("View All",style: TextStyle(color: ColorManager.darkGreyColor),)
+                    ],
+                  ),
+                  Consumer<BottumNavigation>(builder: (context, value, child) {
+                    return Expanded(
+                      child: pages[value.selected],
+                    );
+                  })
                 ],
               ),
             ),

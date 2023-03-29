@@ -3,16 +3,15 @@ import 'splash_resources.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = "_SplashScreenState";
+
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
+
 class _SplashScreenState extends State<SplashScreen> {
-
-  final userPreferences=UserPreferences();
-
-
+  final userPreferences = UserPreferences();
 
   @override
   void initState() {
@@ -25,12 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigation() async {
     Duration time = const Duration(seconds: 3);
     await Future.delayed(time, () {
-      if(userPreferences.email!=null && userPreferences.pass != null && userPreferences.email!.isNotEmpty&& userPreferences.pass!.isNotEmpty)
-      {
+      if (userPreferences.email != null &&
+          userPreferences.pass != null &&
+          userPreferences.email!.isNotEmpty &&
+          userPreferences.pass!.isNotEmpty) {
         Get.off(HomeScreen());
-      }
-      else
-      {
+      } else {
         Get.offNamed("/GetStartPage");
       }
     });

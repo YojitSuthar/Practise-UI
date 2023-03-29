@@ -8,10 +8,11 @@ class RGBColorManager{
 
 class ColorManager{
   static Color greyColor= Colors.grey;
+  static Color darkGreyColor= Colors.grey.shade700;
+  static Color greyOpacityColor= Colors.grey.withOpacity(0.7);
   static Color black87Color= Colors.black87;
   static Color blackColor= Colors.black;
   static Color lightGreenColor= Colors.lightGreen;
-  static Color greyOpacityColor= Colors.grey.withOpacity(0.7);
   static Color redColor= Colors.red;
   static Color lightBlueColor= Colors.lightBlue;
   static Color whiteColor= Colors.white;

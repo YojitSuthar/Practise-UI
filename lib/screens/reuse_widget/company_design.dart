@@ -2,7 +2,6 @@ import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
-
 class CompanyDesign extends StatelessWidget {
   const CompanyDesign({
     super.key,
@@ -38,7 +37,7 @@ class CompanyDesign extends StatelessWidget {
             margin: const EdgeInsets.only(left: 5, top: 5).r,
             child: Text(StringManager.companySlogan,
                 style: fontFamilyWeightTextStyle(
-                    FontWeight.bold, "Gruppo")),
+                  "Gruppo",FontWeight.bold)),
           ),
         ],
       ),
