@@ -18,16 +18,19 @@ class LoginScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
+        backgroundColor: ColorManager.whiteColor,
         body: SingleChildScrollView(
           // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
-            padding: const EdgeInsets.all(15.0).w,
+            padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 90).w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const BackIconButton(),
                 const CompanyDesign(),
                 NormalTextField(
+                    pageLabel: "Login",
+                    checkField: "emailLogin",
+                    noPassTextField: true,
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
@@ -39,10 +42,13 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
-                PassField(
-                    hintText: StringManager.enterPassword,
-                    textPassCtrl: textPassCtrl,
-                    labelText: StringManager.password),
+                NormalTextField(
+                    pageLabel: "Login",
+                    checkField: "passLogin",
+                    noPassTextField: false,
+                    textCtrl: textPassCtrl,
+                    hintText:StringManager.enterPassword,
+                    label: StringManager.password),
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),
@@ -51,9 +57,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
-                AbsorbPointer(
-                  absorbing: false,
-                  child: Container(
+                Container(
                     margin: const EdgeInsets.only(
                       top: 5,
                     ).r,
@@ -66,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                       textPassCtrl: textPassCtrl,
                     ),
                   ),
-                ),
+              
                 Row(children: [
                   Expanded(
                     child: Container(
@@ -84,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                             const EdgeInsets.only(left: 20.0, right: 10.0).r,
                         child: Divider(
                           color: ColorManager.blackColor,
-                          height: 50.h,
+                          height: 45.h,
                         )),),
                 ]),
                 SignInOption(
@@ -102,8 +106,8 @@ class LoginScreen extends StatelessWidget {
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        Get.toNamed("/SignUp");
                         debugPrint("SignIn");
+                        Get.toNamed("/SignUp");
                       },
                       child: RichText(
                         text: TextSpan(

@@ -6,7 +6,7 @@ class SignInOption extends StatelessWidget {
   
   final String? label;
   final String? icon_image;
-  SignInOption({required this.label, required this.icon_image});
+  const SignInOption({required this.label, required this.icon_image});
 
   @override
   Widget build(BuildContext context) {

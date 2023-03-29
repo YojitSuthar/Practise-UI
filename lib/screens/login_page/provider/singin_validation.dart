@@ -24,8 +24,8 @@ class SignInValidation with ChangeNotifier{
     notifyListeners();
   }
 
-  void passSignInValidate(TextEditingController textCtrl){
-    if(textCtrl.text==""){
+  void passSignInValidate(String textCtrl){
+    if(textCtrl==""){
       passValidation="Enter Password";
       checkPass=false;
     }

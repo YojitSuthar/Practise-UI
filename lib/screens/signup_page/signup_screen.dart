@@ -28,6 +28,9 @@ class SignUpScreen extends StatelessWidget {
                 const BackIconButton(),
                 const CompanyDesign(),
                 NormalTextField(
+                    pageLabel: "Singup",
+                    checkField: "signupUsername",
+                    noPassTextField: true,
                     textCtrl: textUserNameCtrl,
                     hintText: StringManager.enterUserName,
                     label: StringManager.userName),
@@ -40,6 +43,9 @@ class SignUpScreen extends StatelessWidget {
                       ));
                 }),
                 NormalTextField(
+                  checkField: "signUpEmail",
+                    noPassTextField: true,
+                    pageLabel: "Signup",
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
@@ -51,10 +57,13 @@ class SignUpScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
-                PassField(
+                NormalTextField(
+                    checkField: "signUpPass",
+                    noPassTextField: false,
+                    pageLabel: "Signup",
+                    textCtrl:  textPassCtrl,
                     hintText: StringManager.password,
-                    textPassCtrl: textPassCtrl,
-                    labelText: StringManager.password),
+                    label: StringManager.password),
                 Consumer<SignUpValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main_resources.dart';
+import 'provider/absorbing.dart';
 
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
@@ -16,6 +17,7 @@ class Myapp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => SignUpValidation()),
             ChangeNotifierProvider(create: (context) => ChangeColor()),
             ChangeNotifierProvider(create: (context) => BottumNavigation()),
+            ChangeNotifierProvider(create: (context) => Absorbing()),
           ],
           child: GetMaterialApp(
               theme: ThemeData(

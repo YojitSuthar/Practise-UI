@@ -20,15 +20,15 @@ class Signup {
         builder: (context) {
           return const Center(child: Loading());
         });
-    final userData = <String, dynamic>{
-      "UserName": textUserNameCtrl.text,
-      "Email": textEmailCtrl.text,
-      "Password": textPassCtrl.text
+    final userData = <String, String>{
+      "UserName": textUserNameCtrl.text.trim(),
+      "Email": textEmailCtrl.text.trim(),
+      "Password": textPassCtrl.text.trim()
     };
     try {
       await db
           .collection("Users")
-          .doc(textEmailCtrl.text.toString())
+          .doc(textEmailCtrl.text.trim())
           .get()
           .then((value) {
         if (value.exists) {
@@ -39,10 +39,10 @@ class Signup {
           debugPrint("No email");
           db
               .collection("Users")
-              .doc(textEmailCtrl.text.toString())
+              .doc(textEmailCtrl.text.toString().trim())
               .set(userData)
               .then((value) {
-            Get.offAll( HomeScreen());
+            Get.offAll(HomeScreen());
           });
         }
       });

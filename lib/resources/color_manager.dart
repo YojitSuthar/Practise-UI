@@ -15,6 +15,4 @@ class ColorManager{
   static Color redColor= Colors.red;
   static Color lightBlueColor= Colors.lightBlue;
   static Color whiteColor= Colors.white;
-
-
 }

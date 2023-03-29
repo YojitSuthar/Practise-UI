@@ -51,7 +51,7 @@ class GetStartPage extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 80).r,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.toNamed("/LoginPage");
+                      Get.offAllNamed("/LoginPage");
                       debugPrint("Button pressed");
                     },
                     style: ElevatedButton.styleFrom(

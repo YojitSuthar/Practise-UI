@@ -1,14 +1,15 @@
 import 'package:ecommerce/screens/home_screen/home_screen.dart';
+import 'package:ecommerce/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/resources/resources.dart';
-
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
 
 class Signin{
   final db = FirebaseFirestore.instance;
   final bar = WarningBar();
+  final userPreferences=UserPreferences();
   void signIN(BuildContext context,TextEditingController textEmailCtrl,
       TextEditingController textPassCtrl) async {
     debugPrint("Button pressed");
@@ -23,14 +24,15 @@ class Signin{
     try {
       await db
           .collection("Users")
-          .doc(textEmailCtrl.text.toString().trim())
+          .doc(textEmailCtrl.text.trim())
           .get()
           .then((value) {
         if (value["Email"] == textEmailCtrl.text.trim() &&
-            value["Password"] == textPassCtrl.text) {
-          Get.offAll( HomeScreen());
+            value["Password"] == textPassCtrl.text.trim()) {
+          userPreferences.saveLoginUserInfo(textEmailCtrl.text,textPassCtrl.text);
+          Get.offAll(HomeScreen());
         } else {
-          debugPrint("invalid caredentials");
+          debugPrint("invalid credentials");
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(invalidCredentials);
         }
