@@ -30,7 +30,7 @@ class Signin{
         if (value["Email"] == textEmailCtrl.text.trim() &&
             value["Password"] == textPassCtrl.text.trim()) {
           userPreferences.saveLoginUserInfo(textEmailCtrl.text,textPassCtrl.text);
-          Get.offAll(HomeScreen());
+          Get.offAll(MainScreen());
         } else {
           debugPrint("invalid credentials");
           Navigator.pop(context);

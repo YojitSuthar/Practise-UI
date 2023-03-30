@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
           userPreferences.pass != null &&
           userPreferences.email!.isNotEmpty &&
           userPreferences.pass!.isNotEmpty) {
-        Get.off(HomeScreen());
+        Get.off(MainScreen());
       } else {
         Get.offNamed("/GetStartPage");
       }

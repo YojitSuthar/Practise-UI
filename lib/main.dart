@@ -22,6 +22,8 @@ class Myapp extends StatelessWidget {
           child: GetMaterialApp(
               theme: ThemeData(
                 fontFamily: "Mukta",
+                scaffoldBackgroundColor: ColorManager.whiteColor,
+
               ),
               debugShowCheckedModeBanner: false,
               home: const SplashScreen(),

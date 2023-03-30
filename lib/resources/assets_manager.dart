@@ -28,4 +28,8 @@ class IconsAssets {
   static const String homeUnfilledLogo = "$ICONS_PATH/home-unfilled.png";
   static const String wishListLogo = "$ICONS_PATH/heart.png";
   static const String wishListUnfilledLogo = "$ICONS_PATH/heart-unfilled.png";
+  static const String editLogo = "$ICONS_PATH/pencil.png";
+  static const String radioEnabledLogo = "$ICONS_PATH/radio-on-button.png";
+  static const String radioDisabledLogo = "$ICONS_PATH/radio-button.png";
+  static const String logOutLogo = "$ICONS_PATH/logout.png";
 }

@@ -42,7 +42,7 @@ class Signup {
               .doc(textEmailCtrl.text.toString().trim())
               .set(userData)
               .then((value) {
-            Get.offAll(HomeScreen());
+            Get.offAll(MainScreen());
           });
         }
       });

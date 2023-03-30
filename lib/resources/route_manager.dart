@@ -22,5 +22,5 @@ final List<GetPage<dynamic>> routes = [
       page: () => SignUpScreen(),
       transition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 450)),
-  GetPage(name: "/HomePage", page: () => HomeScreen()),
+  GetPage(name: "/HomePage", page: () => MainScreen()),
 ];
