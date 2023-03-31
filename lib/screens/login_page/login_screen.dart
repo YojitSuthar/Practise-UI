@@ -91,13 +91,13 @@ class LoginScreen extends StatelessWidget {
                           height: 45.h,
                         )),),
                 ]),
-                SignInOption(
+                const SignInOption(
                   label: StringManager.googleSignIn,
                   icon_image: IconsAssets.googleLogo,
                 ),
                 SizedBox(height:10.h,
                 ),
-                SignInOption(
+                const SignInOption(
                   label: StringManager.appleSignIn,
                   icon_image: IconsAssets.appleLogo,
                 ),

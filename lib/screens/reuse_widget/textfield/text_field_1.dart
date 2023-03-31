@@ -82,7 +82,7 @@ class _NormalTextFieldState extends State<NormalTextField> {
                 cursorColor: ColorManager.lightGreenColor,
                 cursorRadius: const Radius.circular(10),
                 cursorWidth: 4,
-                obscureText: obSure,
+                obscureText: widget.noPassTextField?obSure=false:obSure,
                 controller: widget.textCtrl,
                 decoration: InputDecoration(
                     hintText: widget.hintText,
@@ -102,7 +102,6 @@ class _NormalTextFieldState extends State<NormalTextField> {
                         : obSure
                             ? Icon(
                                 FluentSystemIcons.ic_fluent_eye_show_filled,
-                                color: Colors.grey[600],
                               )
                             : const Icon(
                                 FluentSystemIcons.ic_fluent_eye_hide_filled)),

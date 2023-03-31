@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/home_screen/homescreen_resources.dart';
 
@@ -8,8 +9,8 @@ class MainScreen extends StatelessWidget {
   final pages = [
     const HomeScreen(),
     const ShoppingCart(),
-     Wishlist(),
-    UserProfile(),
+    WishList(),
+    UserAccount(),
   ];
 
   @override

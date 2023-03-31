@@ -1,9 +1,10 @@
+import 'package:ecommerce/provider/theme_mode.dart';
 import 'package:flutter/material.dart';
 import 'main_resources.dart';
 import 'provider/absorbing.dart';
 
 class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+   Myapp({super.key});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -18,16 +19,21 @@ class Myapp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => ChangeColor()),
             ChangeNotifierProvider(create: (context) => BottumNavigation()),
             ChangeNotifierProvider(create: (context) => Absorbing()),
+            ChangeNotifierProvider(create: (context) => ThemeChange()),
           ],
-          child: GetMaterialApp(
-              theme: ThemeData(
-                fontFamily: "Mukta",
-                scaffoldBackgroundColor: ColorManager.whiteColor,
-
-              ),
-              debugShowCheckedModeBanner: false,
-              home: const SplashScreen(),
-              getPages: routes),
+          child: Consumer<ThemeChange>(builder: (context,value,child){
+            return GetMaterialApp(
+                theme: ThemeData(
+                  fontFamily: "Mukta",
+                ),
+                darkTheme: ThemeData(
+                  brightness: Brightness.dark,
+                ),
+                themeMode: value.isDarkMode ? ThemeMode.dark:ThemeMode.light,
+                debugShowCheckedModeBanner: false,
+                home: const SplashScreen(),
+                getPages: routes);
+          },)
         );
       },
     );
@@ -37,5 +43,5 @@ class Myapp extends StatelessWidget {
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const Myapp());
+  runApp(Myapp());
 }
