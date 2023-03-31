@@ -128,7 +128,7 @@ class UserProfile extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(bottom: 15, top: 15),
                 padding: const EdgeInsets.all(22).w,
-                height: 320,
+                height: 310.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     // color: Colors.pink,
