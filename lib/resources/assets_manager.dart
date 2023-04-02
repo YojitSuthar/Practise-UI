@@ -12,8 +12,8 @@ class ProjectImage {
 }
 
 class IconsAssets {
-  static const String shoppingBag_1logo = "$ICONS_PATH/shopping_bag_1.png";
-  static const String shoppingBag_2logo = "$ICONS_PATH/shopping-bag_2.png";
+  static const String designBagLogo = "$ICONS_PATH/shopping_bag.png";
+  static const String shoppingBagLogo = "$ICONS_PATH/shopping-bag_2.png";
   static const String googleLogo = "$ICONS_PATH/google.png";
   static const String appleLogo = "$ICONS_PATH/apple.png";
   static const String userLogo = "$ICONS_PATH/user.png";

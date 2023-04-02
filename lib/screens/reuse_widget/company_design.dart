@@ -21,7 +21,7 @@ class CompanyDesign extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                IconsAssets.shoppingBag_1logo,
+                IconsAssets.designBagLogo,
                 height: 30,
               ),
               Container(

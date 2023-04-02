@@ -9,7 +9,7 @@ class OptionButton {
     },
     {
       "label_1":"My order",
-      "iconAsset":IconsAssets.shoppingBag_2logo,
+      "iconAsset":IconsAssets.shoppingBagLogo,
       "Navigation":"sa"
     },
     {
