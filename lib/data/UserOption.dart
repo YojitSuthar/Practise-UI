@@ -1,7 +1,7 @@
 import '../resources/assets_manager.dart';
 
 class OptionButton {
-  final List optionButton = [
+  final List userAccountOptions_1 = [
     {
       "label_1":"Personal details",
       "iconAsset":IconsAssets.userLogo,
@@ -9,7 +9,7 @@ class OptionButton {
     },
     {
       "label_1":"My order",
-      "iconAsset":IconsAssets.shoppingbaglogo,
+      "iconAsset":IconsAssets.shoppingBag_2logo,
       "Navigation":"sa"
     },
     {
@@ -31,6 +31,29 @@ class OptionButton {
       "label_1":"Setting",
       "iconAsset":IconsAssets.settingLogo,
       "Navigation":"as"
+    },
+  ];
+
+  final List userAccountOptions_2 = [
+    {
+      "label_1":"FAQs",
+      "iconAsset":IconsAssets.faqsLogo,
+      "Navigation":"null"
+    },
+    {
+      "label_1":"Privacy Policy",
+      "iconAsset":IconsAssets.privacyPolicyLogo,
+      "Navigation":"null"
+    },
+    {
+      "label_1":"Terms and Conditions",
+      "iconAsset":IconsAssets.termsLogo,
+      "Navigation":"null"
+    },
+    {
+      "label_1":"About Us",
+      "iconAsset":IconsAssets.aboutUsLogo,
+      "Navigation":"null"
     },
   ];
 }

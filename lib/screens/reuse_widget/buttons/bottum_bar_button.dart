@@ -6,39 +6,39 @@ class BottumTabButton extends StatelessWidget {
   BottumTabButton({
     super.key,
     required this.inDex,
-    required this.OnSelectImageAsset,
+    required this.onSelectImageAsset,
     required this.notSelectImageAsset
   });
 
   int inDex;
-  String OnSelectImageAsset;
+  String onSelectImageAsset;
   String notSelectImageAsset;
 
   @override
   Widget build(BuildContext context) {
-    final abc = Provider.of<BottumNavigation>(context, listen: false);
+    final navigation = Provider.of<BottumNavigation>(context, listen: false);
     return Consumer<BottumNavigation>(builder: (context, value, child) {
       return IconButton(
           enableFeedback: false,
           onPressed: () {
-            if (abc.contain.contains(inDex)) {
+            if (navigation.contain.contains(inDex)) {
               debugPrint("change");
-              abc.change(inDex);
+              navigation.change(inDex);
             } else {
               debugPrint("else change");
-              abc.contain.clear();
-              abc.change(inDex);
-              abc.add(inDex);
+              navigation.contain.clear();
+              navigation.change(inDex);
+              navigation.add(inDex);
             }
           },
-          icon: abc.contain.contains(inDex)
-              ? Container(
+          icon: navigation.contain.contains(inDex)
+              ? SizedBox(
                  height: 30,
             child: Image.asset(
-              OnSelectImageAsset,
+              onSelectImageAsset,
             ),
           )
-              : Container(
+              : SizedBox(
             height: 25,
             child: Image.asset(
               notSelectImageAsset,

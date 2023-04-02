@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import '../../../resources/import_resources.dart';
+import '../../../resources/resources.dart';
 
 
 class BackIconButton extends StatelessWidget {
@@ -8,11 +9,11 @@ class BackIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(top: 35.0),
+        margin: const EdgeInsets.only(top: 35.0),
         child: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.keyboard_arrow_left)));
+            icon: Image.asset(IconsAssets.backButtonLogo)));
   }
 }

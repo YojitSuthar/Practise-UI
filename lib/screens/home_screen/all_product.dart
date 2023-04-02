@@ -23,7 +23,8 @@ class AllProduct extends StatelessWidget {
               },
               child: Container(
                 height: 200,
-                width: 170,margin: const EdgeInsets.only(bottom: 10),
+                width: 170,
+                margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                     color: Colors.pink,
                     borderRadius: BorderRadius.circular(20)),

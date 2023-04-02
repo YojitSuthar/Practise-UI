@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(17, 17, 17, 1),
       body: Center(
-        child: Lottie.asset(AnimationAssets.splash1_animation),
+        child: Lottie.asset(AnimationAssets.splashAnimation),
       ),
     );
   }

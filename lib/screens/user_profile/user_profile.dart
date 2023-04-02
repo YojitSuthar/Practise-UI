@@ -1,24 +1,16 @@
-import 'package:ecommerce/provider/theme_mode.dart';
 import 'package:ecommerce/resources/import_resources.dart';
-import 'package:ecommerce/screens/reuse_widget/buttons/switch_button.dart';
-import 'package:ecommerce/screens/reuse_widget/radio_button.dart';
 import 'package:flutter/material.dart';
-import '../../data/radio_button_list.dart';
-import '../../resources/resources.dart';
-import '../../user_preferences/user_preferences.dart';
-import '../reuse_widget/box_design.dart';
-import '../reuse_widget/textfield/text_field_2.dart';
+import 'user_resources.dart';
 
 class UserProfile extends StatelessWidget {
   UserProfile({Key? key}) : super(key: key);
   bool abc = true;
   final userPreferences = UserPreferences();
   final notificationButtonCtrl = ValueNotifier<bool>(false);
-  final ThemeButtonCtrl = ValueNotifier<bool>(false);
+  final themeButtonCtrl = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
-    final themeMode=Provider.of<ThemeChange>(context,listen: false);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -26,11 +18,12 @@ class UserProfile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const BackIconButton(),
               Center(
                 child: Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 70, bottom: 5).r,
+                      margin: const EdgeInsets.only(top: 10, bottom: 5).r,
                       height: 70.h,
                       width: 80.w,
                       decoration: const BoxDecoration(
@@ -139,7 +132,8 @@ class UserProfile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     BoxDesign(
-                        child_1: const DesignLabel(
+                        child_1:  DesignLabel(
+                          sizeBoxWidth: 200,
                           label_1: "Language",
                           iconAsset: IconsAssets.languageLogo,
                         ),
@@ -147,19 +141,22 @@ class UserProfile extends StatelessWidget {
                           label: "English",
                         )),
                     BoxDesign(
-                        child_1: const DesignLabel(
+                        child_1:   DesignLabel(
+                          sizeBoxWidth: 200,
                           label_1: "Notification",
                           iconAsset: IconsAssets.notificationLogo,
                         ),
                         child_2: SwitchButton(value: true,label: "Notification",)),
                     BoxDesign(
-                        child_1: const DesignLabel(
+                        child_1:  DesignLabel(
+                          sizeBoxWidth: 200,
                           label_1: "Dark Mode",
                           iconAsset: IconsAssets.darkThemeLogo,
                         ),
-                        child_2: SwitchButton(value: themeMode.isDarkMode,label: "DarkMode",)),
+                        child_2: SwitchButton(value: false,label: "DarkMode",)),
                     BoxDesign(
-                        child_1: const DesignLabel(
+                        child_1:   DesignLabel(
+                          sizeBoxWidth: 200,
                           label_1: "Help Center",
                           iconAsset: IconsAssets.helpCenterLogo,
                         ),

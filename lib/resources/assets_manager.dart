@@ -2,10 +2,9 @@ const String ANIMATION_PATH = "assets/animations";
 const String IMAGES_PATH = "assets/image";
 const String ICONS_PATH = "assets/icons";
 
-
 class AnimationAssets {
-  static const String splash1_animation = "$ANIMATION_PATH/spash_screen.json";
-  static const String loading_animation = "$ANIMATION_PATH/loading.json";
+  static const String splashAnimation = "$ANIMATION_PATH/spash_screen.json";
+  static const String loadingAnimation = "$ANIMATION_PATH/loading.json";
 }
 
 class ProjectImage {
@@ -13,7 +12,8 @@ class ProjectImage {
 }
 
 class IconsAssets {
-  static const String shoppingbaglogo = "$ICONS_PATH/shopping-bag (1).png";
+  static const String shoppingBag_1logo = "$ICONS_PATH/shopping_bag_1.png";
+  static const String shoppingBag_2logo = "$ICONS_PATH/shopping-bag_2.png";
   static const String googleLogo = "$ICONS_PATH/google.png";
   static const String appleLogo = "$ICONS_PATH/apple.png";
   static const String userLogo = "$ICONS_PATH/user.png";
@@ -40,5 +40,9 @@ class IconsAssets {
   static const String shippingLogo = "$ICONS_PATH/delivery-truck.png";
   static const String cardLogo = "$ICONS_PATH/credit-card.png";
   static const String settingLogo = "$ICONS_PATH/setting.png";
-
+  static const String backButtonLogo = "$ICONS_PATH/backbutton.png";
+  static const String aboutUsLogo = "$ICONS_PATH/about-us.png";
+  static const String faqsLogo = "$ICONS_PATH/FAQs.png";
+  static const String privacyPolicyLogo = "$ICONS_PATH/privacypolicy.png";
+  static const String termsLogo = "$ICONS_PATH/terms.png";
 }

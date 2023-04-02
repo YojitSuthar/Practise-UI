@@ -3,6 +3,34 @@ import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
 
 
+class Box extends StatelessWidget {
+  Box({
+    super.key,
+    required this.child,
+    required this.height,
+  });
+
+  Widget child;
+  double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10, top: 15),
+      padding: const EdgeInsets.only(top: 0, left: 15, right: 15, bottom: 0).w,
+      height: height.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        // color: Colors.pink,
+          border:
+          Border.all(color: ColorManager.greyOpacityColor, width: 2.3.w),
+          borderRadius: BorderRadius.circular(30)),
+      child: child,
+    );
+  }
+}
+
+
 class BoxDesign extends StatelessWidget {
    BoxDesign({
     super.key,
@@ -44,19 +72,21 @@ class BoxText extends StatelessWidget {
 }
 
 class DesignLabel extends StatelessWidget {
-  const DesignLabel({
+   DesignLabel({
     super.key,
     required this.iconAsset,
     required this.label_1,
+    required this.sizeBoxWidth,
   });
 
   final String iconAsset;
   final String label_1;
+  double sizeBoxWidth;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 190.w,
+      width: sizeBoxWidth.w,
       child: Row(
         children: [
           Container(

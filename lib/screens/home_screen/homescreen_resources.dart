@@ -7,7 +7,7 @@ export 'package:ecommerce/screens/reuse_widget/buttons/category_button.dart';
 export 'package:ecommerce/screens/home_screen/provider/bottum_navigation/bottum_navigation.dart';
 export 'package:ecommerce/screens/home_screen/all_product.dart';
 export 'package:ecommerce/data/product_categorylist.dart';
-export '../../resources/resources.dart';
-export 'package:ecommerce/resources/import_resources.dart';
 export 'package:ecommerce/screens/user_profile/user_account.dart';
+export '../reuse_widget/buttons/icon_button.dart';
+export '../reuse_widget/circle_avatar.dart';
 

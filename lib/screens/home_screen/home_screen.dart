@@ -1,6 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/home_screen/homescreen_resources.dart';
+import '../../resources/resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
+
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -9,7 +11,7 @@ class MainScreen extends StatelessWidget {
   final pages = [
     const HomeScreen(),
     const ShoppingCart(),
-    WishList(),
+    const WishList(),
     UserAccount(),
   ];
 
@@ -49,20 +51,20 @@ class MainScreen extends StatelessWidget {
               children: [
                 BottumTabButton(
                     inDex: 0,
-                    OnSelectImageAsset: IconsAssets.homeLogo,
+                    onSelectImageAsset: IconsAssets.homeLogo,
                     notSelectImageAsset: IconsAssets.homeUnfilledLogo),
                 BottumTabButton(
                     inDex: 1,
-                    OnSelectImageAsset: IconsAssets.cartLogo,
+                    onSelectImageAsset: IconsAssets.cartLogo,
                     notSelectImageAsset: IconsAssets.cartUnfilledLogo),
                 BottumTabButton(
                   inDex: 2,
-                  OnSelectImageAsset: IconsAssets.wishListLogo,
+                  onSelectImageAsset: IconsAssets.wishListLogo,
                   notSelectImageAsset: IconsAssets.wishListUnfilledLogo,
                 ),
                 BottumTabButton(
                   inDex: 3,
-                  OnSelectImageAsset: IconsAssets.userLogo,
+                  onSelectImageAsset: IconsAssets.userLogo,
                   notSelectImageAsset: IconsAssets.userUnfilledLogo,
                 ),
               ],
@@ -86,121 +88,114 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                    padding: const EdgeInsets.all(0),
-                    iconSize: 45,
-                    onPressed: () {
-                      debugPrint("dashboard");
-                    },
-                    icon: Image.asset(
-                      IconsAssets.dashboardLogo,
-                    )),
-                IconButton(
-                    padding: const EdgeInsets.all(0),
-                    iconSize: 50,
-                    onPressed: () {
-                      debugPrint("User logo");
-                    },
-                    icon: CircleAvatar(
-                      radius: 45,
-                      backgroundColor: ColorManager.greyOpacityColor,
-                      child: Container(
-                        padding: const EdgeInsets.all(5).w,
-                        child: Image.asset(
-                          IconsAssets.userLogo,
-                        ),
-                      ),
-                    )),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20).r,
-              child: RichText(
-                text: TextSpan(
-                  text: 'Welcome,\n',
-                  style: TextStyle(
-                      color: ColorManager.blackColor,
-                      fontSize: 35.sp,
-                      fontWeight: FontWeightManager.bold),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'Our Fashions App',
-                        style: TextStyle(
-                            color: ColorManager.greyOpacityColor,
-                            fontSize: 25.sp,
-                            fontWeight: FontWeightManager.bold))
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IcnButton(
+                        onPressed: () {
+                          debugPrint("dashBoard");
+                        },
+                        iconSize: 45,
+                        child: Image.asset(IconsAssets.dashboardLogo)),
+                    IcnButton(
+                        iconSize: 45,
+                        onPressed: () {
+                          debugPrint("User logo");
+                        },
+                        child: CrcleAvatar(
+                          color: RGBColorManager.rgbWhiteColor,
+                          radius: 45,
+                          child: Image.asset(IconsAssets.userLogo),
+                        )),
                   ],
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 12).r,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 280.0.w,
-                    height: 45.0.h,
-                    decoration: BoxDecoration(
-                        color: RGBColorManager.rgbWhiteColor,
-                        borderRadius: BorderRadius.circular(20.w)),
-                    child: Row(
-                      children: [
-                        IconButton(
-                            padding: const EdgeInsets.all(0),
-                            onPressed: () {
-                              debugPrint("search icon");
-                            },
-                            icon: SizedBox(
-                              height: 25,
-                              child: Image.asset(
-                                IconsAssets.searchLogo,
-                              ),
-                            )),
-                        Expanded(
-                          child: TextFormField(
-                            controller: null,
-                            cursorHeight: 24,
-                            cursorRadius: const Radius.circular(10).w,
-                            cursorColor: ColorManager.blackColor,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: const EdgeInsets.only(left: 11).r,
-                              hintText: "Search",
-                              // border: OutlineInputBorder(),
-                            ),
-                          ),
-                        )
+                Padding(
+                  padding: const EdgeInsets.only(top: 20).r,
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Welcome,\n',
+                      style: TextStyle(
+                          color: ColorManager.blackColor,
+                          fontSize: 35.sp,
+                          fontWeight: FontWeightManager.bold),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'Our Fashions App',
+                            style: TextStyle(
+                                color: ColorManager.greyOpacityColor,
+                                fontSize: 25.sp,
+                                fontWeight: FontWeightManager.bold))
                       ],
                     ),
                   ),
-                  IconButton(
-                      padding: const EdgeInsets.all(0),
-                      onPressed: () {
-                        debugPrint("Filter");
-                      },
-                      icon: CircleAvatar(
-                        radius: 23,
-                        backgroundColor: ColorManager.blackColor,
-                        child: Container(
-                          padding: const EdgeInsets.all(9).w,
-                          child: Image.asset(
-                            IconsAssets.filterLogo,
-                          ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12).r,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: 280.0.w,
+                        height: 45.0.h,
+                        decoration: BoxDecoration(
+                            color: RGBColorManager.rgbWhiteColor,
+                            borderRadius: BorderRadius.circular(20.w)),
+                        child: Row(
+                          children: [
+                            IcnButton(
+                                onPressed: () {
+                                  debugPrint("search icon");
+                                },
+                                iconSize: 0,
+                                child: SizedBox(
+                                  height: 25,
+                                  child: Image.asset(
+                                    IconsAssets.searchLogo,
+                                  ),
+                                )),
+                            Expanded(
+                              child: TextFormField(
+                                controller: null,
+                                cursorHeight: 24,
+                                cursorRadius: const Radius.circular(10).w,
+                                cursorColor: ColorManager.blackColor,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding: const EdgeInsets.only(left: 11).r,
+                                  hintText: "Search",
+                                  // border: OutlineInputBorder(),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      ))
-                ],
-              ),
+                      ),
+                      IcnButton(
+                          iconSize: 0,
+                          onPressed: () {
+                            debugPrint("Filter");
+                          },
+                          child: CrcleAvatar(
+                            radius: 23,
+                            color: ColorManager.blackColor,
+                            child: Image.asset(
+                              IconsAssets.filterLogo,
+                            ),
+                          ))
+                    ],
+                  ),
+                ),
+              ],
             ),
             Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10).r,
                 child: Text(
                   "Categories",
                   style: fontWeightSizeColorTextStyle(
-                      FontWeightManager.bold, 20, Colors.black),
+                      FontWeightManager.bold, 20, ColorManager.blackColor),
                 )),
             Padding(
               padding: const EdgeInsets.only(top: 8).r,
@@ -244,3 +239,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+

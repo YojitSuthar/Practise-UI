@@ -11,7 +11,7 @@ class Loading extends StatelessWidget {
       child: Center(
         child: SizedBox(
           height: 100.h,
-            child: Lottie.asset(AnimationAssets.loading_animation)),
+            child: Lottie.asset(AnimationAssets.loadingAnimation)),
       ),
     );
   }

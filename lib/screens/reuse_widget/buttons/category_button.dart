@@ -1,4 +1,3 @@
-import 'package:ecommerce/resources/color_manager.dart';
 import 'package:ecommerce/resources/resources.dart';
 import 'package:ecommerce/screens/home_screen/provider/button_color/button_color.dart';
 import 'package:ecommerce/resources/import_resources.dart';
