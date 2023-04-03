@@ -78,7 +78,6 @@ class SignUpScreen extends StatelessWidget {
                   ).r,
                   child: Button(
                     label: StringManager.signUp,
-                    createPage: null,
                     width: 450,
                     height: 45,
                     textEmailCtrl: textEmailCtrl,

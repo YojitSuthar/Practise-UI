@@ -1,8 +1,8 @@
 import 'package:ecommerce/auth/sign_in.dart';
 import 'package:ecommerce/auth/sing_up.dart';
 import 'package:ecommerce/provider/absorbing.dart';
-import 'package:ecommerce/screens/signup_page/provider/signup_validation.dart';
-import 'package:ecommerce/screens/login_page/provider/singin_validation.dart';
+import 'package:ecommerce/screens/signup_screen/provider/signup_validation.dart';
+import 'package:ecommerce/screens/login_screen/provider/singin_validation.dart';
 import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
@@ -11,7 +11,6 @@ class Button extends StatelessWidget {
 
   final signup = Signup();
   final signin = Signin();
-  final Widget? createPage;
   final String? label;
   final double? width;
   final double? height;
@@ -22,7 +21,6 @@ class Button extends StatelessWidget {
   Button(
       {super.key,
       required this.label,
-      required this.createPage,
       required this.width,
       required this.height,
       this.textEmailCtrl,

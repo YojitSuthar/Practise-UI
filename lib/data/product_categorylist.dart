@@ -5,20 +5,27 @@ class ProductCategory {
     "fragrances",
     "skincare",
     "groceries",
-    "home-decoration",
     "furniture",
     "tops",
-    "women's-dresses",
-    "women's-shoes",
     "mens-shirts",
     "mens-shoes",
+    "automotive",
     "mens-watches",
     "women's-watches",
     "women's-bags",
     "women's-jewellery",
     "sunglasses",
-    "automotive",
     "motorcycle",
-    "lighting"
+    "lighting",
+    "home-decoration",
+    "women's-dresses",
+    "women's-shoes",
   ];
+
+  final List sortBy = [
+    "New Today",
+    "Discount",
+    "Popularity",
+  ];
+
 }

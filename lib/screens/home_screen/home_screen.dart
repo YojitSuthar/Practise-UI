@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/home_screen/homescreen_resources.dart';
 import '../../resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
-
+import '../reuse_widget/rich_text.dart';
+import '../reuse_widget/text_design.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -103,7 +104,8 @@ class HomeScreen extends StatelessWidget {
                     IcnButton(
                         iconSize: 45,
                         onPressed: () {
-                          debugPrint("User logo");
+                          debugPrint("User Profile");
+                          Get.toNamed("/UserProfile");
                         },
                         child: CrcleAvatar(
                           color: RGBColorManager.rgbWhiteColor,
@@ -114,23 +116,11 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20).r,
-                  child: RichText(
-                    text: TextSpan(
-                      text: 'Welcome,\n',
-                      style: TextStyle(
-                          color: ColorManager.blackColor,
-                          fontSize: 35.sp,
-                          fontWeight: FontWeightManager.bold),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: 'Our Fashions App',
-                            style: TextStyle(
-                                color: ColorManager.greyOpacityColor,
-                                fontSize: 25.sp,
-                                fontWeight: FontWeightManager.bold))
-                      ],
-                    ),
-                  ),
+                  child: RichTxt(
+                      text_1: "Welcome\n",
+                      text_2: "Our Fashions App",
+                      textSize_1: 35,
+                      textSize_2: 25),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 12).r,
@@ -164,7 +154,8 @@ class HomeScreen extends StatelessWidget {
                                 cursorColor: ColorManager.blackColor,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  contentPadding: const EdgeInsets.only(left: 11).r,
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 11).r,
                                   hintText: "Search",
                                   // border: OutlineInputBorder(),
                                 ),
@@ -176,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                       IcnButton(
                           iconSize: 0,
                           onPressed: () {
-                            debugPrint("Filter");
+                            Get.toNamed("/FilterScreen");
                           },
                           child: CrcleAvatar(
                             radius: 23,
@@ -190,13 +181,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-                padding: const EdgeInsets.only(top: 10).r,
-                child: Text(
-                  "Categories",
-                  style: fontWeightSizeColorTextStyle(
-                      FontWeightManager.bold, 20, ColorManager.blackColor),
-                )),
+            DesignText(
+                fontSize: 20,
+                text: "Categories",
+                color: ColorManager.blackColor),
             Padding(
               padding: const EdgeInsets.only(top: 8).r,
               child: SizedBox(
@@ -214,20 +202,19 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10.h,
+              height: 4.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  "Top Dresses",
-                  style: TextStyle(
-                      fontSize: 18, fontWeight: FontWeightManager.bold),
-                ),
-                Text(
-                  "View All",
-                  style: TextStyle(color: ColorManager.darkGreyColor),
-                )
+                DesignText(
+                    fontSize: 18,
+                    text: "TopDress",
+                    color: ColorManager.blackColor),
+                DesignText(
+                    fontSize: 12,
+                    text: "View all",
+                    color: ColorManager.darkGreyColor),
               ],
             ),
             Expanded(

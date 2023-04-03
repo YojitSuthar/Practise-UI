@@ -1,6 +1,6 @@
 import 'package:ecommerce/resources/resources.dart';
-import 'package:ecommerce/screens/login_page/provider/singin_validation.dart';
-import 'package:ecommerce/screens/signup_page/provider/signup_validation.dart';
+import 'package:ecommerce/screens/login_screen/provider/singin_validation.dart';
+import 'package:ecommerce/screens/signup_screen/provider/signup_validation.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
@@ -100,7 +100,7 @@ class _NormalTextFieldState extends State<NormalTextField> {
                     icon: widget.noPassTextField
                         ? const Icon(null)
                         : obSure
-                            ? Icon(
+                            ? const Icon(
                                 FluentSystemIcons.ic_fluent_eye_show_filled,
                               )
                             : const Icon(

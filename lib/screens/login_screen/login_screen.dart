@@ -63,7 +63,6 @@ class LoginScreen extends StatelessWidget {
                     ).r,
                     child: Button(
                       label: StringManager.signIn,
-                      createPage: null,
                       width: 450,
                       height: 45,
                       textEmailCtrl: textEmailCtrl,

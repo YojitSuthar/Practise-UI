@@ -1,10 +1,11 @@
 import 'package:ecommerce/screens/home_screen/home_screen.dart';
 import 'package:ecommerce/resources/import_resources.dart';
-import '../screens/get_startPage/get_startScreen.dart';
-import '../screens/login_page/login_screen.dart';
-import '../screens/signup_page/signup_screen.dart';
-import '../screens/splash_Page/splash_screen.dart';
-import '../screens/user_profile/user_profile.dart';
+import '../screens/filtering_screen/filter_screen.dart';
+import '../screens/get_startscreen/get_startScreen.dart';
+import '../screens/login_screen/login_screen.dart';
+import '../screens/signup_screen/signup_screen.dart';
+import '../screens/splash_screen/splash_screen.dart';
+import '../screens/user_profile_screen/user_profile.dart';
 
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),
@@ -24,5 +25,10 @@ final List<GetPage<dynamic>> routes = [
       transition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 450)),
   GetPage(name: "/HomePage", page: () => MainScreen()),
-  GetPage(name: "/UserData", page: () => UserProfile()),
+  GetPage(name: "/UserProfile", page: () => UserProfile()),
+  GetPage(
+      name: "/FilterScreen",
+      page: () =>  FilterScreen(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250)),
 ];

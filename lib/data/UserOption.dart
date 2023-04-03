@@ -5,32 +5,32 @@ class OptionButton {
     {
       "label_1":"Personal details",
       "iconAsset":IconsAssets.userLogo,
-      "Navigation":"/UserData"
+      "Navigation":"/UserProfile"
     },
     {
       "label_1":"My order",
       "iconAsset":IconsAssets.shoppingBagLogo,
-      "Navigation":"sa"
+      "Navigation":"null"
     },
     {
       "label_1":"My Favorites",
       "iconAsset":IconsAssets.wishListLogo,
-      "Navigation":"asd"
+      "Navigation":"none"
     },
     {
       "label_1":"Shipping address",
       "iconAsset":IconsAssets.shippingLogo,
-      "Navigation":"asd"
+      "Navigation":"none"
     },
     {
       "label_1":"My Card",
       "iconAsset":IconsAssets.cardLogo,
-      "Navigation":"sa"
+      "Navigation":"none"
     },
     {
       "label_1":"Setting",
       "iconAsset":IconsAssets.settingLogo,
-      "Navigation":"as"
+      "Navigation":"none"
     },
   ];
 
@@ -38,22 +38,22 @@ class OptionButton {
     {
       "label_1":"FAQs",
       "iconAsset":IconsAssets.faqsLogo,
-      "Navigation":"null"
+      "Navigation":"none"
     },
     {
       "label_1":"Privacy Policy",
       "iconAsset":IconsAssets.privacyPolicyLogo,
-      "Navigation":"null"
+      "Navigation":"none"
     },
     {
       "label_1":"Terms and Conditions",
       "iconAsset":IconsAssets.termsLogo,
-      "Navigation":"null"
+      "Navigation":"none"
     },
     {
       "label_1":"About Us",
       "iconAsset":IconsAssets.aboutUsLogo,
-      "Navigation":"null"
+      "Navigation":"none"
     },
   ];
 }

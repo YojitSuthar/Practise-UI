@@ -1,6 +1,6 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
-import '../screens/login_page/login_screen.dart';
+import '../screens/login_screen/login_screen.dart';
 import '../screens/reuse_widget/loading.dart';
 
 

@@ -8,7 +8,7 @@ class IcnButton extends StatelessWidget {
     required this.child,
   });
 
-  final void Function()? onPressed;
+  final VoidCallback? onPressed;
   double iconSize;
   Widget child;
 

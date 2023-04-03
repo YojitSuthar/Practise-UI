@@ -1,10 +1,10 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
+import '../reuse_widget/buttons/button_2.dart';
 import 'user_resources.dart';
 
 class UserProfile extends StatelessWidget {
   UserProfile({Key? key}) : super(key: key);
-  bool abc = true;
   final userPreferences = UserPreferences();
   final notificationButtonCtrl = ValueNotifier<bool>(false);
   final themeButtonCtrl = ValueNotifier<bool>(false);
@@ -132,7 +132,7 @@ class UserProfile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     BoxDesign(
-                        child_1:  DesignLabel(
+                        child_1: DesignLabel(
                           sizeBoxWidth: 200,
                           label_1: "Language",
                           iconAsset: IconsAssets.languageLogo,
@@ -141,21 +141,27 @@ class UserProfile extends StatelessWidget {
                           label: "English",
                         )),
                     BoxDesign(
-                        child_1:   DesignLabel(
+                        child_1: DesignLabel(
                           sizeBoxWidth: 200,
                           label_1: "Notification",
                           iconAsset: IconsAssets.notificationLogo,
                         ),
-                        child_2: SwitchButton(value: true,label: "Notification",)),
+                        child_2: SwitchButton(
+                          value: true,
+                          label: "Notification",
+                        )),
                     BoxDesign(
-                        child_1:  DesignLabel(
+                        child_1: DesignLabel(
                           sizeBoxWidth: 200,
                           label_1: "Dark Mode",
                           iconAsset: IconsAssets.darkThemeLogo,
                         ),
-                        child_2: SwitchButton(value: false,label: "DarkMode",)),
+                        child_2: SwitchButton(
+                          value: false,
+                          label: "DarkMode",
+                        )),
                     BoxDesign(
-                        child_1:   DesignLabel(
+                        child_1: DesignLabel(
                           sizeBoxWidth: 200,
                           label_1: "Help Center",
                           iconAsset: IconsAssets.helpCenterLogo,
@@ -166,32 +172,12 @@ class UserProfile extends StatelessWidget {
                   ],
                 ),
               ),
-              ElevatedButton(
+              BlackButton(
+                buttonName: "Log out",
+                iconAsset: IconsAssets.logOutLogo,
                 onPressed: () {
                   userPreferences.logOutsetData(context);
                 },
-                style: ElevatedButton.styleFrom(
-                    fixedSize: Size(350.w, 50.h),
-                    backgroundColor: ColorManager.blackColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20).w)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      IconsAssets.logOutLogo,
-                      height: 18,
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Log Out",
-                      style: fontSizeWeightTextStyle(
-                          17, FontWeightManager.semiBold),
-                    )
-                  ],
-                ),
               )
             ],
           ),
@@ -200,6 +186,8 @@ class UserProfile extends StatelessWidget {
     );
   }
 }
+
+
 
 class Label extends StatelessWidget {
   Label({super.key, required this.label, required this.child});

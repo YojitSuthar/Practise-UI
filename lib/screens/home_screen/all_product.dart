@@ -11,7 +11,6 @@ class AllProduct extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 0,
         crossAxisSpacing: 20,
-        // width / height: fixed for *all* items
         childAspectRatio: 0.55,
       ),
       itemBuilder: (BuildContext context, int index) {
@@ -42,7 +41,7 @@ class AllProduct extends StatelessWidget {
             const Text(
               "Roller Rabit",
               style: TextStyle(
-                  fontFamily: "Varela", fontWeight: FontWeightManager.bold),
+                  fontFamily: "Varela", fontWeight: FontWeightManager.semiBold),
             ),
             const Text("Vado Odells Dress"),
             const Text("&198.00")

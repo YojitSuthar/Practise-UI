@@ -1,4 +1,5 @@
 import 'package:ecommerce/provider/theme_mode.dart';
+import 'package:ecommerce/screens/filtering_screen/provider/range_slider.dart';
 import 'package:flutter/material.dart';
 import 'main_resources.dart';
 import 'provider/absorbing.dart';
@@ -20,6 +21,7 @@ class Myapp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => BottumNavigation()),
             ChangeNotifierProvider(create: (context) => Absorbing()),
             ChangeNotifierProvider(create: (context) => ThemeChange()),
+            ChangeNotifierProvider(create: (context) => RangeSlide()),
           ],
           child: Consumer<ThemeChange>(builder: (context,value,child){
             return GetMaterialApp(
