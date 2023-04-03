@@ -7,10 +7,12 @@ class PassField extends StatefulWidget {
   TextEditingController textPassCtrl;
   String? hintText;
   final String? labelText;
+  final Function(String)? onChanged;
 
   PassField(
       {required this.hintText,
       required this.textPassCtrl,
+      required this.onChanged,
       required this.labelText});
 
   @override
@@ -42,7 +44,7 @@ class _PassFieldState extends State<PassField> {
                   child: TextFormField(
                 onChanged: (value) {
                   debugPrint(value);
-                  validate.passSignInValidate(value);
+                  widget.onChanged!(value);
                 },
                 cursorColor: ColorManager.lightGreenColor,
                 cursorRadius: const Radius.circular(10).w,
@@ -63,7 +65,6 @@ class _PassFieldState extends State<PassField> {
                   icon: obSure
                       ? Icon(
                           FluentSystemIcons.ic_fluent_eye_show_filled,
-                          color: Colors.grey[600],
                         )
                       : const Icon(FluentSystemIcons.ic_fluent_eye_hide_filled))
             ],

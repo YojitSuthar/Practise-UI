@@ -7,6 +7,12 @@ class LoginScreen extends StatelessWidget {
 
   LoginScreen({Key? key}) : super(key: key);
 
+  void signIn(String value, BuildContext context, String label) {
+    final singinValidate = Provider.of<SignInValidation>(context, listen: false);
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final validate = Provider.of<SignInValidation>(context, listen: false);
@@ -28,9 +34,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const CompanyDesign(),
                 NormalTextField(
-                    pageLabel: "Login",
-                    checkField: "emailLogin",
-                    noPassTextField: true,
+                  onChanged: validate.emailSignInValidate,
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
@@ -42,13 +46,11 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
-                NormalTextField(
-                    pageLabel: "Login",
-                    checkField: "passLogin",
-                    noPassTextField: false,
-                    textCtrl: textPassCtrl,
+                PassField(
+                  onChanged: validate.passSignInValidate,
+                    textPassCtrl: textPassCtrl,
                     hintText:StringManager.enterPassword,
-                    label: StringManager.password),
+                    labelText: StringManager.password),
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),

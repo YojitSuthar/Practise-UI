@@ -11,9 +11,9 @@ class Button extends StatelessWidget {
 
   final signup = Signup();
   final signin = Signin();
-  final String? label;
-  final double? width;
-  final double? height;
+  final String label;
+  final double width;
+  final double height;
 
   final TextEditingController? textEmailCtrl;
   final TextEditingController? textPassCtrl;
@@ -66,12 +66,12 @@ class Button extends StatelessWidget {
                 Onpressed(context);
               },
               style: ElevatedButton.styleFrom(
-                  fixedSize: Size(width!.w, height!.h),
+                  fixedSize: Size(width.w, height.h),
                   backgroundColor: value.absorbButton?RGBColorManager.rgbWhiteColor:RGBColorManager.rgbNeonColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40).w)),
               child: Text(
-                label!,
+                label,
                 style: fontSizeColorTextStyle(17, ColorManager.blackColor),
               )),
         );
