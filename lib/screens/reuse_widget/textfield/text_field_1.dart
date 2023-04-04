@@ -12,7 +12,7 @@ class NormalTextField extends StatelessWidget {
       {super.key,
       required this.textCtrl,
       required this.hintText,
-      required this.onChanged,
+       this.onChanged,
       required this.label});
 
   bool obSure = false;

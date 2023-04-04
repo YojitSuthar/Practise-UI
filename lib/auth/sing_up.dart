@@ -1,5 +1,6 @@
 import 'package:ecommerce/screens/home_screen/home_screen.dart';
 import 'package:ecommerce/resources/import_resources.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
@@ -41,7 +42,10 @@ class Signup {
               .collection("Users")
               .doc(textEmailCtrl.text.toString().trim())
               .set(userData)
-              .then((value) {
+              .then((value) async {
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                email: textEmailCtrl.text.trim(),
+                password: textPassCtrl.text.trim());
             Get.offAll(MainScreen());
           });
         }

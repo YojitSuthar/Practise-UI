@@ -86,8 +86,6 @@ class SignUpScreen extends StatelessWidget {
                       signUp(context);
                     },
                     label: StringManager.signUp,
-                    width: 450,
-                    height: 45,
                   ),
                 ),
               ],

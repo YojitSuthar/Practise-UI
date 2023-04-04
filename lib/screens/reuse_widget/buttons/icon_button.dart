@@ -18,6 +18,7 @@ class IcnButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         iconSize: iconSize,
         onPressed: onPressed,
-        icon: child);
+        icon: child
+    );
   }
 }

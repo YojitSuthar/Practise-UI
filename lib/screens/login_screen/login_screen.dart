@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class LoginScreen extends StatelessWidget {
   final TextEditingController textEmailCtrl = TextEditingController();
   final TextEditingController textPassCtrl = TextEditingController();
+
   LoginScreen({Key? key}) : super(key: key);
 
   final signin = Signin();
-  void logIn(BuildContext context){
+
+  void logIn(BuildContext context) {
     final signIn = Provider.of<SignInValidation>(context, listen: false);
     if (signIn.checkEmail && signIn.checkPass) {
       signin.signIN(context, textEmailCtrl, textPassCtrl);
@@ -32,13 +34,13 @@ class LoginScreen extends StatelessWidget {
         body: SingleChildScrollView(
           // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
-            padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 90).w,
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 90).w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CompanyDesign(),
                 NormalTextField(
-                  onChanged: validate.emailSignInValidate,
+                    onChanged: validate.emailSignInValidate,
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
                     label: StringManager.email),
@@ -51,9 +53,9 @@ class LoginScreen extends StatelessWidget {
                       ));
                 }),
                 PassField(
-                  onChanged: validate.passSignInValidate,
+                    onChanged: validate.passSignInValidate,
                     textPassCtrl: textPassCtrl,
-                    hintText:StringManager.enterPassword,
+                    hintText: StringManager.enterPassword,
                     labelText: StringManager.password),
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
@@ -63,20 +65,26 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
+                GestureDetector(
+                    onTap: () {
+                      debugPrint("Forget Password");
+                      Get.toNamed("/ForgetPassword");
+                    },
+                    child: const Text(
+                      "Forget password?",
+                      style: TextStyle(color: Colors.lightBlue),
+                    )),
                 Container(
-                    margin: const EdgeInsets.only(
-                      top: 5,
-                    ).r,
-                    child: Button(
-                      onPressed: (){
-                        logIn(context);
-                      },
-                      label: StringManager.signIn,
-                      width: 450,
-                      height: 45,
-                    ),
+                  margin: const EdgeInsets.only(
+                    top: 5,
+                  ).r,
+                  child: Button(
+                    onPressed: () {
+                      logIn(context);
+                    },
+                    label: StringManager.signIn,
                   ),
-              
+                ),
                 Row(children: [
                   Expanded(
                     child: Container(
@@ -95,13 +103,15 @@ class LoginScreen extends StatelessWidget {
                         child: Divider(
                           color: ColorManager.blackColor,
                           height: 45.h,
-                        )),),
+                        )),
+                  ),
                 ]),
                 const SignInOption(
                   label: StringManager.googleSignIn,
                   icon_image: IconsAssets.googleLogo,
                 ),
-                SizedBox(height:10.h,
+                SizedBox(
+                  height: 10.h,
                 ),
                 const SignInOption(
                   label: StringManager.appleSignIn,
