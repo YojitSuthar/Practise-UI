@@ -1,17 +1,21 @@
+import '../../auth/sign_in.dart';
 import 'login_resources.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController textEmailCtrl = TextEditingController();
   final TextEditingController textPassCtrl = TextEditingController();
-
   LoginScreen({Key? key}) : super(key: key);
 
-  void signIn(String value, BuildContext context, String label) {
-    final singinValidate = Provider.of<SignInValidation>(context, listen: false);
-
+  final signin = Signin();
+  void logIn(BuildContext context){
+    final signIn = Provider.of<SignInValidation>(context, listen: false);
+    if (signIn.checkEmail && signIn.checkPass) {
+      signin.signIN(context, textEmailCtrl, textPassCtrl);
+    } else {
+      debugPrint("not sign in ");
+    }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +68,12 @@ class LoginScreen extends StatelessWidget {
                       top: 5,
                     ).r,
                     child: Button(
+                      onPressed: (){
+                        logIn(context);
+                      },
                       label: StringManager.signIn,
                       width: 450,
                       height: 45,
-                      textEmailCtrl: textEmailCtrl,
-                      textPassCtrl: textPassCtrl,
                     ),
                   ),
               

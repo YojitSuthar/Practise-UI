@@ -20,7 +20,7 @@ class PassField extends StatefulWidget {
 }
 
 class _PassFieldState extends State<PassField> {
-  bool obSure = false;
+  bool obSure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +63,10 @@ class _PassFieldState extends State<PassField> {
                     });
                   },
                   icon: obSure
-                      ? Icon(
-                          FluentSystemIcons.ic_fluent_eye_show_filled,
+                      ? const Icon(
+                          FluentSystemIcons.ic_fluent_eye_hide_filled,
                         )
-                      : const Icon(FluentSystemIcons.ic_fluent_eye_hide_filled))
+                      : const Icon(FluentSystemIcons.ic_fluent_eye_show_filled))
             ],
           ),
         ),

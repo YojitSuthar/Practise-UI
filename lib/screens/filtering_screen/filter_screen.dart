@@ -5,13 +5,12 @@ import 'flitering_resources.dart';
 
 
 class FilterScreen extends StatelessWidget {
-  FilterScreen({Key? key}) : super(key: key);
+  const FilterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final slider = Provider.of<RangeSlide>(context, listen: false);
     return Scaffold(
-        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
@@ -53,7 +52,7 @@ class FilterScreen extends StatelessWidget {
                           width: 380,
                           height: 50,
                           child: RangeSlider(
-                            activeColor: Colors.black,
+                            activeColor: ColorManager.blackColor,
                             inactiveColor:
                                 const Color.fromRGBO(241, 242, 245, 1),
                             values: value.currentRangeValues,
@@ -123,8 +122,6 @@ class FilterScreen extends StatelessWidget {
                  Get.back();
                 },
               )
-
-
             ],
           ),
         ));

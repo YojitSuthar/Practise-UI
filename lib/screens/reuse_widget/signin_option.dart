@@ -4,8 +4,8 @@ import 'package:ecommerce/resources/import_resources.dart';
 
 class SignInOption extends StatelessWidget {
   
-  final String? label;
-  final String? icon_image;
+  final String label;
+  final String icon_image;
   const SignInOption({required this.label, required this.icon_image});
 
   @override
@@ -19,13 +19,13 @@ class SignInOption extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            icon_image!,
+            icon_image,
             height: 25,
           ),
           Container(
               margin: const EdgeInsets.only(left: 10),
               child:  Text(
-                label!,
+                label,
                 style: fontSizeWeightTextStyle(15,FontWeightManager.medium),
               ))
         ],

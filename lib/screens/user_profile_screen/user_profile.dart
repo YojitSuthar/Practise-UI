@@ -1,16 +1,16 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
+import '../../provider/theme_mode.dart';
 import '../reuse_widget/buttons/button_2.dart';
 import 'user_resources.dart';
 
 class UserProfile extends StatelessWidget {
   UserProfile({Key? key}) : super(key: key);
   final userPreferences = UserPreferences();
-  final notificationButtonCtrl = ValueNotifier<bool>(false);
-  final themeButtonCtrl = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
+    final DarkTheme = Provider.of<ThemeChange>(context, listen: false);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -69,6 +69,7 @@ class UserProfile extends StatelessWidget {
               Label(
                   label: "Name",
                   child: UserTextField(
+                    keyboardType: TextInputType.name,
                     label: "Name",
                   )),
               SizedBox(
@@ -104,11 +105,13 @@ class UserProfile extends StatelessWidget {
               Label(
                   label: "Age",
                   child: UserTextField(
+                    keyboardType: TextInputType.number,
                     label: "Age",
                   )),
               Label(
                   label: "Email",
                   child: UserTextField(
+                    keyboardType: TextInputType.emailAddress,
                     label: "Email",
                   )),
               Padding(
@@ -147,8 +150,7 @@ class UserProfile extends StatelessWidget {
                           iconAsset: IconsAssets.notificationLogo,
                         ),
                         child_2: SwitchButton(
-                          value: true,
-                          label: "Notification",
+                          changed: false,
                         )),
                     BoxDesign(
                         child_1: DesignLabel(
@@ -157,8 +159,8 @@ class UserProfile extends StatelessWidget {
                           iconAsset: IconsAssets.darkThemeLogo,
                         ),
                         child_2: SwitchButton(
-                          value: false,
-                          label: "DarkMode",
+                          changed: false,
+                          perform:DarkTheme.themeDarkTrue,
                         )),
                     BoxDesign(
                         child_1: DesignLabel(
@@ -186,8 +188,6 @@ class UserProfile extends StatelessWidget {
     );
   }
 }
-
-
 
 class Label extends StatelessWidget {
   Label({super.key, required this.label, required this.child});

@@ -8,7 +8,7 @@ class SignInValidation with ChangeNotifier{
   String passValidation="";
   bool checkPass=false;
 
-  void emailSignInValidate(String textCtrl){
+   void emailSignInValidate(String textCtrl){
     if(textCtrl==""){
       emailValidation="Enter Email";
       checkEmail=false;

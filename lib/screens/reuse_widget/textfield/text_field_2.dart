@@ -7,15 +7,18 @@ class UserTextField extends StatelessWidget {
 
   UserTextField({
     super.key,
-    required this.label
+    required this.label,
+    required this.keyboardType
   });
   String label;
+  TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 40,
       width: 270,
       child: TextFormField(
+        keyboardType: keyboardType,
         controller: null,
         cursorHeight: 20,
         cursorRadius: const Radius.circular(10).w,

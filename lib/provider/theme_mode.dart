@@ -4,8 +4,12 @@ class ThemeChange with ChangeNotifier{
 
   bool isDarkMode=false;
 
-  void themeDark(){
+  void themeDarkTrue(){
     isDarkMode=true;
+    notifyListeners();
+  }
+  void themeDarkFalse(){
+    isDarkMode=false;
     notifyListeners();
   }
 }

@@ -3,10 +3,10 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/resources/resources.dart';
 
 
-class GetStartPage extends StatelessWidget {
+class OnBordingScreen extends StatelessWidget {
   static const String id = "GetStartPage";
 
-  const GetStartPage({Key? key}) : super(key: key);
+  const OnBordingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -37,15 +37,15 @@ class UserAccount extends StatelessWidget {
                   children: [
                     Container(
                       height: 80,
-                      width: 80,
+                      width: 75,
                       decoration: BoxDecoration(
                           color: ColorManager.greyOpacityColor,
                           image: const DecorationImage(
                               fit: BoxFit.fill,
                               image: NetworkImage(
                                   "https://c4.wallpaperflare.com/wallpaper/100/30/528/anime-naruto-itachi-uchiha-wallpaper-preview.jpg")),
-                          borderRadius: BorderRadius.circular(10)),
-                      margin: const EdgeInsets.all(5).w,
+                          borderRadius: BorderRadius.circular(20)),
+                      margin: const EdgeInsets.all(11).w,
                     ),
                     SizedBox(
                       height: 70,

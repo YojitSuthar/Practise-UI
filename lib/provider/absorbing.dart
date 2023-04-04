@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class Absorbing with ChangeNotifier{
+class Absorbing with ChangeNotifier {
+
   bool absorbButton=false;
 
   void buttonAbsorbingTrue(){
