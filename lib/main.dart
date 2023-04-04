@@ -34,6 +34,7 @@ class Myapp extends StatelessWidget {
                     ),
                     darkTheme: ThemeData(
                       brightness: Brightness.dark,
+                      fontFamily: "Mukta",
                     ),
                     themeMode:
                         value.isDarkMode ? ThemeMode.dark : ThemeMode.light,
