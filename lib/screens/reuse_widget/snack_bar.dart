@@ -3,7 +3,7 @@ import 'package:ecommerce/resources/style_manager.dart';
 import 'package:flutter/material.dart';
 
 class WarningBar{
-  SnackBar snack(String warning) {
+  SnackBar snack(String warning,Color backgroundColor) {
     return SnackBar(
       content: Text(
         warning,
@@ -12,7 +12,7 @@ class WarningBar{
             fontSize: 15,
             fontWeight: FontWeightManager.semiBold),
       ),
-      backgroundColor: ColorManager.redColor,
+      backgroundColor: backgroundColor,
       behavior: SnackBarBehavior.floating,
     );
   }

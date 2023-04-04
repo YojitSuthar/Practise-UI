@@ -17,7 +17,7 @@ class StringManager{
   static const String appleSignIn =  "Signup with apple";
   static const String noAccount=  "Account does not exist";
   static const String yesAccount=  "Account already exist";
-  static const String Invalidcredentials =  "Invalid credentials";
+  static const String invalidCredentials =  "Invalid credentials";
   static const String emailSent =  "Mail sent Successfully";
   static const String error =  "Error";
 

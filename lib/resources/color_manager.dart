@@ -13,6 +13,7 @@ class ColorManager{
   static Color black87Color= Colors.black87;
   static Color blackColor= Colors.black;
   static Color lightGreenColor= Colors.lightGreen;
+  static Color greenColor= Colors.green;
   static Color redColor= Colors.red;
   static Color lightBlueColor= Colors.lightBlue;
   static Color whiteColor= Colors.white;

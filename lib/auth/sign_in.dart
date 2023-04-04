@@ -15,8 +15,8 @@ class Signin{
   void signIN(BuildContext context,TextEditingController textEmailCtrl,
       TextEditingController textPassCtrl) async {
     debugPrint("Button pressed");
-    final invalidCredentials = bar.snack(StringManager.Invalidcredentials);
-    final notExist = bar.snack(StringManager.noAccount);
+    final invalidCredentials = bar.snack(StringManager.invalidCredentials,ColorManager.redColor);
+    final notExist = bar.snack(StringManager.noAccount,ColorManager.redColor);
 
     showDialog(
         context: context,

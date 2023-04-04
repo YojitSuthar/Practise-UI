@@ -2,6 +2,7 @@ import 'package:ecommerce/screens/home_screen/home_screen.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../resources/resources.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
 
@@ -14,7 +15,7 @@ class Signup {
       TextEditingController textEmailCtrl,
       TextEditingController textPassCtrl,
       TextEditingController textUserNameCtrl) async {
-    final notExist = bar.snack("Account already exist");
+    final notExist = bar.snack(StringManager.noAccount,ColorManager.redColor);
     debugPrint("Button pressed");
     showDialog(
         context: context,
