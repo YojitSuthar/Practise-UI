@@ -1,5 +1,6 @@
 export 'package:firebase_auth/firebase_auth.dart';
 import 'package:ecommerce/user_preferences/user_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/resources/resources.dart';
@@ -29,15 +30,13 @@ class Signin{
           .doc(textEmailCtrl.text.trim())
           .get()
           .then((value) async {
-        if (value["Email"] == textEmailCtrl.text.trim() &&
-            value["Password"] == textPassCtrl.text.trim()) {
-          // await FirebaseAuth.instance
-          //     .signInWithEmailAndPassword(
-          //     email: textEmailCtrl.text.trim(),
-          //     password: textPassCtrl.text.trim());
+        if (value["Email"] == textEmailCtrl.text.trim()){
+          await FirebaseAuth.instance
+              .signInWithEmailAndPassword(
+              email: textEmailCtrl.text.trim(),
+              password: textPassCtrl.text.trim()).then((value) {userPreferences.saveLoginUserInfo(textEmailCtrl.text,textPassCtrl.text);
+          Get.offAll(MainScreen());});
 
-          userPreferences.saveLoginUserInfo(textEmailCtrl.text,textPassCtrl.text);
-          Get.offAll(MainScreen());
         } else {
           debugPrint("invalid credentials");
           Navigator.pop(context);

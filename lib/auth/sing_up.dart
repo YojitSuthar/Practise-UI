@@ -15,7 +15,7 @@ class Signup {
       TextEditingController textEmailCtrl,
       TextEditingController textPassCtrl,
       TextEditingController textUserNameCtrl) async {
-    final notExist = bar.snack(StringManager.noAccount,ColorManager.redColor);
+    final notExist = bar.snack(StringManager.yesAccount,ColorManager.redColor);
     debugPrint("Button pressed");
     showDialog(
         context: context,
@@ -25,7 +25,7 @@ class Signup {
     final userData = <String, String>{
       "UserName": textUserNameCtrl.text.trim(),
       "Email": textEmailCtrl.text.trim(),
-      "Password": textPassCtrl.text.trim()
+      // "Password": textPassCtrl.text.trim()
     };
     try {
       await db

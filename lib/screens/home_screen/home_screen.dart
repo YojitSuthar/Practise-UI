@@ -1,20 +1,37 @@
+import 'package:ecommerce/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/home_screen/homescreen_resources.dart';
 import '../../resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import '../reuse_widget/rich_text.dart';
+import '../reuse_widget/text_design.dart';
 import 'homescreen_presistentHeader.dart';
 
-class MainScreen extends StatelessWidget {
-  MainScreen({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   final userPreferences = UserPreferences();
+  ApiService getData=ApiService();
   bool icon = true;
+
   final pages = [
     const HomeScreen(),
     const ShoppingCart(),
     const WishList(),
     UserAccount(),
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData.fetchProduct();
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,8 +102,10 @@ class HomeScreen extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+      snap: true,
+          floating: true,
           backgroundColor: ColorManager.whiteColor,
-          expandedHeight: 150.h,
+          expandedHeight: 140.h,
           flexibleSpace: FlexibleSpaceBar(
               background: Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
@@ -122,13 +141,117 @@ class HomeScreen extends StatelessWidget {
                     child: RichTxt(
                         text_1: "Welcome\n",
                         text_2: "Our Fashions App",
-                        textSize_1: 35,
+                        textSize_1: 30,
                         textSize_2: 25),
                   ),
                 ],
               ),
             ),
           )),
+        ),
+         SliverToBoxAdapter(
+          child: Container(
+            color: Colors.white,
+            padding: const EdgeInsets.only(left: 15,right: 15).w,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 25).r,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: 280.0.w,
+                        height: 45.0.h,
+                        decoration: BoxDecoration(
+                            color: RGBColorManager.rgbWhiteColor,
+                            borderRadius: BorderRadius.circular(20.w)),
+                        child: Row(
+                          children: [
+                            IcnButton(
+                                onPressed: () {
+                                  debugPrint("search icon");
+                                },
+                                iconSize: 0,
+                                child: SizedBox(
+                                  height: 25,
+                                  child: Image.asset(
+                                    IconsAssets.searchLogo,
+                                  ),
+                                )),
+                            Expanded(
+                              child: TextFormField(
+                                controller: null,
+                                cursorHeight: 24,
+                                cursorRadius: const Radius.circular(10).w,
+                                cursorColor: ColorManager.blackColor,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding:
+                                  const EdgeInsets.only(left: 11).r,
+                                  hintText: "Search",
+                                  // border: OutlineInputBorder(),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      IcnButton(
+                          iconSize: 0,
+                          onPressed: () {
+                            Get.toNamed("/FilterScreen");
+                          },
+                          child: CrcleAvatar(
+                            radius: 23,
+                            color: ColorManager.blackColor,
+                            child: Image.asset(
+                              IconsAssets.filterLogo,
+                            ),
+                          ))
+                    ],
+                  ),
+                ),
+                DesignText(
+                    fontSize: 20,
+                    text: "Categories",
+                    color: ColorManager.blackColor),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8).r,
+                  child: SizedBox(
+                    height: 25.h,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: ProductCategory().category.length,
+                      itemBuilder: (BuildContext context, index) {
+                        return CategoryButton(
+                          label: ProductCategory().category[index],
+                          index: index,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 4.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DesignText(
+                        fontSize: 18,
+                        text: "TopDress",
+                        color: ColorManager.blackColor),
+                    DesignText(
+                        fontSize: 12,
+                        text: "View all",
+                        color: ColorManager.darkGreyColor),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
         SliverPersistentHeader(delegate: HomeScreenPersistentHeader())
       ],

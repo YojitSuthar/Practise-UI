@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/resources.dart';
 
 class AllProduct extends StatelessWidget {
-  //its will give the list of all product which is available in store and purchasable
   @override
   Widget build(BuildContext context) {
     return GridView.builder(

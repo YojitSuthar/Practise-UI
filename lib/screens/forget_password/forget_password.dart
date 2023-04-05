@@ -6,8 +6,8 @@ import '../../auth/forgetpassword_auth.dart';
 class Forget extends StatelessWidget {
    Forget({Key? key}) : super(key: key);
 
-  final TextEditingController textForgetPassCtrl = TextEditingController();
-   final forget = ForgetPassword();
+  final TextEditingController textForgetPassCtrl =  TextEditingController();
+  final  forget = ForgetPassword();
 
 
   @override

@@ -19,11 +19,10 @@ class ForgetPassword {
         });
     try {
       await FirebaseAuth.instance
-          .sendPasswordResetEmail(email: forgetPassword.text.trim())
-          .then((value) {
-        Navigator.pop(context);
-        ScaffoldMessenger.of(context).showSnackBar(successFull);
-      });
+          .sendPasswordResetEmail(email: forgetPassword.text.trim());
+      debugPrint(forgetPassword.text.trim());
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(successFull);
     } catch (e) {
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(invalid);
