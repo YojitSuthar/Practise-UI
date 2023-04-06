@@ -4,12 +4,12 @@ class IcnButton extends StatelessWidget {
   IcnButton({
     super.key,
     required this.onPressed,
-    required this.iconSize,
+     this.iconSize,
     required this.child,
   });
 
   final VoidCallback? onPressed;
-  double iconSize;
+  double? iconSize;
   Widget child;
 
   @override

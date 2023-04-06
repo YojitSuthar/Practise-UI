@@ -1,8 +1,9 @@
+import 'package:ecommerce/main_resources.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../provider/theme_mode.dart';
 import '../../../provider/toggle_provider.dart';
-import '../../../resources/import_resources.dart';
+
 
 class SwitchButton extends StatelessWidget {
   SwitchButton({
@@ -21,8 +22,8 @@ class SwitchButton extends StatelessWidget {
       return Transform.scale(
         scale: 0.8,
         child: CupertinoSwitch(
-          activeColor: Colors.black,
-          thumbColor: Colors.white,
+          activeColor: ColorManager.blackColor,
+          thumbColor: ColorManager.whiteColor,
           trackColor: Colors.black12,
           value:changed,
           onChanged: (value) {

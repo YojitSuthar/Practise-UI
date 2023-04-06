@@ -28,4 +28,12 @@ class ProductCategory {
     "Popularity",
   ];
 
+  final List clothSize = [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+  ];
+
 }

@@ -8,16 +8,17 @@ import '../screens/home_screen/home_screen.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
 
-
-class Signin{
+class Signin {
   final db = FirebaseFirestore.instance;
   final bar = WarningBar();
-  final userPreferences=UserPreferences();
-  void signIN(BuildContext context,TextEditingController textEmailCtrl,
+  final userPreferences = UserPreferences();
+
+  void signIN(BuildContext context, TextEditingController textEmailCtrl,
       TextEditingController textPassCtrl) async {
     debugPrint("Button pressed");
-    final invalidCredentials = bar.snack(StringManager.invalidCredentials,ColorManager.redColor);
-    final notExist = bar.snack(StringManager.noAccount,ColorManager.redColor);
+    final invalidCredentials =
+        bar.snack(StringManager.invalidCredentials, ColorManager.redColor);
+    final notExist = bar.snack(StringManager.noAccount, ColorManager.redColor);
 
     showDialog(
         context: context,
@@ -30,13 +31,16 @@ class Signin{
           .doc(textEmailCtrl.text.trim())
           .get()
           .then((value) async {
-        if (value["Email"] == textEmailCtrl.text.trim()){
+        if (value["Email"] == textEmailCtrl.text.trim()) {
           await FirebaseAuth.instance
               .signInWithEmailAndPassword(
-              email: textEmailCtrl.text.trim(),
-              password: textPassCtrl.text.trim()).then((value) {userPreferences.saveLoginUserInfo(textEmailCtrl.text,textPassCtrl.text);
-          Get.offAll(MainScreen());});
-
+                  email: textEmailCtrl.text.trim(),
+                  password: textPassCtrl.text.trim())
+              .then((value) {
+            userPreferences.saveLoginUserInfo(
+                textEmailCtrl.text, textPassCtrl.text);
+            Get.offAll(MainScreen());
+          });
         } else {
           debugPrint("invalid credentials");
           Navigator.pop(context);

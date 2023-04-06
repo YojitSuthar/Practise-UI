@@ -46,4 +46,6 @@ class IconsAssets {
   static const String privacyPolicyLogo = "$ICONS_PATH/privacypolicy.png";
   static const String termsLogo = "$ICONS_PATH/terms.png";
   static const String applyLogo = "$ICONS_PATH/apply.png";
+  static const String addLogo = "$ICONS_PATH/add.png";
+  static const String minusLogo = "$ICONS_PATH/minus.png";
 }

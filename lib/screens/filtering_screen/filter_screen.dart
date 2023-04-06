@@ -18,6 +18,7 @@ class FilterScreen extends StatelessWidget {
             children: [
               const BackIconButton(),
               DesignText(
+                padding: 8,
                   fontSize: 18,
                   text: "Categories",
                   color: ColorManager.blackColor),
@@ -41,6 +42,7 @@ class FilterScreen extends StatelessWidget {
                 ),
               ),
               DesignText(
+                padding: 8,
                   fontSize: 18,
                   text: "Price range",
                   color: ColorManager.blackColor),
@@ -89,6 +91,7 @@ class FilterScreen extends StatelessWidget {
                 );
               }),
               DesignText(
+                padding: 8,
                   fontSize: 18,
                   text: "Sort By",
                   color: ColorManager.blackColor),
@@ -112,6 +115,7 @@ class FilterScreen extends StatelessWidget {
                 ),
               ),
               DesignText(
+                padding: 8,
                   fontSize: 18,
                   text: "Ratting by",
                   color: ColorManager.blackColor),

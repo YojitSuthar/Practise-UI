@@ -16,10 +16,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final userPreferences = UserPreferences();
-  ApiService getData=ApiService();
+
   bool icon = true;
 
-  final pages = [
+  final _pages = [
     const HomeScreen(),
     const ShoppingCart(),
     const WishList(),
@@ -29,7 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getData.fetchProduct();
+
 
   }
 
@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
       },
       child: Scaffold(
           body: Consumer<BottumNavigation>(builder: (context, value, child) {
-            return pages[value.selected];
+            return _pages[value.selected];
           }),
           bottomNavigationBar: Container(
             height: 75,
@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
       snap: true,
           floating: true,
           backgroundColor: ColorManager.whiteColor,
-          expandedHeight: 140.h,
+          expandedHeight: 144.h.w,
           flexibleSpace: FlexibleSpaceBar(
               background: Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
@@ -151,7 +151,6 @@ class HomeScreen extends StatelessWidget {
         ),
          SliverToBoxAdapter(
           child: Container(
-            color: Colors.white,
             padding: const EdgeInsets.only(left: 15,right: 15).w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -214,6 +213,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 DesignText(
+                  padding: 8,
                     fontSize: 20,
                     text: "Categories",
                     color: ColorManager.blackColor),
@@ -240,10 +240,12 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     DesignText(
+                      padding: 8,
                         fontSize: 18,
                         text: "TopDress",
                         color: ColorManager.blackColor),
                     DesignText(
+                      padding: 8,
                         fontSize: 12,
                         text: "View all",
                         color: ColorManager.darkGreyColor),
