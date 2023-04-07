@@ -1,5 +1,7 @@
+import 'package:ecommerce/provider/provider_resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
+import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/main_resources.dart';
 
 class CustoumRadioButton extends StatelessWidget {
   CustoumRadioButton({

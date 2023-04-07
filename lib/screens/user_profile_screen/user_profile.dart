@@ -1,8 +1,12 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../provider/theme_mode.dart';
-import '../reuse_widget/buttons/button_2.dart';
-import 'user_resources.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import '../../resources/resources.dart';
+import '../../data/data.dart';
+import '../../user_preferences/user_preferences.dart';
+
+
 
 class UserProfile extends StatelessWidget {
   UserProfile({Key? key}) : super(key: key);
@@ -23,13 +27,16 @@ class UserProfile extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 10, bottom: 5).r,
+                      margin: const EdgeInsets.only(
+                        top: 10,
+                        bottom: 5,
+                      ).r,
                       height: 70.h,
                       width: 80.w,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          color: Colors.pink,
-                          image: DecorationImage(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(const Radius.circular(16).w),
+                          color: ColorManager.pinkColor,
+                          image: const DecorationImage(
                               fit: BoxFit.fill,
                               image: NetworkImage(
                                   "https://c4.wallpaperflare.com/wallpaper/100/30/528/anime-naruto-itachi-uchiha-wallpaper-preview.jpg"))),
@@ -121,16 +128,8 @@ class UserProfile extends StatelessWidget {
                     style: fontWeightSizeColorTextStyle(
                         FontWeightManager.bold, 16, Colors.black),
                   )),
-              Container(
-                margin: const EdgeInsets.only(bottom: 15, top: 15),
-                padding: const EdgeInsets.all(22).w,
-                height: 310.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    // color: Colors.pink,
-                    border: Border.all(
-                        color: ColorManager.greyOpacityColor, width: 2.3.w),
-                    borderRadius: BorderRadius.circular(30)),
+              Box(
+                height: 300,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -160,7 +159,7 @@ class UserProfile extends StatelessWidget {
                         ),
                         child_2: SwitchButton(
                           changed: false,
-                          perform:DarkTheme.themeDarkTrue,
+                          perform: DarkTheme.themeDarkTrue,
                         )),
                     BoxDesign(
                         child_1: DesignLabel(

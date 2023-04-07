@@ -1,11 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce/main_resources.dart';
-import 'package:ecommerce/screens/filtering_screen/flitering_resources.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import '../../resources/resources.dart';
+import '../../resources/import_resources.dart';
+import '../../data/data.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../reuse_widget/buttons/icon_button.dart';
-import '../reuse_widget/circle_avatar.dart';
 import 'provider/page_index.dart';
+
+
 
 class ProductDetailsView extends StatelessWidget {
   ProductDetailsView({Key? key}) : super(key: key);
@@ -69,7 +69,8 @@ class ProductDetailsView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Consumer<PageIndex>(builder: (context, value, child) {
+                            Consumer<PageIndex>(
+                                builder: (context, value, child) {
                               return AnimatedSmoothIndicator(
                                 activeIndex: value.pageIndex,
                                 count: urlImages.length,
@@ -81,14 +82,12 @@ class ProductDetailsView extends StatelessWidget {
                               );
                             }),
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 100, right: 15),
-                              child: CrcleAvatar(
-                                color: RGBColorManager.rgbWhiteColor,
-                                radius: 22,
-                                child:
-                                    Image.asset(IconsAssets.wishListUnfilledLogo),
-                              ),
+                              padding: const EdgeInsets.only(
+                                left: 80,
+                                right: 15,
+                                bottom: 5
+                              ).r,
+                              child: const AnimatedIconButton(),
                             )
                           ],
                         ),
@@ -185,7 +184,7 @@ class ProductDetailsView extends StatelessWidget {
                                 ProductCategory().clothSize[index],
                                 style: fontWeightSizeColorTextStyle(
                                     FontWeightManager.bold,
-                                    19,
+                                    18,
                                     ColorManager.blackColor),
                               ),
                             ),
@@ -201,9 +200,9 @@ class ProductDetailsView extends StatelessWidget {
                       color: ColorManager.blackColor),
                   Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-                    style: TextStyle(fontSize: 15,color: ColorManager.darkGreyColor),
+                    style: TextStyle(
+                        fontSize: 15, color: ColorManager.darkGreyColor),
                   ),
-
                 ],
               ),
             ),

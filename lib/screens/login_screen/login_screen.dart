@@ -1,6 +1,11 @@
-import '../../auth/sign_in.dart';
-import 'login_resources.dart';
+import 'package:ecommerce/auth/auth.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/resources/resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
+import 'provider/singin_validation.dart';
+
+
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController textEmailCtrl = TextEditingController();

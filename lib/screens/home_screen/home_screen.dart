@@ -1,11 +1,13 @@
-import 'package:ecommerce/services/api_service.dart';
+import 'package:ecommerce/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/screens/home_screen/homescreen_resources.dart';
 import '../../resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
-import '../reuse_widget/rich_text.dart';
-import '../reuse_widget/text_design.dart';
 import 'homescreen_presistentHeader.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import '../../data/data.dart';
+import 'provider/bottum_navigation/bottum_navigation.dart';
+import 'package:ecommerce/screens/screens.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

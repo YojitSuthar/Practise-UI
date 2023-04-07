@@ -2,7 +2,6 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
 
-
 class Box extends StatelessWidget {
   Box({
     super.key,
@@ -21,18 +20,17 @@ class Box extends StatelessWidget {
       height: height.h,
       width: double.infinity,
       decoration: BoxDecoration(
-        // color: Colors.pink,
+          // color: Colors.pink,
           border:
-          Border.all(color: ColorManager.greyOpacityColor, width: 2.3.w),
+              Border.all(color: ColorManager.greyOpacityColor, width: 1.5.w),
           borderRadius: BorderRadius.circular(30)),
       child: child,
     );
   }
 }
 
-
 class BoxDesign extends StatelessWidget {
-   BoxDesign({
+  BoxDesign({
     super.key,
     required this.child_1,
     required this.child_2,
@@ -46,8 +44,8 @@ class BoxDesign extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-       child_1,
-       child_2,
+        child_1,
+        child_2,
       ],
     );
   }
@@ -72,40 +70,45 @@ class BoxText extends StatelessWidget {
 }
 
 class DesignLabel extends StatelessWidget {
-   DesignLabel({
+  DesignLabel({
     super.key,
     required this.iconAsset,
     required this.label_1,
     required this.sizeBoxWidth,
+    this.onTap,
   });
 
   final String iconAsset;
   final String label_1;
   double sizeBoxWidth;
+  VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: sizeBoxWidth.w,
-      child: Row(
-        children: [
-          Container(
-            height: 45.h,
-            width: 50.w,
-            margin: const EdgeInsets.only(right: 15,top: 10).r,
-            padding: const EdgeInsets.all(15).w,
-            decoration: BoxDecoration(
-              color: RGBColorManager.rgbWhiteColor,
-              borderRadius: BorderRadius.circular(10).w,
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: sizeBoxWidth.w,
+        child: Row(
+          children: [
+            Container(
+              height: 45.h,
+              width: 50.w,
+              margin: const EdgeInsets.only(right: 15, top: 10).r,
+              padding: const EdgeInsets.all(15).w,
+              decoration: BoxDecoration(
+                color: RGBColorManager.rgbWhiteColor,
+                borderRadius: BorderRadius.circular(10).w,
+              ),
+              child: Image.asset(iconAsset),
             ),
-            child: Image.asset(iconAsset),
-          ),
-          Text(
-            label_1,
-            style: fontWeightSizeColorTextStyle(
-                FontWeightManager.bold, 16, Colors.black),
-          )
-        ],
+            Text(
+              label_1,
+              style: fontWeightSizeColorTextStyle(
+                  FontWeightManager.bold, 16, Colors.black),
+            )
+          ],
+        ),
       ),
     );
   }

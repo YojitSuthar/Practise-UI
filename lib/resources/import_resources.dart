@@ -6,3 +6,5 @@ export 'package:lottie/lottie.dart';
 export 'package:fluentui_icons/fluentui_icons.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:shared_preferences/shared_preferences.dart' ;
+export 'package:carousel_slider/carousel_slider.dart';
+export 'package:smooth_page_indicator/smooth_page_indicator.dart';

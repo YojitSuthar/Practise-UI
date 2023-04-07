@@ -1,11 +1,14 @@
-import 'package:ecommerce/provider/productdata.dart';
-import 'package:ecommerce/provider/theme_mode.dart';
-import 'package:ecommerce/provider/toggle_provider.dart';
 import 'package:ecommerce/screens/filtering_screen/provider/range_slider.dart';
 import 'package:flutter/material.dart';
-import 'main_resources.dart';
-import 'provider/absorbing.dart';
+import 'package:ecommerce/provider/provider_resources.dart';
+import 'screens/home_screen/provider/bottum_navigation/bottum_navigation.dart';
+import 'screens/login_screen/provider/singin_validation.dart';
 import 'screens/productdetail_screen/provider/page_index.dart';
+import '../../resources/resources.dart';
+import '../../resources/import_resources.dart';
+import 'screens/signup_screen/provider/signup_validation.dart';
+import 'package:ecommerce/screens/screens.dart';
+
 
 class Myapp extends StatelessWidget {
   Myapp({super.key});
@@ -28,7 +31,7 @@ class Myapp extends StatelessWidget {
               ChangeNotifierProvider(create: (context) => RangeSlide()),
               ChangeNotifierProvider(create: (context) => Toggle()),
               ChangeNotifierProvider(create: (context) => PageIndex()),
-              ChangeNotifierProvider(create: (context) => ProductData()),
+              ChangeNotifierProvider(create: (context) => ProductData())
             ],
             child: Consumer<ThemeChange>(
               builder: (context, value, child) {

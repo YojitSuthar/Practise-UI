@@ -1,6 +1,9 @@
+
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
-import 'user_resources.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import '../../resources/resources.dart';
+import '../../data/data.dart';
 
 class UserAccount extends StatelessWidget {
   UserAccount({Key? key}) : super(key: key);
@@ -80,9 +83,14 @@ class UserAccount extends StatelessWidget {
                 itemBuilder: (BuildContext context, index) {
                   return BoxDesign(
                     child_1: DesignLabel(
+                      onTap: () {
+                        Get.toNamed(
+                            option.userAccountOptions_1[index]["Navigation"]);
+                      },
                       sizeBoxWidth: 230,
                       label_1: option.userAccountOptions_1[index]["label_1"],
-                      iconAsset: option.userAccountOptions_1[index]["iconAsset"],
+                      iconAsset: option.userAccountOptions_1[index]
+                          ["iconAsset"],
                     ),
                     child_2: IconNavigation(
                       Navigation: option.userAccountOptions_1[index]
@@ -100,9 +108,14 @@ class UserAccount extends StatelessWidget {
                 itemBuilder: (BuildContext context, index) {
                   return BoxDesign(
                     child_1: DesignLabel(
+                      onTap: () {
+                        Get.toNamed(
+                            option.userAccountOptions_2[index]["Navigation"]);
+                      },
                       sizeBoxWidth: 230,
                       label_1: option.userAccountOptions_2[index]["label_1"],
-                      iconAsset: option.userAccountOptions_2[index]["iconAsset"],
+                      iconAsset: option.userAccountOptions_2[index]
+                          ["iconAsset"],
                     ),
                     child_2: IconNavigation(
                       Navigation: option.userAccountOptions_2[index]
@@ -118,7 +131,6 @@ class UserAccount extends StatelessWidget {
     );
   }
 }
-
 
 class IconNavigation extends StatelessWidget {
   IconNavigation({super.key, required this.Navigation});

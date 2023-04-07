@@ -1,7 +1,9 @@
+import 'package:ecommerce/resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
-import 'package:ecommerce/screens/login_screen/login_resources.dart';
 import 'package:flutter/material.dart';
-import '../../auth/forgetpassword_auth.dart';
+import 'package:ecommerce/auth/auth.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+
 
 class Forget extends StatelessWidget {
    Forget({Key? key}) : super(key: key);

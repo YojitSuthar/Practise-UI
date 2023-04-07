@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../data/product_categorylist.dart';
 import '../../resources/import_resources.dart';
 import '../../resources/resources.dart';
-import 'flitering_resources.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import 'provider/range_slider.dart';
+
 
 
 class FilterScreen extends StatelessWidget {

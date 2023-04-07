@@ -1,4 +1,5 @@
-import 'package:ecommerce/main_resources.dart';
+import 'package:ecommerce/resources/import_resources.dart';
+import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../provider/theme_mode.dart';

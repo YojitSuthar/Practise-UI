@@ -1,13 +1,5 @@
-import 'package:ecommerce/screens/home_screen/home_screen.dart';
-import 'package:ecommerce/resources/import_resources.dart';
-import '../screens/filtering_screen/filter_screen.dart';
-import '../screens/forget_password/forget_password.dart';
-import '../screens/login_screen/login_screen.dart';
-import '../screens/onboarding_screen/onbording_screen.dart';
-import '../screens/productdetail_screen/productdetail_screen.dart';
-import '../screens/signup_screen/signup_screen.dart';
-import '../screens/splash_screen/splash_screen.dart';
-import '../screens/user_profile_screen/user_profile.dart';
+import '../../resources/import_resources.dart';
+import 'package:ecommerce/screens/screens.dart';
 
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),

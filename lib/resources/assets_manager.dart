@@ -3,8 +3,9 @@ const String IMAGES_PATH = "assets/image";
 const String ICONS_PATH = "assets/icons";
 
 class AnimationAssets {
-  static const String splashAnimation = "$ANIMATION_PATH/spash_screen.json";
+  static const String splashAnimation = "$ANIMATION_PATH/splash_screen.json";
   static const String loadingAnimation = "$ANIMATION_PATH/loading.json";
+  static const String likeAnimation = "$ANIMATION_PATH/like_animation.json";
 }
 
 class ProjectImage {

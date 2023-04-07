@@ -1,0 +1,12 @@
+export 'package:ecommerce/screens/filtering_screen/filter_screen.dart';
+export '../screens/forget_password/forget_password.dart';
+export '../screens/home_screen/home_screen.dart';
+export '../screens/login_screen/login_screen.dart';
+export '../screens/onboarding_screen/onbording_screen.dart';
+export '../screens/productdetail_screen/productdetail_screen.dart';
+export '../screens/shopping_cart_screen/shopping_cart.dart';
+export '../screens/signup_screen/signup_screen.dart';
+export '../screens/splash_screen/splash_screen.dart';
+export 'user_profile_screen/user_account.dart';
+export 'user_profile_screen/user_profile.dart';
+export 'wishlist_screen/wishlist_screen.dart';

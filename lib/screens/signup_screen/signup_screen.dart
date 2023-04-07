@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../auth/sing_up.dart';
-import 'signup_resources.dart';
+import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
+import '../../resources/resources.dart';
+import '../../resources/import_resources.dart';
+import 'package:ecommerce/auth/auth.dart';
+import 'provider/signup_validation.dart';
+
+
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);

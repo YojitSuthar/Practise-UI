@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/resources.dart';
-
 import '../../provider/productdata.dart';
 import '../../resources/import_resources.dart';
 
 class AllProduct extends StatelessWidget {
+  const AllProduct({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductData>(builder: (context,value,child){
       return GridView.builder(
+        physics: false?NeverScrollableScrollPhysics():null,
         padding: const EdgeInsets.all(14).w,
         itemCount: value.productData.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
