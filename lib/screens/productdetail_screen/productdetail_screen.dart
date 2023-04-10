@@ -5,17 +5,9 @@ import '../../data/data.dart';
 import 'package:flutter/material.dart';
 import 'provider/page_index.dart';
 
-
-
 class ProductDetailsView extends StatelessWidget {
-  ProductDetailsView({Key? key}) : super(key: key);
-
-  List urlImages = [
-    'https://c1.wallpaperflare.com/preview/169/906/352/cactus-cacti-potted-minimal.jpg',
-    'https://c1.wallpaperflare.com/preview/152/420/904/x-box-console-joypad-activity.jpg',
-    'https://c0.wallpaperflare.com/preview/611/951/728/alarm-alarm-clock-alert-beat.jpg',
-    'https://c1.wallpaperflare.com/preview/152/420/904/x-box-console-joypad-activity.jpg',
-  ];
+  ProductDetailsView({Key? key, this.imageIndex}) : super(key: key);
+  int ?imageIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +20,21 @@ class ProductDetailsView extends StatelessWidget {
           children: [
             Stack(
               children: [
-                CarouselSlider.builder(
-                    itemCount: urlImages.length,
-                    options: CarouselOptions(
-                        onPageChanged: (index, reason) {
-                          activeIndex.changeIndex(index);
-                        },
-                        height: 320.h,
-                        viewportFraction: 1,
-                        enableInfiniteScroll: false),
-                    itemBuilder: (BuildContext context, index, pageIndex) {
-                      return Image.network(urlImages[index], fit: BoxFit.cover);
-                    }),
+                 CarouselSlider.builder(
+                      itemCount:  ProductCategory.apiData[imageIndex!]["images"].length,
+                      options: CarouselOptions(
+                          onPageChanged: (index, reason) {
+                            activeIndex.changeIndex(index);
+                          },
+                          height: 320.h,
+                          viewportFraction: 1,
+                          enableInfiniteScroll: false),
+                      itemBuilder: (BuildContext context, index, pageIndex) {
+                        return Image.network(
+                            ProductCategory.apiData[imageIndex!]["images"][index],
+                            fit: BoxFit.cover);
+                      }),
+
                 SizedBox(
                   height: 320.h,
                   child: Column(
@@ -50,7 +45,7 @@ class ProductDetailsView extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const BackIconButton(),
+                            BackIconButton(topPadding: 30),
                             Padding(
                               padding:
                                   const EdgeInsets.only(right: 10, top: 35).r,
@@ -73,7 +68,7 @@ class ProductDetailsView extends StatelessWidget {
                                 builder: (context, value, child) {
                               return AnimatedSmoothIndicator(
                                 activeIndex: value.pageIndex,
-                                count: urlImages.length,
+                                count: ProductCategory.apiData[imageIndex!]["images"].length,
                                 effect: ExpandingDotsEffect(
                                     dotHeight: 7.h,
                                     dotWidth: 8.w,
@@ -83,10 +78,8 @@ class ProductDetailsView extends StatelessWidget {
                             }),
                             Padding(
                               padding: const EdgeInsets.only(
-                                left: 80,
-                                right: 15,
-                                bottom: 5
-                              ).r,
+                                      left: 80, right: 15, bottom: 5)
+                                  .r,
                               child: const AnimatedIconButton(),
                             )
                           ],
@@ -110,14 +103,15 @@ class ProductDetailsView extends StatelessWidget {
                         children: [
                           DesignText(
                               padding: 0,
-                              text: "Roller Rabbit",
-                              fontSize: 20,
-                              color: Colors.black),
+                              text: ProductCategory.apiData[imageIndex!]["title"],
+                              fontSize: 15,
+                              color: ColorManager.blackColor),
                           DesignText(
                               padding: 0,
-                              text: "Vado Odelle Dres",
+                              text: ProductCategory.apiData[imageIndex!]["brand"],
                               fontSize: 12,
-                              color: Colors.grey),
+                              color: ColorManager.greyColor
+                          ),
                         ],
                       ),
                       Column(
@@ -173,15 +167,15 @@ class ProductDetailsView extends StatelessWidget {
                       child: ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.horizontal,
-                        itemCount: ProductCategory().clothSize.length,
+                        itemCount: ProductCategory.clothSize.length,
                         itemBuilder: (BuildContext context, index) {
                           return Padding(
-                            padding: const EdgeInsets.only(left: 5),
+                            padding: const EdgeInsets.only(left: 5).r,
                             child: CrcleAvatar(
                               radius: 25,
                               color: RGBColorManager.rgbWhiteColor,
                               child: Text(
-                                ProductCategory().clothSize[index],
+                                ProductCategory.clothSize[index],
                                 style: fontWeightSizeColorTextStyle(
                                     FontWeightManager.bold,
                                     18,
@@ -199,24 +193,25 @@ class ProductDetailsView extends StatelessWidget {
                       fontSize: 17,
                       color: ColorManager.blackColor),
                   Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+                    ProductCategory.apiData[imageIndex!]["description"],
                     style: TextStyle(
                         fontSize: 15, color: ColorManager.darkGreyColor),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: BlackButton(
-                iconAsset: IconsAssets.applyLogo,
-                buttonName: "Add to Cart",
-                onPressed: () {
-                  Get.back();
-                },
-              ),
-            ),
+
           ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: BlackButton(
+          iconAsset: IconsAssets.applyLogo,
+          buttonName: "Add to Cart",
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
     );

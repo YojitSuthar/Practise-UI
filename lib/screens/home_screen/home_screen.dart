@@ -8,15 +8,9 @@ import '../../data/data.dart';
 import 'provider/bottum_navigation/bottum_navigation.dart';
 import 'package:ecommerce/screens/screens.dart';
 
+class MainScreen extends StatelessWidget {
+  MainScreen({Key? key}) : super(key: key);
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
   final userPreferences = UserPreferences();
 
   bool icon = true;
@@ -27,13 +21,6 @@ class _MainScreenState extends State<MainScreen> {
     const WishList(),
     UserAccount(),
   ];
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +50,9 @@ class _MainScreenState extends State<MainScreen> {
                     spreadRadius: 2.0,
                   ),
                 ],
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25))),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.w),
+                    topRight: Radius.circular(25.w))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -104,10 +91,10 @@ class HomeScreen extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-      snap: true,
+          snap: true,
           floating: true,
           backgroundColor: ColorManager.whiteColor,
-          expandedHeight: 144.h.w,
+          expandedHeight: 130.h.w,
           flexibleSpace: FlexibleSpaceBar(
               background: Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
@@ -151,9 +138,9 @@ class HomeScreen extends StatelessWidget {
             ),
           )),
         ),
-         SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Container(
-            padding: const EdgeInsets.only(left: 15,right: 15).w,
+            padding: const EdgeInsets.only(left: 15, right: 15).w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -190,7 +177,7 @@ class HomeScreen extends StatelessWidget {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   contentPadding:
-                                  const EdgeInsets.only(left: 11).r,
+                                      const EdgeInsets.only(left: 11).r,
                                   hintText: "Search",
                                   // border: OutlineInputBorder(),
                                 ),
@@ -215,7 +202,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 DesignText(
-                  padding: 8,
+                    padding: 8,
                     fontSize: 20,
                     text: "Categories",
                     color: ColorManager.blackColor),
@@ -225,10 +212,10 @@ class HomeScreen extends StatelessWidget {
                     height: 25.h,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: ProductCategory().category.length,
+                      itemCount: ProductCategory.category.length,
                       itemBuilder: (BuildContext context, index) {
                         return CategoryButton(
-                          label: ProductCategory().category[index],
+                          label: ProductCategory.category[index],
                           index: index,
                         );
                       },
@@ -242,12 +229,12 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     DesignText(
-                      padding: 8,
+                        padding: 8,
                         fontSize: 18,
                         text: "TopDress",
                         color: ColorManager.blackColor),
                     DesignText(
-                      padding: 8,
+                        padding: 8,
                         fontSize: 12,
                         text: "View all",
                         color: ColorManager.darkGreyColor),

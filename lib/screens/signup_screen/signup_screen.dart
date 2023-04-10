@@ -41,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const BackIconButton(),
+                BackIconButton(topPadding: 30),
                 const CompanyDesign(),
                 NormalTextField(
                     onChanged: validate.userNameSignUpValidate,

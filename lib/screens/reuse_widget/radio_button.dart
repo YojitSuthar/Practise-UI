@@ -15,7 +15,6 @@ class CustoumRadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final onTap = Provider.of<ChangeColor>(context, listen: false);
     return Consumer<ChangeColor>(builder: (context, value, child) {
       return GestureDetector(
         onTap: () {
@@ -27,7 +26,7 @@ class CustoumRadioButton extends StatelessWidget {
           }
         },
         child: Container(
-          width: 85.w,
+          width: 80.w,
           margin: const EdgeInsets.only(right: 15).r,
           decoration: BoxDecoration(
               border: Border.all(
@@ -40,10 +39,10 @@ class CustoumRadioButton extends StatelessWidget {
                   : ColorManager.whiteColor,
               borderRadius: BorderRadius.all(const Radius.circular(9).w)),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                height: 15,
+                height: 13.h,
                 child: value.data.contains(index)
                     ? Image.asset(
                         IconsAssets.radioEnabledLogo,

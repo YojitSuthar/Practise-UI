@@ -1,5 +1,5 @@
 class ProductCategory {
-  final List category = [
+  static final List category = [
     "smartphones",
     "laptops",
     "fragrances",
@@ -22,18 +22,20 @@ class ProductCategory {
     "women's-shoes",
   ];
 
-  final List sortBy = [
+  static final List sortBy = [
     "New Today",
     "Discount",
     "Popularity",
   ];
 
-  final List clothSize = [
+  static final List clothSize = [
     "S",
     "M",
     "L",
     "XL",
     "XXL",
   ];
+
+   static List<dynamic> apiData=[];
 
 }

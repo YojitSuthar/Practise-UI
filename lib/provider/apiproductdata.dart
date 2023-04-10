@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import '../data/product_categorylist.dart';
 import '../services/api_service.dart';
 
 class ProductData with ChangeNotifier {
 
-   List<dynamic> productData=[];
+  List<dynamic> productData=[];
   final ApiService _getData=ApiService();
   bool loading=true;
 
@@ -11,6 +12,7 @@ class ProductData with ChangeNotifier {
     final response= await _getData.fetchProduct();
     productData=response;
     loading=false;
+    ProductCategory.apiData=productData;
     notifyListeners();
   }
 
@@ -18,7 +20,5 @@ class ProductData with ChangeNotifier {
     print("calling api service");
     fetchingData();
   }
-
-
 
 }

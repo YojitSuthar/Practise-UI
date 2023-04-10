@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import '../../../resources/import_resources.dart';
 import '../../../resources/resources.dart';
 
-
 class BackIconButton extends StatelessWidget {
-  const BackIconButton({Key? key}) : super(key: key);
+  BackIconButton({Key? key, required this.topPadding}) : super(key: key);
+
+  double topPadding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 35.0),
+        margin: EdgeInsets.only(
+          top: topPadding,
+        ).r,
         child: IconButton(
             onPressed: () {
               Get.back();

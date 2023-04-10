@@ -20,7 +20,7 @@ class Forget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const BackIconButton(),
+               BackIconButton(topPadding: 30),
               const CompanyDesign(),
               NormalTextField(
                   textCtrl: textForgetPassCtrl,

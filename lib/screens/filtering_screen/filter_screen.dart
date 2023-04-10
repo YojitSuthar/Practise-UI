@@ -19,7 +19,7 @@ class FilterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const BackIconButton(),
+               BackIconButton(topPadding: 30),
               DesignText(
                 padding: 8,
                   fontSize: 18,
@@ -38,7 +38,7 @@ class FilterScreen extends StatelessWidget {
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return CategoryButton(
-                      label: ProductCategory().category[index],
+                      label: ProductCategory.category[index],
                       index: index+30,
                     );
                   },
@@ -102,7 +102,7 @@ class FilterScreen extends StatelessWidget {
                 height: 70,
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: ProductCategory().sortBy.length,
+                  itemCount: ProductCategory.sortBy.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     childAspectRatio: 4 / 1,
@@ -111,7 +111,7 @@ class FilterScreen extends StatelessWidget {
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return CategoryButton(
-                      label: ProductCategory().sortBy[index],
+                      label: ProductCategory.sortBy[index],
                       index: index+40,
                     );
                   },

@@ -1,6 +1,7 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
-import '../../provider/productdata.dart';
+import '../../provider/apiproductdata.dart';
+import '../shimmer_scrren/shimmer_screen.dart';
 import 'all_product.dart';
 
 
@@ -11,7 +12,7 @@ class HomeScreenPersistentHeader extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Consumer<ProductData>(builder: (context,value,child){
-      return value.loading ?const Center(child: CircularProgressIndicator()):const AllProduct();
+      return value.loading ?const LoadingListPage():const AllProduct();
     });
   }
 

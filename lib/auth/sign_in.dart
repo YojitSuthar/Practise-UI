@@ -31,17 +31,22 @@ class Signin {
           .doc(textEmailCtrl.text.trim())
           .get()
           .then((value) async {
+            debugPrint("Enter");
+            print(textEmailCtrl.text.trim());
         if (value["Email"] == textEmailCtrl.text.trim()) {
+          debugPrint(value["Email"]);
           await FirebaseAuth.instance
               .signInWithEmailAndPassword(
                   email: textEmailCtrl.text.trim(),
                   password: textPassCtrl.text.trim())
               .then((value) {
+                print("asdasdasdadasd");
             userPreferences.saveLoginUserInfo(
                 textEmailCtrl.text, textPassCtrl.text);
-            Get.offAll(MainScreen());
+            Get.offAll( MainScreen());
           });
-        } else {
+        }
+        else {
           debugPrint("invalid credentials");
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(invalidCredentials);
@@ -50,7 +55,7 @@ class Signin {
     } catch (Exception) {
       debugPrint("Account Does not exists");
       Navigator.pop(context);
-      ScaffoldMessenger.of(context).showSnackBar(notExist);
+      ScaffoldMessenger.of(context).showSnackBar(invalidCredentials);
     }
   }
 }

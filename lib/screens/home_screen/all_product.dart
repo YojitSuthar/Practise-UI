@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/resources.dart';
-import '../../provider/productdata.dart';
+import '../../provider/apiproductdata.dart';
 import '../../resources/import_resources.dart';
+import '../screens.dart';
 
 class AllProduct extends StatelessWidget {
   const AllProduct({super.key});
@@ -11,7 +12,6 @@ class AllProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ProductData>(builder: (context,value,child){
       return GridView.builder(
-        physics: false?NeverScrollableScrollPhysics():null,
         padding: const EdgeInsets.all(14).w,
         itemCount: value.productData.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -27,15 +27,15 @@ class AllProduct extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   debugPrint("Product Category");
-                  Get.toNamed("/ProductDetailsView");
+                  Get.to(ProductDetailsView(imageIndex: index,));
                 },
                 child: Container(
                   height: 170.h,
                   width: 145.w,
                   margin: const EdgeInsets.only(bottom: 10).r,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage(value.productData[index]["thumbnail"]),fit: BoxFit.fill),
-                      color: Colors.pink,
+                    image: DecorationImage(image: NetworkImage(value.productData[index]["thumbnail"]),fit: BoxFit.cover),
+                      color: ColorManager.greyOpacityColor,
                       borderRadius: BorderRadius.circular(20).w),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
