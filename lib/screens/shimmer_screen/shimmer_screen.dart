@@ -26,7 +26,7 @@ class LoadingListPage extends StatelessWidget {
                       children: <Widget>[
                         Container(
                             width: 145.0.w,
-                            height: 170.0.h,
+                            height: 160.0.h,
                             decoration: BoxDecoration(
                                 color: ColorManager.whiteColor,
                                 borderRadius: BorderRadius.circular(20).w)),
@@ -47,7 +47,7 @@ class LoadingListPage extends StatelessWidget {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 0,
-                    crossAxisSpacing: 20,
+                    crossAxisSpacing: 40,
                     childAspectRatio: 0.55,
                   ),
                 ),
