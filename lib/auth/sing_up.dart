@@ -6,6 +6,7 @@ import '../resources/resources.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
 
+// in this where you can create the account
 class Signup {
   final db = FirebaseFirestore.instance;
   final bar = WarningBar();

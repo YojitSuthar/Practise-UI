@@ -2,6 +2,7 @@
 import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 
+// this is custom animation like button with Scale Translation animation
 class AnimatedIconButton extends StatefulWidget {
   const AnimatedIconButton({Key? key}) : super(key: key);
 

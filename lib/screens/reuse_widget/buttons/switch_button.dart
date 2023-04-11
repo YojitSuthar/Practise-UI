@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import '../../../provider/theme_mode.dart';
 import '../../../provider/toggle_provider.dart';
 
-
+// this are the Switch Button or toggle button
 class SwitchButton extends StatelessWidget {
   SwitchButton({
     super.key,
     required this.changed,
-     this.perform,
+    this.perform,
   });
 
   bool changed;
@@ -33,7 +33,7 @@ class SwitchButton extends StatelessWidget {
               debugPrint("onchange True");
               perform!();
             }else{
-              DarkTheme.themeDarkFalse();
+              // DarkTheme.themeDarkFalse();
               debugPrint("button pressed onchange False");
             }
           },

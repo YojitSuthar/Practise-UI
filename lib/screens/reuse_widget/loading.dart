@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/resources/resources.dart';
+
+// this is the Loading animation
 class Loading extends StatelessWidget {
   const Loading({Key? key}) : super(key: key);
 

@@ -2,7 +2,6 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
 
-
 class DesignText extends StatelessWidget {
   DesignText({
     super.key,

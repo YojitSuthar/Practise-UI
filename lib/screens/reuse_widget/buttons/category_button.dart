@@ -3,6 +3,8 @@ import 'package:ecommerce/provider/button_color.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 
+// this are the category buttons
+
 class CategoryButton extends StatelessWidget {
   final String label;
   final int index;

@@ -3,6 +3,7 @@ import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
+// this is login and signup screen password text field
 class PassField extends StatefulWidget {
   TextEditingController textPassCtrl;
   String? hintText;

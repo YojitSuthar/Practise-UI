@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../screens/login_screen/login_screen.dart';
 import '../screens/reuse_widget/loading.dart';
 
-
+// In this we use sharedPreferences to save the user as data locally so user dont need to sign in again and again
 class UserPreferences{
   String? email;
   String? pass;

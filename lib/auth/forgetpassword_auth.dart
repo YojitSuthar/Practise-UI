@@ -5,6 +5,8 @@ import '../resources/string_manager.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
 
+
+/* This is the class of the forget password features*/
 class ForgetPassword {
 
    void forgetPassword(

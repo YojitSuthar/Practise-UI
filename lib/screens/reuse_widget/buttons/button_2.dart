@@ -2,6 +2,7 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../../resources/resources.dart';
 
+// This are the different colour theme which we are using in whole project
 class BlackButton extends StatelessWidget {
   BlackButton({
     super.key,
@@ -12,7 +13,7 @@ class BlackButton extends StatelessWidget {
 
   String buttonName;
   String iconAsset;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

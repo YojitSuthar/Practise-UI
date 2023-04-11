@@ -2,6 +2,8 @@ import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
+// this is the text Field which are  using in login, Signup and Forget Password fields
+
 class NormalTextField extends StatelessWidget {
   TextEditingController textCtrl;
   String hintText;

@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
 
   bool icon = true;
 
-  final _pages = [
+  final List  _pages = [
     const HomeScreen(),
     const ShoppingCart(),
     const WishList(),
@@ -159,6 +159,7 @@ class HomeScreen extends StatelessWidget {
                           IcnButton(
                               onPressed: () {
                                 debugPrint("search icon");
+                                Get.toNamed("/SearchProduct");
                               },
                               iconSize: 0,
                               child: SizedBox(

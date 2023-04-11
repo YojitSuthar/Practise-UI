@@ -7,7 +7,9 @@ import 'package:ecommerce/resources/resources.dart';
 import '../screens/home_screen/home_screen.dart';
 import '../screens/reuse_widget/loading.dart';
 import '../screens/reuse_widget/snack_bar.dart';
-
+/*
+This class perform signin by getting the data from the user
+*/
 class Signin {
   final db = FirebaseFirestore.instance;
   final bar = WarningBar();

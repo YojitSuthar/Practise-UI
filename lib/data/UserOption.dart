@@ -1,5 +1,5 @@
 import '../resources/assets_manager.dart';
-import '../screens/reuse_widget/box_widget.dart';
+
 
 class OptionButton {
   static final List userAccountOptions_1 = [
@@ -58,31 +58,5 @@ class OptionButton {
     },
   ];
 
-  static final List<Map<String,dynamic>> userAccountOptions_3 = [
-    {
-      "label_1": "FAQs",
-      "iconAsset":  DesignLabel(
-        sizeBoxWidth: 200,
-        label_1: "Help Center",
-        iconAsset: IconsAssets.helpCenterLogo,
-      ),
-      "Navigation": "none"
-    },
-    {
-      "label_1": "Privacy Policy",
-      "iconAsset": IconsAssets.privacyPolicyLogo,
-      "Navigation": "none"
-    },
-    {
-      "label_1": "Terms and Conditions",
-      "iconAsset": IconsAssets.termsLogo,
-      "Navigation": "none"
-    },
-    {
-      "label_1": "About Us",
-      "iconAsset": IconsAssets.aboutUsLogo,
-      "Navigation": "none"
-    },
-  ];
 
 }

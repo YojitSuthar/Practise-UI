@@ -11,3 +11,4 @@ export 'user_profile_screen/user_account.dart';
 export 'user_profile_screen/user_profile.dart';
 export 'wishlist_screen/wishlist_screen.dart';
 export 'package:ecommerce/screens/shimmer_screen/shimmer_screen.dart';
+export '../screens/searchproduct_screen/searchproduct_screen.dart';

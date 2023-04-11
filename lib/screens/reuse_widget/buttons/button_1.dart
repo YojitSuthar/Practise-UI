@@ -2,6 +2,7 @@ import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
+// This are the buttons of login and signup page
 class Button extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;

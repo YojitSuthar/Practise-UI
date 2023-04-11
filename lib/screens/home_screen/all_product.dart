@@ -4,6 +4,7 @@ import '../../provider/apiproductdata.dart';
 import '../../resources/import_resources.dart';
 import '../screens.dart';
 
+// we are showing the data of the product in the grid view
 class AllProduct extends StatelessWidget {
   const AllProduct({super.key});
 

@@ -2,6 +2,7 @@ import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 
+// This is the company design logo
 class CompanyDesign extends StatelessWidget {
   const CompanyDesign({
     super.key,

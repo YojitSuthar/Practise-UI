@@ -2,6 +2,8 @@ import 'package:ecommerce/screens/home_screen/provider/bottum_navigation/bottum_
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 
+// This are the buttons on button tab bar button with changing index abd body
+
 class BottumTabButton extends StatelessWidget {
   BottumTabButton({
     super.key,

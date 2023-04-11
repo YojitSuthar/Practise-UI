@@ -13,6 +13,5 @@ class ApiService{
     final body = response.body;
     final json = jsonDecode(body);
     return json["products"];
-
   }
 }

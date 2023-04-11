@@ -1,16 +1,22 @@
-# databse_auth
+# Ecommerce application
 
-A new Flutter project.
+A Flutter project.
 
-## Getting Started
+This Ecommerce application based on Flutter and we use provider(For State change) and getX State Management(getX for navigation)
+We use Api to get the data to show the user
+Use fireBase for user authentication
 
-This project is a starting point for a Flutter application.
+Screens=>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. On boarding screens
+2. Login screen
+3. Singup screen
+4. Forget password screen
+5. Home screen
+6. Product filtering screen
+7. User account screen
+8. User profile screen
+9. Product detail screen
+10. Animated loading screen
+11. Animated splash screen
+12. animated like button

@@ -2,6 +2,8 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
 
+// This is custom box Widget which we use in user profile Screens
+
 class Box extends StatelessWidget {
   Box({
     super.key,

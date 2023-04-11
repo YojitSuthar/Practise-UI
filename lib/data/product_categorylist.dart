@@ -1,3 +1,5 @@
+// This class Contain the list of category,sorted by and cloth Size(if you want to add new data you can easily add with out any writing more code)
+
 class ProductCategory {
   static final List category = [
     "smartphones",

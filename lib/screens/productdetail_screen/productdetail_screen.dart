@@ -20,20 +20,25 @@ class ProductDetailsView extends StatelessWidget {
           children: [
             Stack(
               children: [
-                 CarouselSlider.builder(
-                      itemCount:  ProductCategory.apiData[imageIndex!]["images"].length,
-                      options: CarouselOptions(
-                          onPageChanged: (index, reason) {
-                            activeIndex.changeIndex(index);
-                          },
-                          height: 320.h,
-                          viewportFraction: 1,
-                          enableInfiniteScroll: false),
-                      itemBuilder: (BuildContext context, index, pageIndex) {
-                        return Image.network(
-                            ProductCategory.apiData[imageIndex!]["images"][index],
-                            fit: BoxFit.cover);
-                      }),
+                 GestureDetector(
+                   onDoubleTap: (){
+                     debugPrint("Navigate image");
+                   },
+                   child: CarouselSlider.builder(
+                        itemCount:  ProductCategory.apiData[imageIndex!]["images"].length,
+                        options: CarouselOptions(
+                            onPageChanged: (index, reason) {
+                              activeIndex.changeIndex(index);
+                            },
+                            height: 320.h,
+                            viewportFraction: 1,
+                            enableInfiniteScroll: false),
+                        itemBuilder: (BuildContext context, index, pageIndex) {
+                          return Image.network(
+                              ProductCategory.apiData[imageIndex!]["images"][index],
+                              fit: BoxFit.cover);
+                        }),
+                 ),
 
                 SizedBox(
                   height: 320.h,

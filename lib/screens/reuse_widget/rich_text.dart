@@ -2,7 +2,7 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
 
-
+// This is the rich Text Widget we used in the whole application
 class RichTxt extends StatelessWidget {
   RichTxt({
     super.key,

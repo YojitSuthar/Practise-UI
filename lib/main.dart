@@ -26,7 +26,6 @@ class Myapp extends StatelessWidget {
               ChangeNotifierProvider(create: (context) => SignUpValidation()),
               ChangeNotifierProvider(create: (context) => ChangeColor()),
               ChangeNotifierProvider(create: (context) => BottumNavigation()),
-              ChangeNotifierProvider(create: (context) => Absorbing()),
               ChangeNotifierProvider(create: (context) => ThemeChange()),
               ChangeNotifierProvider(create: (context) => RangeSlide()),
               ChangeNotifierProvider(create: (context) => Toggle()),
