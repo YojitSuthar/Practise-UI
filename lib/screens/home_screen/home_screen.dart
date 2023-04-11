@@ -1,12 +1,16 @@
 import 'package:ecommerce/user_preferences/user_preferences.dart';
 import 'package:flutter/material.dart';
+import '../../provider/provider_resources.dart';
 import '../../resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
+import '../shimmer_scrren/shimmer_screen.dart';
+import 'all_product.dart';
 import 'homescreen_presistentHeader.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import '../../data/data.dart';
 import 'provider/bottum_navigation/bottum_navigation.dart';
 import 'package:ecommerce/screens/screens.dart';
+import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -88,164 +92,168 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          snap: true,
-          floating: true,
-          backgroundColor: ColorManager.whiteColor,
-          expandedHeight: 130.h.w,
-          flexibleSpace: FlexibleSpaceBar(
-              background: Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
-            child: Container(
-              margin: const EdgeInsets.only(top: 45),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder:
+            (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              backgroundColor: ColorManager.whiteColor,
+              expandedHeight: 145.h,
+              flexibleSpace: FlexibleSpaceBar(
+                  background: Padding(
+                    padding: const EdgeInsets.only(left: 15.0, right: 15.0).r,
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 45),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IcnButton(
+                                  onPressed: () {
+                                    debugPrint("dashBoard");
+                                  },
+                                  iconSize: 45,
+                                  child: Image.asset(IconsAssets.dashboardLogo)),
+                              IcnButton(
+                                  iconSize: 45,
+                                  onPressed: () {
+                                    debugPrint("User Profile");
+                                    Get.toNamed("/UserProfile");
+                                  },
+                                  child: CrcleAvatar(
+                                    color: RGBColorManager.rgbWhiteColor,
+                                    radius: 45,
+                                    child: Image.asset(IconsAssets.userLogo),
+                                  )),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20).r,
+                            child: RichTxt(
+                                text_1: "Welcome\n",
+                                text_2: "Our Fashions App",
+                                textSize_1: 30,
+                                textSize_2: 25),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )),
+            ),
+          ];
+        }, body: Container(
+        padding: const EdgeInsets.only(left: 15, right: 15).w,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 25).r,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IcnButton(
-                          onPressed: () {
-                            debugPrint("dashBoard");
-                          },
-                          iconSize: 45,
-                          child: Image.asset(IconsAssets.dashboardLogo)),
-                      IcnButton(
-                          iconSize: 45,
-                          onPressed: () {
-                            debugPrint("User Profile");
-                            Get.toNamed("/UserProfile");
-                          },
-                          child: CrcleAvatar(
-                            color: RGBColorManager.rgbWhiteColor,
-                            radius: 45,
-                            child: Image.asset(IconsAssets.userLogo),
-                          )),
-                    ],
+                  Container(
+                    width: 280.0.w,
+                    height: 45.0.h,
+                    decoration: BoxDecoration(
+                        color: RGBColorManager.rgbWhiteColor,
+                        borderRadius: BorderRadius.circular(20.w)),
+                    child: Row(
+                      children: [
+                        IcnButton(
+                            onPressed: () {
+                              debugPrint("search icon");
+                            },
+                            iconSize: 0,
+                            child: SizedBox(
+                              height: 25,
+                              child: Image.asset(
+                                IconsAssets.searchLogo,
+                              ),
+                            )),
+                        Expanded(
+                          child: TextFormField(
+                            controller: null,
+                            cursorHeight: 24,
+                            cursorRadius: const Radius.circular(10).w,
+                            cursorColor: ColorManager.blackColor,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              contentPadding:
+                              const EdgeInsets.only(left: 11).r,
+                              hintText: "Search",
+                              // border: OutlineInputBorder(),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20).r,
-                    child: RichTxt(
-                        text_1: "Welcome\n",
-                        text_2: "Our Fashions App",
-                        textSize_1: 30,
-                        textSize_2: 25),
-                  ),
+                  IcnButton(
+                      iconSize: 0,
+                      onPressed: () {
+                        Get.toNamed("/FilterScreen");
+                      },
+                      child: CrcleAvatar(
+                        radius: 23,
+                        color: ColorManager.blackColor,
+                        child: Image.asset(
+                          IconsAssets.filterLogo,
+                        ),
+                      ))
                 ],
               ),
             ),
-          )),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            padding: const EdgeInsets.only(left: 15, right: 15).w,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 25).r,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 280.0.w,
-                        height: 45.0.h,
-                        decoration: BoxDecoration(
-                            color: RGBColorManager.rgbWhiteColor,
-                            borderRadius: BorderRadius.circular(20.w)),
-                        child: Row(
-                          children: [
-                            IcnButton(
-                                onPressed: () {
-                                  debugPrint("search icon");
-                                },
-                                iconSize: 0,
-                                child: SizedBox(
-                                  height: 25,
-                                  child: Image.asset(
-                                    IconsAssets.searchLogo,
-                                  ),
-                                )),
-                            Expanded(
-                              child: TextFormField(
-                                controller: null,
-                                cursorHeight: 24,
-                                cursorRadius: const Radius.circular(10).w,
-                                cursorColor: ColorManager.blackColor,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding:
-                                      const EdgeInsets.only(left: 11).r,
-                                  hintText: "Search",
-                                  // border: OutlineInputBorder(),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      IcnButton(
-                          iconSize: 0,
-                          onPressed: () {
-                            Get.toNamed("/FilterScreen");
-                          },
-                          child: CrcleAvatar(
-                            radius: 23,
-                            color: ColorManager.blackColor,
-                            child: Image.asset(
-                              IconsAssets.filterLogo,
-                            ),
-                          ))
-                    ],
-                  ),
+            DesignText(
+                padding: 8,
+                fontSize: 20,
+                text: "Categories",
+                color: ColorManager.blackColor),
+            Padding(
+              padding: const EdgeInsets.only(top: 8).r,
+              child: SizedBox(
+                height: 25.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: ProductCategory.category.length,
+                  itemBuilder: (BuildContext context, index) {
+                    return CategoryButton(
+                      label: ProductCategory.category[index],
+                      index: index,
+                    );
+                  },
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 4.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
                 DesignText(
                     padding: 8,
-                    fontSize: 20,
-                    text: "Categories",
+                    fontSize: 18,
+                    text: "TopDress",
                     color: ColorManager.blackColor),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8).r,
-                  child: SizedBox(
-                    height: 25.h,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: ProductCategory.category.length,
-                      itemBuilder: (BuildContext context, index) {
-                        return CategoryButton(
-                          label: ProductCategory.category[index],
-                          index: index,
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    DesignText(
-                        padding: 8,
-                        fontSize: 18,
-                        text: "TopDress",
-                        color: ColorManager.blackColor),
-                    DesignText(
-                        padding: 8,
-                        fontSize: 12,
-                        text: "View all",
-                        color: ColorManager.darkGreyColor),
-                  ],
-                ),
+                DesignText(
+                    padding: 8,
+                    fontSize: 12,
+                    text: "View all",
+                    color: ColorManager.darkGreyColor),
               ],
             ),
-          ),
+            Expanded(
+              child: Consumer<ProductData>(builder: (context,value,child){
+                return value.loading ?const LoadingListPage():const AllProduct();
+              }),
+            )
+          ],
         ),
-        SliverPersistentHeader(delegate: HomeScreenPersistentHeader())
-      ],
+      ),
+      ),
     );
   }
 }

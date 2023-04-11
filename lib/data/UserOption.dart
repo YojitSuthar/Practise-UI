@@ -1,7 +1,8 @@
 import '../resources/assets_manager.dart';
+import '../screens/reuse_widget/box_widget.dart';
 
 class OptionButton {
-  final List userAccountOptions_1 = [
+  static final List userAccountOptions_1 = [
     {
       "label_1": "Personal details",
       "iconAsset": IconsAssets.userLogo,
@@ -34,10 +35,37 @@ class OptionButton {
     },
   ];
 
-  final List userAccountOptions_2 = [
+  static final List userAccountOptions_2 = [
     {
       "label_1": "FAQs",
       "iconAsset": IconsAssets.faqsLogo,
+      "Navigation": "none"
+    },
+    {
+      "label_1": "Privacy Policy",
+      "iconAsset": IconsAssets.privacyPolicyLogo,
+      "Navigation": "none"
+    },
+    {
+      "label_1": "Terms and Conditions",
+      "iconAsset": IconsAssets.termsLogo,
+      "Navigation": "none"
+    },
+    {
+      "label_1": "About Us",
+      "iconAsset": IconsAssets.aboutUsLogo,
+      "Navigation": "none"
+    },
+  ];
+
+  static final List<Map<String,dynamic>> userAccountOptions_3 = [
+    {
+      "label_1": "FAQs",
+      "iconAsset":  DesignLabel(
+        sizeBoxWidth: 200,
+        label_1: "Help Center",
+        iconAsset: IconsAssets.helpCenterLogo,
+      ),
       "Navigation": "none"
     },
     {

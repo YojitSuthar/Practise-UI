@@ -79,21 +79,21 @@ class UserAccount extends StatelessWidget {
               height: 380,
               child: ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: option.userAccountOptions_1.length,
+                itemCount: OptionButton.userAccountOptions_1.length,
                 itemBuilder: (BuildContext context, index) {
                   return BoxDesign(
                     child_1: DesignLabel(
                       onTap: () {
                         Get.toNamed(
-                            option.userAccountOptions_1[index]["Navigation"]);
+                            OptionButton.userAccountOptions_1[index]["Navigation"]);
                       },
                       sizeBoxWidth: 230,
-                      label_1: option.userAccountOptions_1[index]["label_1"],
-                      iconAsset: option.userAccountOptions_1[index]
+                      label_1: OptionButton.userAccountOptions_1[index]["label_1"],
+                      iconAsset: OptionButton.userAccountOptions_1[index]
                           ["iconAsset"],
                     ),
                     child_2: IconNavigation(
-                      Navigation: option.userAccountOptions_1[index]
+                      Navigation: OptionButton.userAccountOptions_1[index]
                           ["Navigation"],
                     ),
                   );
@@ -104,21 +104,21 @@ class UserAccount extends StatelessWidget {
               height: 270,
               child: ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: option.userAccountOptions_2.length,
+                itemCount: OptionButton.userAccountOptions_2.length,
                 itemBuilder: (BuildContext context, index) {
                   return BoxDesign(
                     child_1: DesignLabel(
                       onTap: () {
                         Get.toNamed(
-                            option.userAccountOptions_2[index]["Navigation"]);
+                            OptionButton.userAccountOptions_2[index]["Navigation"]);
                       },
                       sizeBoxWidth: 230,
-                      label_1: option.userAccountOptions_2[index]["label_1"],
-                      iconAsset: option.userAccountOptions_2[index]
+                      label_1: OptionButton.userAccountOptions_2[index]["label_1"],
+                      iconAsset: OptionButton.userAccountOptions_2[index]
                           ["iconAsset"],
                     ),
                     child_2: IconNavigation(
-                      Navigation: option.userAccountOptions_2[index]
+                      Navigation: OptionButton.userAccountOptions_2[index]
                           ["Navigation"],
                     ),
                   );

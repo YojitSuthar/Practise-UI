@@ -27,10 +27,10 @@ class UserProfile extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 pinned: true,
-                leading: BackIconButton(topPadding: 2,),
+                leading: BackIconButton(topPadding: 5,),
                 backgroundColor: ColorManager.whiteColor,
                 expandedHeight: 10.h,
-                title:  Text("User profile ",style: TextStyle(color: ColorManager.blackColor),),
+                title:  Text("User profile ",style: TextStyle(color: ColorManager.blackColor,fontSize: 18.sp),),
               ),
               SliverToBoxAdapter(
                 child: Padding(
@@ -89,6 +89,7 @@ class UserProfile extends StatelessWidget {
                     Label(
                         label: "Name",
                         child: UserTextField(
+                          fieldLength: 15,
                           keyboardType: TextInputType.name,
                           label: "Name",
                         )),
@@ -106,14 +107,15 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            width: 205.w,
+                            width: 210.w,
                             margin: const EdgeInsets.only(right: 33, top: 15).r,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: RadioButtonList().data.length,
+                              itemCount: RadioButtonList.data.length,
                               itemBuilder: (BuildContext context, index) {
                                 return CustoumRadioButton(
-                                  label: RadioButtonList().data[index],
+                                  width:  RadioButtonList.data[index]["width"],
+                                  label: RadioButtonList.data[index]["label"],
                                   index: index + 20,
                                 );
                               },
@@ -125,12 +127,14 @@ class UserProfile extends StatelessWidget {
                     Label(
                         label: "Age",
                         child: UserTextField(
+                          fieldLength: 2,
                           keyboardType: TextInputType.number,
                           label: "Age",
                         )),
                     Label(
                         label: "Email",
                         child: UserTextField(
+                          fieldLength: 25,
                           keyboardType: TextInputType.emailAddress,
                           label: "Email",
                         )),
@@ -205,6 +209,7 @@ class UserProfile extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class Label extends StatelessWidget {
   Label({super.key, required this.label, required this.child});
 

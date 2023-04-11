@@ -1,5 +1,6 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../resources/resources.dart';
 
 class UserTextField extends StatelessWidget {
@@ -8,19 +9,24 @@ class UserTextField extends StatelessWidget {
   UserTextField({
     super.key,
     required this.label,
-    required this.keyboardType
+    required this.keyboardType,
+    required this.fieldLength
   });
   String label;
   TextInputType keyboardType;
+  int fieldLength;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
-      width: 270,
+      height: 35.h,
+      width: 235.w,
       child: TextFormField(
+        inputFormatters: [
+           LengthLimitingTextInputFormatter(fieldLength),
+        ],
         keyboardType: keyboardType,
         controller: null,
-        cursorHeight: 20,
+        cursorHeight: 25,
         cursorRadius: const Radius.circular(10).w,
         cursorColor: ColorManager.blackColor,
         decoration: InputDecoration(

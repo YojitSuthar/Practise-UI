@@ -17,7 +17,7 @@ class HomeScreenPersistentHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) =>false;
 
   @override
   double get maxExtent => 430.0.h;

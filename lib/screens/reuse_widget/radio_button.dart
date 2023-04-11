@@ -8,10 +8,12 @@ class CustoumRadioButton extends StatelessWidget {
     super.key,
     required this.label,
     required this.index,
+    required this.width,
   });
 
   String label;
   int index;
+  double width;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +28,8 @@ class CustoumRadioButton extends StatelessWidget {
           }
         },
         child: Container(
-          width: 80.w,
-          margin: const EdgeInsets.only(right: 15).r,
+          width: width.w,
+          margin: const EdgeInsets.only(right: 14).r,
           decoration: BoxDecoration(
               border: Border.all(
                   color: value.data.contains(index)

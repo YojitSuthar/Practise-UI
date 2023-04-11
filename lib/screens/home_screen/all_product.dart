@@ -12,12 +12,11 @@ class AllProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ProductData>(builder: (context,value,child){
       return GridView.builder(
-        padding: const EdgeInsets.all(14).w,
         itemCount: value.productData.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 0,
-          crossAxisSpacing: 20,
+          crossAxisSpacing: 40,
           childAspectRatio: 0.55,
         ),
         itemBuilder: (BuildContext context, int index) {
@@ -30,7 +29,7 @@ class AllProduct extends StatelessWidget {
                   Get.to(ProductDetailsView(imageIndex: index,));
                 },
                 child: Container(
-                  height: 170.h,
+                  height: 160.h,
                   width: 145.w,
                   margin: const EdgeInsets.only(bottom: 10).r,
                   decoration: BoxDecoration(
