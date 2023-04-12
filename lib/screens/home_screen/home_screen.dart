@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
   bool icon = true;
 
   final List  _pages = [
-    const HomeScreen(),
+    HomeScreen(),
     const ShoppingCart(),
     const WishList(),
     UserAccount(),
@@ -83,15 +83,17 @@ class MainScreen extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
+   HomeScreen({
     super.key,
   });
+
+  TextEditingController searchCtrl=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(15.0).w,
+        padding: const EdgeInsets.only(top:15,right: 15.0,left: 15.0).w,
         child: NestedScrollView(
           headerSliverBuilder:
               (BuildContext context, bool innerBoxIsScrolled) {
@@ -159,7 +161,8 @@ class HomeScreen extends StatelessWidget {
                           IcnButton(
                               onPressed: () {
                                 debugPrint("search icon");
-                                Get.toNamed("/SearchProduct");
+                                Get.to(SearchProduct(searchText: searchCtrl.text.trim(),));
+                                searchCtrl.text="";
                               },
                               iconSize: 0,
                               child: SizedBox(
@@ -170,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                               )),
                           Expanded(
                             child: TextFormField(
-                              controller: null,
+                              controller: searchCtrl,
                               cursorHeight: 24,
                               cursorRadius: const Radius.circular(10).w,
                               cursorColor: ColorManager.blackColor,

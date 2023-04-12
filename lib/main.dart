@@ -30,7 +30,8 @@ class Myapp extends StatelessWidget {
               ChangeNotifierProvider(create: (context) => RangeSlide()),
               ChangeNotifierProvider(create: (context) => Toggle()),
               ChangeNotifierProvider(create: (context) => PageIndex()),
-              ChangeNotifierProvider(create: (context) => ProductData())
+              ChangeNotifierProvider(create: (context) => ProductData()),
+              ChangeNotifierProvider(create: (context) => SearchProductData())
             ],
             child: Consumer<ThemeChange>(
               builder: (context, value, child) {

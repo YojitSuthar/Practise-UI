@@ -4,7 +4,7 @@ import 'package:ecommerce/screens/screens.dart';
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),
   GetPage(name: "/ProductDetailsView", page: () =>  ProductDetailsView()),
-  GetPage(name: "/SearchProduct", page: () =>  const SearchProduct()),
+  GetPage(name: "/SearchProduct", page: () =>   SearchProduct()),
   GetPage(
       name: "/GetStartPage",
       page: () => const OnBordingScreen(),

@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'provider/page_index.dart';
 
 class ProductDetailsView extends StatelessWidget {
-  ProductDetailsView({Key? key, this.imageIndex}) : super(key: key);
-  int ?imageIndex;
+  ProductDetailsView({Key? key, this.id}) : super(key: key);
+  int ?id;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ProductDetailsView extends StatelessWidget {
                      debugPrint("Navigate image");
                    },
                    child: CarouselSlider.builder(
-                        itemCount:  ProductCategory.apiData[imageIndex!]["images"].length,
+                        itemCount:  ProductCategory.apiData[id!]["images"].length,
                         options: CarouselOptions(
                             onPageChanged: (index, reason) {
                               activeIndex.changeIndex(index);
@@ -35,7 +35,7 @@ class ProductDetailsView extends StatelessWidget {
                             enableInfiniteScroll: false),
                         itemBuilder: (BuildContext context, index, pageIndex) {
                           return Image.network(
-                              ProductCategory.apiData[imageIndex!]["images"][index],
+                              ProductCategory.apiData[id!]["images"][index],
                               fit: BoxFit.cover);
                         }),
                  ),
@@ -73,7 +73,7 @@ class ProductDetailsView extends StatelessWidget {
                                 builder: (context, value, child) {
                               return AnimatedSmoothIndicator(
                                 activeIndex: value.pageIndex,
-                                count: ProductCategory.apiData[imageIndex!]["images"].length,
+                                count: ProductCategory.apiData[id!]["images"].length,
                                 effect: ExpandingDotsEffect(
                                     dotHeight: 7.h,
                                     dotWidth: 8.w,
@@ -108,12 +108,12 @@ class ProductDetailsView extends StatelessWidget {
                         children: [
                           DesignText(
                               padding: 0,
-                              text: ProductCategory.apiData[imageIndex!]["title"],
+                              text: ProductCategory.apiData[id!]["title"],
                               fontSize: 15,
                               color: ColorManager.blackColor),
                           DesignText(
                               padding: 0,
-                              text: ProductCategory.apiData[imageIndex!]["brand"],
+                              text: ProductCategory.apiData[id!]["brand"],
                               fontSize: 12,
                               color: ColorManager.greyColor
                           ),
@@ -198,7 +198,7 @@ class ProductDetailsView extends StatelessWidget {
                       fontSize: 17,
                       color: ColorManager.blackColor),
                   Text(
-                    ProductCategory.apiData[imageIndex!]["description"],
+                    ProductCategory.apiData[id!]["description"],
                     style: TextStyle(
                         fontSize: 15, color: ColorManager.darkGreyColor),
                   ),

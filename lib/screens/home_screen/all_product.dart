@@ -27,7 +27,7 @@ class AllProduct extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   debugPrint("Product Category");
-                  Get.to(ProductDetailsView(imageIndex: index,));
+                  Get.to(ProductDetailsView(id: index,));
                 },
                 child: Container(
                   height: 160.h,
