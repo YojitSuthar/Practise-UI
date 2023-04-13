@@ -1,3 +1,5 @@
+import 'package:ecommerce/models/product_model/productdata_model.dart';
+import 'package:ecommerce/screens/screens.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import '../../resources/resources.dart';
 import '../../resources/import_resources.dart';
@@ -6,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'provider/page_index.dart';
 
 class ProductDetailsView extends StatelessWidget {
-  ProductDetailsView({Key? key, this.id}) : super(key: key);
-  int ?id;
+  ProductDetailsView({Key? key,required this.index,required this.model}) : super(key: key);
+  int index;
+  List<Product>model;
+  int pageIndex=0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +27,25 @@ class ProductDetailsView extends StatelessWidget {
                  GestureDetector(
                    onDoubleTap: (){
                      debugPrint("Navigate image");
+                     Get.to(ProductView(images: model[index].images!,));
                    },
-                   child: CarouselSlider.builder(
-                        itemCount:  ProductCategory.apiData[id!]["images"].length,
-                        options: CarouselOptions(
-                            onPageChanged: (index, reason) {
-                              activeIndex.changeIndex(index);
-                            },
-                            height: 320.h,
-                            viewportFraction: 1,
-                            enableInfiniteScroll: false),
-                        itemBuilder: (BuildContext context, index, pageIndex) {
-                          return Image.network(
-                              ProductCategory.apiData[id!]["images"][index],
-                              fit: BoxFit.cover);
-                        }),
+                   child: Hero(
+                     tag: "image",
+                     child: CarouselSlider.builder(
+                          itemCount: model[index].images!.length ,
+                          options: CarouselOptions(
+                              onPageChanged: (index, reason) {
+                                pageIndex=activeIndex.changeIndex(index,pageIndex);
+                              },
+                              height: 320.h,
+                              viewportFraction: 1,
+                              enableInfiniteScroll: false),
+                          itemBuilder: (BuildContext context, _, pageIndex) {
+                            return Image.network(
+                                model[index].images![_],
+                                fit: BoxFit.cover);
+                          }),
+                   ),
                  ),
 
                 SizedBox(
@@ -72,8 +80,8 @@ class ProductDetailsView extends StatelessWidget {
                             Consumer<PageIndex>(
                                 builder: (context, value, child) {
                               return AnimatedSmoothIndicator(
-                                activeIndex: value.pageIndex,
-                                count: ProductCategory.apiData[id!]["images"].length,
+                                activeIndex: pageIndex,
+                                count:  model[index].images!.length,
                                 effect: ExpandingDotsEffect(
                                     dotHeight: 7.h,
                                     dotWidth: 8.w,
@@ -108,12 +116,12 @@ class ProductDetailsView extends StatelessWidget {
                         children: [
                           DesignText(
                               padding: 0,
-                              text: ProductCategory.apiData[id!]["title"],
+                              text: model[index].title.toString(),
                               fontSize: 15,
                               color: ColorManager.blackColor),
                           DesignText(
                               padding: 0,
-                              text: ProductCategory.apiData[id!]["brand"],
+                              text: model[index].brand.toString(),
                               fontSize: 12,
                               color: ColorManager.greyColor
                           ),
@@ -198,7 +206,7 @@ class ProductDetailsView extends StatelessWidget {
                       fontSize: 17,
                       color: ColorManager.blackColor),
                   Text(
-                    ProductCategory.apiData[id!]["description"],
+                    model[index].description.toString(),
                     style: TextStyle(
                         fontSize: 15, color: ColorManager.darkGreyColor),
                   ),

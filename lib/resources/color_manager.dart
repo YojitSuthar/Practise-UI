@@ -4,6 +4,7 @@ class RGBColorManager{
   static Color rgbWhiteColor=const Color.fromRGBO(241, 242, 245, 1);
   static Color rgbBlackColor=const Color.fromRGBO(17, 17, 17, 1);
   static Color rgbNeonColor=const Color.fromRGBO(189, 247, 50, 1);
+  static Color rgbRedColor=const Color.fromRGBO(255, 61, 65, 1);
 }
 
 class ColorManager{

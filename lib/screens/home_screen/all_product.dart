@@ -27,14 +27,14 @@ class AllProduct extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   debugPrint("Product Category");
-                  Get.to(ProductDetailsView(id: index,));
+                  Get.to(ProductDetailsView(index: index,model: value.productData,));
                 },
                 child: Container(
                   height: 160.h,
                   width: 145.w,
                   margin: const EdgeInsets.only(bottom: 10).r,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage(value.productData[index]["thumbnail"]),fit: BoxFit.cover),
+                    image: DecorationImage(image: NetworkImage(value.productData[index].thumbnail.toString()),fit: BoxFit.cover),
                       color: ColorManager.greyOpacityColor,
                       borderRadius: BorderRadius.circular(20).w),
                   child: Row(
@@ -49,12 +49,12 @@ class AllProduct extends StatelessWidget {
                 ),
               ),
               Text(
-                value.productData[index]["title"],
+                value.productData[index].title.toString(),
                 style: const TextStyle(
                     fontFamily: "Varela", fontWeight: FontWeightManager.semiBold),
               ),
-               Text(value.productData[index]["brand"].toString()),
-              Text("₹${value.productData[index]["price"].toString()}"),
+               Text(value.productData[index].brand.toString()),
+              Text("₹${value.productData[index].price.toString()}"),
             ],
           );
         },

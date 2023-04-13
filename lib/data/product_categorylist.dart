@@ -38,7 +38,4 @@ class ProductCategory {
     "XXL",
   ];
 
-   static List<dynamic> apiData=[];
-   static List<dynamic> searchApiData=[];
-
 }

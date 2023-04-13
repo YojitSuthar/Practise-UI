@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/resources/resources.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +18,9 @@ class _AnimatedIconButtonState extends State<AnimatedIconButton>
   void initState() {
     iconController = AnimationController(
         vsync: this,
-        duration: const Duration(milliseconds: 225),
+        duration: const Duration(milliseconds: 200),
         value: 1.0,
-        upperBound: 1.4,
+        upperBound: 1.15,
         lowerBound: 1.0);
     super.initState();
   }
@@ -45,13 +44,13 @@ class _AnimatedIconButtonState extends State<AnimatedIconButton>
           width: 50,
           height: 50,
           decoration: BoxDecoration(
-            color: colorRed?ColorManager.whiteColor:ColorManager.pinkColor,
+            color: colorRed?ColorManager.whiteColor:RGBColorManager.rgbRedColor,
             borderRadius: BorderRadius.circular(50),
           ),
           child: ScaleTransition(
               scale: iconController,
               child: colorRed
-                  ?  Icon(Icons.favorite, size: 25,color: ColorManager.pinkColor,)
+                  ?  Icon(Icons.favorite, size: 25,color: RGBColorManager.rgbRedColor,)
                   :  Icon(
                 Icons.favorite,
                 size: 25,

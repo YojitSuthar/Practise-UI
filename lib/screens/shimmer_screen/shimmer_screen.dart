@@ -8,9 +8,8 @@ class LoadingListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0).r,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
