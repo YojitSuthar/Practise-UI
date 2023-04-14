@@ -1,5 +1,7 @@
 // This class Contain the list of category,sorted by and cloth Size(if you want to add new data you can easily add with out any writing more code)
 
+import '../resources/resources.dart';
+
 class ProductCategory {
   static final List category = [
     "smartphones",
@@ -36,6 +38,14 @@ class ProductCategory {
     "L",
     "XL",
     "XXL",
+  ];
+
+  static final List<String> images = [
+    ProjectNetworkImage.randomImage1,
+    ProjectNetworkImage.randomImage2,
+    ProjectNetworkImage.randomImage3,
+    ProjectNetworkImage.randomImage4,
+    ProjectNetworkImage.randomImage5,
   ];
 
 }

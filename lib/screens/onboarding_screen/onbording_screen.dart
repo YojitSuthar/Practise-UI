@@ -14,7 +14,6 @@ class OnBordingScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             Container(
               height: 350.h,
               width: double.infinity,

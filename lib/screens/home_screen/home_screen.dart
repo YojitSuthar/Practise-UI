@@ -5,7 +5,7 @@ import '../../resources/resources.dart';
 import 'package:ecommerce/resources/import_resources.dart';
 import 'all_product.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
-import '../../data/data.dart';
+import '../../listdata/data.dart';
 import 'provider/bottum_navigation/bottum_navigation.dart';
 import 'package:ecommerce/screens/screens.dart';
 
@@ -16,10 +16,10 @@ class MainScreen extends StatelessWidget {
 
   bool icon = true;
 
-  final List  _pages = [
+  final List _pages = [
     HomeScreen(),
     const ShoppingCart(),
-    const WishList(),
+    WishListScreen(),
     UserAccount(),
   ];
 
@@ -83,127 +83,92 @@ class MainScreen extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({
+  HomeScreen({
     super.key,
   });
 
-  TextEditingController searchCtrl=TextEditingController();
+  TextEditingController searchCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final searchData=Provider.of<SearchProductData>(context,listen: false);
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top:15,right: 15.0,left: 15.0).w,
+        padding: const EdgeInsets.only(top: 15, right: 15.0, left: 15.0).w,
         child: NestedScrollView(
-          headerSliverBuilder:
-              (BuildContext context, bool innerBoxIsScrolled) {
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
                 backgroundColor: ColorManager.whiteColor,
                 expandedHeight: 145.h,
                 flexibleSpace: FlexibleSpaceBar(
                     background: Container(
-                      margin: const EdgeInsets.only(top: 45),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IcnButton(
-                                  onPressed: () {
-                                    debugPrint("dashBoard");
-                                  },
-                                  iconSize: 45,
-                                  child: Image.asset(IconsAssets.dashboardLogo)),
-                              IcnButton(
-                                  iconSize: 45,
-                                  onPressed: () {
-                                    debugPrint("User Profile");
-                                    Get.toNamed("/UserProfile");
-                                  },
-                                  child: CrcleAvatar(
-                                    color: RGBColorManager.rgbWhiteColor,
-                                    radius: 45,
-                                    child: Image.asset(IconsAssets.userLogo),
-                                  )),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20).r,
-                            child: RichTxt(
-                                text_1: "Welcome\n",
-                                text_2: "Our Fashions App",
-                                textSize_1: 30,
-                                textSize_2: 25),
-                          ),
-                        ],
-                      ),
-                    )),
-              ),
-            ];
-          }, body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20).r,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 280.0.w,
-                      height: 45.0.h,
-                      decoration: BoxDecoration(
-                          color: RGBColorManager.rgbWhiteColor,
-                          borderRadius: BorderRadius.circular(20.w)),
-                      child: Row(
+                  margin: const EdgeInsets.only(top: 45),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IcnButton(
                               onPressed: () {
-                                debugPrint("search icon");
-                                Get.to(SearchProduct(searchText: searchCtrl.text.trim(),));
-                                searchCtrl.text="";
+                                debugPrint("dashBoard");
+                                Get.toNamed("/Categories");
                               },
-                              iconSize: 0,
-                              child: SizedBox(
-                                height: 25,
-                                child: Image.asset(
-                                  IconsAssets.searchLogo,
-                                ),
+                              iconSize: 45,
+                              child: Image.asset(IconsAssets.dashboardLogo)),
+                          IcnButton(
+                              iconSize: 45,
+                              onPressed: () {
+                                debugPrint("User Profile");
+                                Get.toNamed("/UserProfile");
+                              },
+                              child: CrcleAvatar(
+                                color: RGBColorManager.rgbWhiteColor,
+                                radius: 45,
+                                child: Image.asset(IconsAssets.userLogo),
                               )),
-                          Expanded(
-                            child: TextFormField(
-                              controller: searchCtrl,
-                              cursorHeight: 24,
-                              cursorRadius: const Radius.circular(10).w,
-                              cursorColor: ColorManager.blackColor,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                contentPadding:
-                                const EdgeInsets.only(left: 11).r,
-                                hintText: "Search",
-                                // border: OutlineInputBorder(),
-                              ),
-                            ),
-                          )
                         ],
                       ),
-                    ),
-                    IcnButton(
-                        iconSize: 0,
-                        onPressed: () {
-                          Get.toNamed("/FilterScreen");
-                        },
-                        child: CrcleAvatar(
-                          radius: 23,
-                          color: ColorManager.blackColor,
-                          child: Image.asset(
-                            IconsAssets.filterLogo,
-                          ),
-                        ))
-                  ],
-                ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20).r,
+                        child: RichTxt(
+                            text_1: "Welcome\n",
+                            text_2: "Our Fashions App",
+                            textSize_1: 30,
+                            textSize_2: 25),
+                      ),
+                    ],
+                  ),
+                )),
               ),
+            ];
+          },
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SearchWidget(
+                  textCtrl: searchCtrl,
+                  onPressed: () {
+                    debugPrint("search icon");
+                    Get.to(SearchProduct(
+                      searchText: searchCtrl.text.trim(),
+                    ));
+                    searchCtrl.text = "";
+                    searchData.loading=true;
+                  },
+                  child: IcnButton(
+                      iconSize: 0,
+                      onPressed: () {
+                        Get.toNamed("/FilterScreen");
+                      },
+                      child: CrcleAvatar(
+                        radius: 23,
+                        color: ColorManager.blackColor,
+                        child: Image.asset(
+                          IconsAssets.filterLogo,
+                        ),
+                      ))),
               DesignText(
                   padding: 8,
                   fontSize: 20,
@@ -244,8 +209,10 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: Consumer<ProductData>(builder: (context,value,child){
-                  return value.loading ?const LoadingListPage():const AllProduct();
+                child: Consumer<ProductData>(builder: (context, value, child) {
+                  return value.loading
+                      ? const LoadingListPage()
+                      : const AllProduct();
                 }),
               )
             ],
@@ -255,3 +222,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+

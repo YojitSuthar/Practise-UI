@@ -1,9 +1,15 @@
 import '../../resources/import_resources.dart';
 import 'package:ecommerce/screens/screens.dart';
 
+
+
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),
   GetPage(name: "/SearchProduct", page: () =>   SearchProduct()),
+  GetPage(name: "/ProfileWishListScreen", page: () =>   ProfileWishListScreen()),
+  GetPage(name: "/SelectLanguage", page: () =>    SelectLanguage()),
+  GetPage(name: "/ProfileShoppingCart", page: () =>    const ProfileShoppingCart()),
+  GetPage(name: "/PaymentScreen", page: () =>    PaymentScreen()),
   GetPage(
       name: "/GetStartPage",
       page: () => const OnBordingScreen(),
@@ -14,6 +20,11 @@ final List<GetPage<dynamic>> routes = [
       page: () => LoginScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 450)),
+  GetPage(
+      name: "/Categories",
+      page: () => Categories(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250)),
   GetPage(
       name: "/SignUp",
       page: () => SignUpScreen(),

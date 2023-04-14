@@ -10,3 +10,6 @@ export 'rich_text.dart';
 export 'signin_option.dart';
 export 'snack_bar.dart';
 export 'text_design.dart';
+export 'search_widget.dart';
+export 'plus_minus.dart';
+export 'cart.dart';

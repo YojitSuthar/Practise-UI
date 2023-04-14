@@ -10,6 +10,7 @@ class AnimationAssets {
 
 class ProjectImage {
   static const String companyLogo = "$IMAGES_PATH/comapny_logo.jpg";
+  static const String cardLogo = "$IMAGES_PATH/visa.png";
 }
 
 class IconsAssets {
@@ -49,4 +50,22 @@ class IconsAssets {
   static const String applyLogo = "$ICONS_PATH/apply.png";
   static const String addLogo = "$ICONS_PATH/add.png";
   static const String minusLogo = "$ICONS_PATH/minus.png";
+  static const String bellLogo = "$ICONS_PATH/bell.png";
+  static const String barcodeLogo = "$ICONS_PATH/barcode-scanner.png";
+  static const String clothLogo = "$ICONS_PATH/clothing.png";
+  static const String cosmeticsLogo = "$ICONS_PATH/cosmetics.png";
+  static const String dishLogo = "$ICONS_PATH/dish.png";
+  static const String phoneLogo = "$ICONS_PATH/phone.png";
+  static const String sneakersLogo = "$ICONS_PATH/sneakers.png";
+  static const String rightArrowWhiteLogo = "$ICONS_PATH/right.png";
 }
+
+
+class ProjectNetworkImage {
+  static const String randomImage1 =  "https://c4.wallpaperflare.com/wallpaper/352/283/823/hexagon-minimalism-geometry-simple-background-wallpaper-preview.jpg";
+  static const String randomImage2 =  "https://c4.wallpaperflare.com/wallpaper/227/441/94/firewatch-video-game-art-minimalism-simple-hd-wallpaper-preview.jpg";
+  static const String randomImage3 =  "https://c4.wallpaperflare.com/wallpaper/249/818/363/minimalism-simple-black-background-wallpaper-preview.jpg";
+  static const String randomImage4 =  "https://c4.wallpaperflare.com/wallpaper/294/834/442/reactjs-facebook-javascript-minimalism-wallpaper-preview.jpg";
+  static const String randomImage5 =  "https://c4.wallpaperflare.com/wallpaper/106/962/482/death-note-lawliet-l-black-background-simple-wallpaper-preview.jpg";
+}
+

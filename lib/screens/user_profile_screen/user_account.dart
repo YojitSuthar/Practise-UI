@@ -3,11 +3,10 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import '../../resources/resources.dart';
-import '../../data/data.dart';
+import '../../listdata/data.dart';
 
 class UserAccount extends StatelessWidget {
   UserAccount({Key? key}) : super(key: key);
-  OptionButton option = OptionButton();
 
   @override
   Widget build(BuildContext context) {

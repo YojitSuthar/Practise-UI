@@ -11,12 +11,12 @@ class OptionButton {
     {
       "label_1": "My order",
       "iconAsset": IconsAssets.shoppingBagLogo,
-      "Navigation": "null"
+      "Navigation": "ProfileShoppingCart"
     },
     {
       "label_1": "My Favorites",
       "iconAsset": IconsAssets.wishListLogo,
-      "Navigation": "none"
+      "Navigation": "/ProfileWishListScreen"
     },
     {
       "label_1": "Shipping address",
@@ -26,7 +26,7 @@ class OptionButton {
     {
       "label_1": "My Card",
       "iconAsset": IconsAssets.cardLogo,
-      "Navigation": "none"
+      "Navigation": "/PaymentScreen"
     },
     {
       "label_1": "Setting",

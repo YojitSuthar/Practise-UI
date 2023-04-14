@@ -70,17 +70,28 @@ class _SearchProductState extends State<SearchProduct> {
                               debugPrint("search screen");
                               Get.to(ProductDetailsView(index: index,model: value.searchProductData,));
                             },
-                            child: Card(
-                              color: ColorManager.whiteColor,
-                              elevation: 4,
+                            child: Container(
+                              margin: const EdgeInsets.only(top: 10).r,
+                              padding: const EdgeInsets.only(left: 7).r,
+                              decoration: BoxDecoration(
+                                  color: RGBColorManager.rgbWhiteColor,
+                                borderRadius: BorderRadius.circular(17).w
+                              ),
                               child: Row(children: [
-                                Container(
-                                  width: 100.w,
-                                  height: double.infinity,
-                                  color: ColorManager.pinkColor,
-                                  child: Image.network(
-                                      value.searchProductData[index].thumbnail!,
-                                      fit: BoxFit.cover),
+                                Padding(
+                                  padding: const EdgeInsets.all(8).w,
+                                  child: Container(
+                                    width: 90.w,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: NetworkImage( value.searchProductData[index].thumbnail!,)
+                                      ),
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(20).w
+                                    ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(5).w,

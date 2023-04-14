@@ -1,5 +1,3 @@
-
-
 class StringManager{
   static const String companyName = "Academia Products";
   static const String companySlogan = "A Platform You can get yours Favourite";
@@ -19,7 +17,17 @@ class StringManager{
   static const String yesAccount=  "Account already exist";
   static const String invalidCredentials =  "Invalid credentials";
   static const String emailSent =  "Mail sent Successfully";
+  static const String wishList =  "Wishlist";
+  static const String addToCart =  "Add to Cart";
   static const String error =  "Error";
+  static const String categories =  "Categories";
+  static const String countryRegion =  "Country or Region";
+}
+
+class StaticProductString{
+  static const String name =  "Roller Rabit";
+  static const String detail =  "Vado odelle dress";
+  static const String price =  "\$198";
 
 }
 

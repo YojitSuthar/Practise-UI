@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/product_categorylist.dart';
+import '../../listdata/product_categorylist.dart';
 import '../../resources/import_resources.dart';
 import '../../resources/resources.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
@@ -12,7 +12,6 @@ class FilterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final slider = Provider.of<RangeSlide>(context, listen: false);
     return Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(15.0),

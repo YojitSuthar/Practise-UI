@@ -16,6 +16,7 @@ class CrcleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
+
       radius: radius,
       backgroundColor: color,
       child: Container(

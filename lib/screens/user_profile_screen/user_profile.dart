@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../provider/theme_mode.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import '../../resources/resources.dart';
-import '../../data/data.dart';
+import '../../listdata/data.dart';
 import '../../user_preferences/user_preferences.dart';
 
 class UserProfile extends StatelessWidget {
@@ -14,7 +14,7 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkTheme = Provider.of<ThemeChange>(context, listen: false);
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
         if (!currentFocus.hasPrimaryFocus) {
           currentFocus.unfocus();
@@ -22,15 +22,21 @@ class UserProfile extends StatelessWidget {
       },
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(8.0).w,
+          padding: const EdgeInsets.only(top: 8,left: 8,right: 8).w,
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
                 pinned: true,
-                leading: BackIconButton(topPadding: 5,),
+                leading: BackIconButton(
+                  topPadding: 5,
+                ),
                 backgroundColor: ColorManager.whiteColor,
                 expandedHeight: 10.h,
-                title:  Text("User profile ",style: TextStyle(color: ColorManager.blackColor,fontSize: 18.sp),),
+                title: Text(
+                  "User profile ",
+                  style: TextStyle(
+                      color: ColorManager.blackColor, fontSize: 18.sp),
+                ),
               ),
               SliverToBoxAdapter(
                 child: Padding(
@@ -47,7 +53,8 @@ class UserProfile extends StatelessWidget {
                             height: 70.h,
                             width: 80.w,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(const Radius.circular(16).w),
+                                borderRadius: BorderRadius.all(
+                                    const Radius.circular(16).w),
                                 color: ColorManager.pinkColor,
                                 image: const DecorationImage(
                                     fit: BoxFit.fill,
@@ -62,8 +69,8 @@ class UserProfile extends StatelessWidget {
                                     debugPrint("Tap");
                                   },
                                   child: Container(
-                                      margin:
-                                      const EdgeInsets.only(right: 5, bottom: 5)
+                                      margin: const EdgeInsets.only(
+                                              right: 5, bottom: 5)
                                           .r,
                                       padding: const EdgeInsets.all(5).w,
                                       decoration: BoxDecoration(
@@ -102,8 +109,8 @@ class UserProfile extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 15),
                             child: Text(
                               "Gender",
-                              style:
-                              fontSizeColorTextStyle(18, ColorManager.greyColor),
+                              style: fontSizeColorTextStyle(
+                                  18, ColorManager.greyColor),
                             ),
                           ),
                           Container(
@@ -114,7 +121,7 @@ class UserProfile extends StatelessWidget {
                               itemCount: RadioButtonList.data.length,
                               itemBuilder: (BuildContext context, index) {
                                 return CustoumRadioButton(
-                                  width:  RadioButtonList.data[index]["width"],
+                                  width: RadioButtonList.data[index]["width"],
                                   label: RadioButtonList.data[index]["label"],
                                   index: index + 20,
                                 );
@@ -152,6 +159,9 @@ class UserProfile extends StatelessWidget {
                         children: [
                           BoxDesign(
                               child_1: DesignLabel(
+                                onTap: (){
+                                  Get.toNamed("/SelectLanguage");
+                                },
                                 sizeBoxWidth: 200,
                                 label_1: "Language",
                                 iconAsset: IconsAssets.languageLogo,
@@ -194,7 +204,56 @@ class UserProfile extends StatelessWidget {
                       buttonName: "Log out",
                       iconAsset: IconsAssets.logOutLogo,
                       onPressed: () {
-                        userPreferences.logOutsetData(context);
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Dialog(
+                                backgroundColor: ColorManager.whiteColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(const Radius.circular(20.0).w)),
+                                child: SizedBox(
+                                  height: 100.h,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Are you sure, you want to log out",
+                                        style: TextStyle(fontSize: 18.sp),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                fixedSize: Size(80.w, 20.h),
+                                                backgroundColor: ColorManager.blackColor,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(20).w)),
+                                            onPressed: () {
+                                              userPreferences
+                                                  .logOutsetData(context);
+                                            },
+                                            child: Text("Log out",style: TextStyle(fontSize: 14.sp),),
+                                          ),
+                                          ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  fixedSize: Size(70.w, 20.h),
+                                                  backgroundColor: ColorManager.blackColor,
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.circular(20).w)),
+                                              onPressed: () {
+                                                Get.back();
+                                              },
+                                              child: Text("Close",style: TextStyle(fontSize: 14.sp),),),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            });
                       },
                     )
                   ]),
@@ -202,8 +261,7 @@ class UserProfile extends StatelessWidget {
               )
             ],
           ),
-        )
-        ,
+        ),
       ),
     );
   }
