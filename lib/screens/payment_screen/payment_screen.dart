@@ -1,9 +1,7 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import 'package:flutter/material.dart';
-
 import '../../resources/resources.dart';
-import '../screens.dart';
 
 class PaymentScreen extends StatelessWidget {
   PaymentScreen({Key? key}) : super(key: key);
@@ -218,7 +216,7 @@ class PaymentScreen extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20).w)),
                             onPressed: () {
-                              Get.to(MainScreen());
+                              Get.offAllNamed("/HomePage");
                             },
                             child: Text(
                               "Continue Shopping",

@@ -17,9 +17,12 @@ class LoginScreen extends StatelessWidget {
 
   void logIn(BuildContext context) {
     final signIn = Provider.of<SignInValidation>(context, listen: false);
-    if (signIn.checkEmail && signIn.checkPass) {
+    if (signIn.checkEmail && signIn.checkPass)
+    {
       signin.signIN(context, textEmailCtrl, textPassCtrl);
-    } else {
+    }
+    else
+    {
       debugPrint("not sign in ");
     }
   }
