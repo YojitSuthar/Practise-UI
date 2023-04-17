@@ -11,3 +11,4 @@ export 'package:shared_preferences/shared_preferences.dart' ;
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'package:shimmer/shimmer.dart';
+export 'package:dotted_border/dotted_border.dart';

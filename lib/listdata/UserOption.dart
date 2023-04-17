@@ -24,9 +24,9 @@ class OptionButton {
       "Navigation": "none"
     },
     {
-      "label_1": "My Card",
-      "iconAsset": IconsAssets.cardLogo,
-      "Navigation": "/PaymentScreen"
+      "label_1": "Discount Offers",
+      "iconAsset": IconsAssets.couponsFilledLogo,
+      "Navigation": "none"
     },
     {
       "label_1": "Setting",

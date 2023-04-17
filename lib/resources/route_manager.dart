@@ -1,15 +1,13 @@
 import '../../resources/import_resources.dart';
 import 'package:ecommerce/screens/screens.dart';
 
-
-
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),
-  GetPage(name: "/SearchProduct", page: () =>   SearchProduct()),
-  GetPage(name: "/ProfileWishListScreen", page: () =>   ProfileWishListScreen()),
-  GetPage(name: "/SelectLanguage", page: () =>    SelectLanguage()),
-  GetPage(name: "/ProfileShoppingCart", page: () =>    const ProfileShoppingCart()),
-  GetPage(name: "/PaymentScreen", page: () =>    PaymentScreen()),
+  GetPage(name: "/SearchProduct", page: () => SearchProduct()),
+  GetPage(name: "/ProfileWishListScreen", page: () => ProfileWishListScreen()),
+  GetPage(name: "/SelectLanguage", page: () => SelectLanguage()),
+  GetPage(
+      name: "/ProfileShoppingCart", page: () => const ProfileShoppingCart()),
   GetPage(
       name: "/GetStartPage",
       page: () => const OnBordingScreen(),
@@ -26,6 +24,25 @@ final List<GetPage<dynamic>> routes = [
       transition: Transition.leftToRight,
       transitionDuration: const Duration(milliseconds: 250)),
   GetPage(
+      name: "/CartDelivery",
+      page: () => CartDelivery(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 250)),
+  GetPage(
+      name: "/TrackingProduct",
+      page: () => TrackingProduct(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 250)),
+  GetPage(
+    name: "/AddPaymentScreen",
+    page: () => AddPaymentScreen(),
+  ),
+  GetPage(
+      name: "/PaymentScreen",
+      page: () => PaymentScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 250)),
+  GetPage(
       name: "/SignUp",
       page: () => SignUpScreen(),
       transition: Transition.fade,
@@ -38,7 +55,7 @@ final List<GetPage<dynamic>> routes = [
   GetPage(name: "/UserProfile", page: () => UserProfile()),
   GetPage(
       name: "/ForgetPassword",
-      page: () =>  Forget(),
+      page: () => Forget(),
       transition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 450)),
   GetPage(

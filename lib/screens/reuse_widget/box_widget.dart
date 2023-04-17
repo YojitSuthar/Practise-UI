@@ -74,16 +74,17 @@ class BoxText extends StatelessWidget {
 class DesignLabel extends StatelessWidget {
   DesignLabel({
     super.key,
-    required this.iconAsset,
     required this.label_1,
     required this.sizeBoxWidth,
     this.onTap,
+    required this.child,
+
   });
 
-  final String iconAsset;
   final String label_1;
   double sizeBoxWidth;
   VoidCallback? onTap;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -93,17 +94,7 @@ class DesignLabel extends StatelessWidget {
         width: sizeBoxWidth.w,
         child: Row(
           children: [
-            Container(
-              height: 45.h,
-              width: 50.w,
-              margin: const EdgeInsets.only(right: 15, top: 10).r,
-              padding: const EdgeInsets.all(15).w,
-              decoration: BoxDecoration(
-                color: RGBColorManager.rgbWhiteColor,
-                borderRadius: BorderRadius.circular(10).w,
-              ),
-              child: Image.asset(iconAsset),
-            ),
+           child,
             Text(
               label_1,
               style: fontWeightSizeColorTextStyle(
@@ -112,6 +103,30 @@ class DesignLabel extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class WhiteContainer extends StatelessWidget {
+  const WhiteContainer({
+    super.key,
+    required this.iconAsset,
+  });
+
+  final String iconAsset;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 45.h,
+      width: 50.w,
+      // margin: const EdgeInsets.only(right: 15, top: 10).r,
+      padding: const EdgeInsets.all(15).w,
+      decoration: BoxDecoration(
+        color: RGBColorManager.rgbWhiteColor,
+        borderRadius: BorderRadius.circular(10).w,
+      ),
+      child: Image.asset(iconAsset),
     );
   }
 }

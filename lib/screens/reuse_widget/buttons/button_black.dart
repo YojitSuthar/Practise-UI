@@ -1,10 +1,11 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import '../../../resources/resources.dart';
+import '../reuse_widget.dart';
 
 // This are the different colour theme which we are using in whole project
-class BlackButton extends StatelessWidget {
-  BlackButton({
+class IconBlackButton extends StatelessWidget {
+  IconBlackButton({
     super.key,
     required this.buttonName,
     required this.onPressed,
@@ -40,6 +41,41 @@ class BlackButton extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+
+class BlackButton extends StatelessWidget {
+   BlackButton({
+    super.key,
+    required this.buttonName,
+    required this.onPressed,
+    required this.height,
+    required this.width,
+    required this.borderRadius,
+  });
+
+  final String buttonName;
+  final double height;
+  final double width;
+  final double borderRadius;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          fixedSize: Size(width.w, height.h),
+          backgroundColor: ColorManager.blackColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius).w)),
+      child: DesignText(
+          text: buttonName,
+          fontSize: 15,
+          color: ColorManager.whiteColor,
+          padding: 0),
     );
   }
 }

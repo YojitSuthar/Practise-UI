@@ -13,6 +13,8 @@ class Categories extends StatelessWidget {
     {"icon": IconsAssets.cosmeticsLogo, "label": "Cosmetics", "suffix": "skin"},
     {"icon": IconsAssets.sneakersLogo, "label": "Shoes", "suffix": "shoes"},
     {"icon": IconsAssets.phoneLogo, "label": "Phones", "suffix": "phone"},
+    {"icon": IconsAssets.womenLogo, "label": "Women's product", "suffix": "women"},
+    {"icon": IconsAssets.menLogo, "label": "Men's product", "suffix": "men"},
   ];
 
   void onTap(String suffix) {

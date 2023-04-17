@@ -1,6 +1,5 @@
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
-
 import '../../resources/resources.dart';
 import '../reuse_widget/reuse_widget.dart';
 import '../screens.dart';
@@ -43,7 +42,7 @@ class ProfileShoppingCart extends StatelessWidget {
         
         decoration:  BoxDecoration(
           color: ColorManager.whiteColor,
-          borderRadius: BorderRadius.only(topRight: Radius.circular(25),topLeft:Radius.circular(25), )
+          borderRadius: const BorderRadius.only(topRight: Radius.circular(25),topLeft:Radius.circular(25), )
         ),
         child: Column(
           children: [
@@ -63,7 +62,9 @@ class ProfileShoppingCart extends StatelessWidget {
               ],
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed("/CartDelivery");
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: Size(350.w, 50.h),
                     backgroundColor: ColorManager.blackColor,

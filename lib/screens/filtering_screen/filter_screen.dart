@@ -121,7 +121,7 @@ class FilterScreen extends StatelessWidget {
                   fontSize: 18,
                   text: "Ratting by",
                   color: ColorManager.blackColor),
-              BlackButton(
+              IconBlackButton(
                 iconAsset: IconsAssets.applyLogo,
                 buttonName: "Apply now",
                 onPressed: () {

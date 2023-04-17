@@ -22,10 +22,14 @@ class Forget extends StatelessWidget {
             children: [
                BackIconButton(topPadding: 30),
               const CompanyDesign(),
+              DesignText(text:  StringManager.email, fontSize: 12, color: ColorManager.blackColor, padding: 0),
               NormalTextField(
+                topMargin: 5,
+                borderRadius: 30,
+                height: 40,
                   textCtrl: textForgetPassCtrl,
                   hintText: StringManager.enterEmail,
-                  label: StringManager.email),
+                ),
               Container(
                 margin: const EdgeInsets.only(
                   top:45,

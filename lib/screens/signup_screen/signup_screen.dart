@@ -43,11 +43,14 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 BackIconButton(topPadding: 30),
                 const CompanyDesign(),
-                NormalTextField(
+                DesignText(text:  StringManager.userName, fontSize: 12, color: ColorManager.blackColor, padding: 0),
+                NormalTextField(height: 40,
+                    topMargin: 5,
+                    borderRadius: 30,
                     onChanged: validate.userNameSignUpValidate,
                     textCtrl: textUserNameCtrl,
                     hintText: StringManager.enterUserName,
-                    label: StringManager.userName),
+                    ),
                 Consumer<SignUpValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),
@@ -56,11 +59,15 @@ class SignUpScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.redColor),
                       ));
                 }),
+                DesignText(text:  StringManager.enterEmail, fontSize: 12, color: ColorManager.blackColor, padding: 0),
                 NormalTextField(
+                   topMargin: 5,
+                  borderRadius: 30,
+                  height: 40,
                   onChanged: validate.emailSignUpValidate,
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
-                    label: StringManager.email),
+                    ),
                 Consumer<SignUpValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),

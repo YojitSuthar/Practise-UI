@@ -153,7 +153,7 @@ class UserProfile extends StatelessWidget {
                               FontWeightManager.bold, 16, Colors.black),
                         )),
                     Box(
-                      height: 300,
+                      height: 220.h,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -164,7 +164,11 @@ class UserProfile extends StatelessWidget {
                                 },
                                 sizeBoxWidth: 200,
                                 label_1: "Language",
-                                iconAsset: IconsAssets.languageLogo,
+                                child:  const Padding(
+                                  padding: EdgeInsets.only(top: 10, right: 15),
+                                  child: WhiteContainer(
+                                      iconAsset: IconsAssets.languageLogo),
+                                ),
                               ),
                               child_2: const BoxText(
                                 label: "English",
@@ -173,7 +177,11 @@ class UserProfile extends StatelessWidget {
                               child_1: DesignLabel(
                                 sizeBoxWidth: 200,
                                 label_1: "Notification",
-                                iconAsset: IconsAssets.notificationLogo,
+                                child:  const Padding(
+                                  padding: EdgeInsets.only(top: 10, right: 15),
+                                  child: WhiteContainer(
+                                      iconAsset: IconsAssets.notificationLogo),
+                                ),
                               ),
                               child_2: SwitchButton(
                                 changed: false,
@@ -182,7 +190,11 @@ class UserProfile extends StatelessWidget {
                               child_1: DesignLabel(
                                 sizeBoxWidth: 200,
                                 label_1: "Dark Mode",
-                                iconAsset: IconsAssets.darkThemeLogo,
+                                child: const Padding(
+                                  padding: EdgeInsets.only(top: 10, right: 15),
+                                  child: WhiteContainer(
+                                      iconAsset: IconsAssets.darkThemeLogo),
+                                ),
                               ),
                               child_2: SwitchButton(
                                 changed: false,
@@ -192,7 +204,11 @@ class UserProfile extends StatelessWidget {
                               child_1: DesignLabel(
                                 sizeBoxWidth: 200,
                                 label_1: "Help Center",
-                                iconAsset: IconsAssets.helpCenterLogo,
+                                child:  const Padding(
+                                  padding: EdgeInsets.only(top: 10, right: 15),
+                                  child: WhiteContainer(
+                                      iconAsset: IconsAssets.helpCenterLogo),
+                                ),
                               ),
                               child_2: const BoxText(
                                 label: "?",
@@ -200,7 +216,7 @@ class UserProfile extends StatelessWidget {
                         ],
                       ),
                     ),
-                    BlackButton(
+                    IconBlackButton(
                       buttonName: "Log out",
                       iconAsset: IconsAssets.logOutLogo,
                       onPressed: () {

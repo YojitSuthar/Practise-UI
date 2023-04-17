@@ -13,3 +13,4 @@ export 'text_design.dart';
 export 'search_widget.dart';
 export 'plus_minus.dart';
 export 'cart.dart';
+export 'card_container.dart';

@@ -22,6 +22,10 @@ class StringManager{
   static const String error =  "Error";
   static const String categories =  "Categories";
   static const String countryRegion =  "Country or Region";
+  static const String deliveryAddress =  "Delivery Address";
+  static const String productItem =  "Product Item";
+  static const String promoCode =  "Add promo code";
+  static const String tracking =  "Tracking";
 }
 
 class StaticProductString{

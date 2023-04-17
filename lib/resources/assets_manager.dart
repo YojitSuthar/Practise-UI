@@ -58,6 +58,13 @@ class IconsAssets {
   static const String phoneLogo = "$ICONS_PATH/phone.png";
   static const String sneakersLogo = "$ICONS_PATH/sneakers.png";
   static const String rightArrowWhiteLogo = "$ICONS_PATH/right.png";
+  static const String couponsLogo = "$ICONS_PATH/discount.png";
+  static const String couponsFilledLogo = "$ICONS_PATH/discount-filled.png";
+  static const String cargoTruckLogo = "$ICONS_PATH/cargo-truck.png";
+  static const String addCircleLogo = "$ICONS_PATH/add-circle.png";
+  static const String payLogo = "$ICONS_PATH/credit-cards-payment.png";
+  static const String menLogo = "$ICONS_PATH/man.png";
+  static const String womenLogo = "$ICONS_PATH/woman.png";
 }
 
 

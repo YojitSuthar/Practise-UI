@@ -190,7 +190,7 @@ class ProductDetailsView extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: BlackButton(
+        child: IconBlackButton(
           iconAsset: IconsAssets.applyLogo,
           buttonName: "Add to Cart",
           onPressed: () {

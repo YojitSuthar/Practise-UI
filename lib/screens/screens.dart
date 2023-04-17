@@ -18,4 +18,7 @@ export '../screens/wishlist_screen/profile_wishlist_screen.dart';
 export '../screens/category_screen/category_screen.dart';
 export '../screens/language_screen/language.dart';
 export 'shopping_cart_screen/profile_shopping_cart.dart';
+export 'payment_screen/add_payment_screen.dart';
+export 'shopping_cart_screen/cart_delivery.dart';
+export 'shopping_cart_screen/tracking_screen.dart';
 export 'payment_screen/payment_screen.dart';

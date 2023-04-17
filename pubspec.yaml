@@ -20,6 +20,7 @@ dependencies:
   smooth_page_indicator: ^1.0.1
   http: ^0.13.5
   shimmer: ^2.0.0
+  dotted_border: ^2.0.0+3
 
 
 dev_dependencies:

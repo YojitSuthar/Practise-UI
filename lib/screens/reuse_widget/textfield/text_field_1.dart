@@ -5,39 +5,36 @@ import 'package:ecommerce/resources/import_resources.dart';
 // this is the text Field which are  using in login, Signup and Forget Password fields
 
 class NormalTextField extends StatelessWidget {
-  TextEditingController textCtrl;
-  String hintText;
-  String label;
+  final TextEditingController textCtrl;
+  final String hintText;
   final Function(String)? onChanged;
+  final double height;
+  final double borderRadius;
+  final double topMargin;
+
+
 
   NormalTextField(
       {super.key,
       required this.textCtrl,
+        required this.topMargin,
       required this.hintText,
-       this.onChanged,
-      required this.label});
-
-  bool obSure = false;
+      required this.height,
+      required this.borderRadius,
+       this.onChanged,});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: fontWeightColorTextStyle(
-              FontWeightManager.bold, ColorManager.black87Color),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 5).r,
-          decoration: BoxDecoration(
-              border: Border.all(color: ColorManager.greyOpacityColor),
-              borderRadius: BorderRadius.circular(30).w),
-          child: Row(
-            children: [
-              Expanded(
-                  child: TextFormField(
+    return Container(
+      height: height.h,
+      margin:  EdgeInsets.only(top: topMargin).r,
+      decoration: BoxDecoration(
+          border: Border.all(color: ColorManager.greyOpacityColor),
+          borderRadius: BorderRadius.circular(borderRadius).w),
+      child: Row(
+        children: [
+          Expanded(
+              child: TextFormField(
                 onChanged: (val) {
                   onChanged!(val);
                 },
@@ -50,10 +47,9 @@ class NormalTextField extends StatelessWidget {
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.only(left: 10).r),
               )),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
+

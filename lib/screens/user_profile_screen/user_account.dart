@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/resources/import_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
@@ -88,8 +87,12 @@ class UserAccount extends StatelessWidget {
                       },
                       sizeBoxWidth: 230,
                       label_1: OptionButton.userAccountOptions_1[index]["label_1"],
-                      iconAsset: OptionButton.userAccountOptions_1[index]
-                          ["iconAsset"],
+                      child:  Padding(
+                        padding: const EdgeInsets.only(top: 10, right: 15),
+                        child: WhiteContainer(
+                            iconAsset: OptionButton.userAccountOptions_1[index]
+                            ["iconAsset"]),
+                      ),
                     ),
                     child_2: IconNavigation(
                       Navigation: OptionButton.userAccountOptions_1[index]
@@ -108,13 +111,18 @@ class UserAccount extends StatelessWidget {
                   return BoxDesign(
                     child_1: DesignLabel(
                       onTap: () {
-                        Get.toNamed(
-                            OptionButton.userAccountOptions_2[index]["Navigation"]);
+                        Get.toNamed(OptionButton.userAccountOptions_2[index]
+                            ["Navigation"]);
                       },
                       sizeBoxWidth: 230,
-                      label_1: OptionButton.userAccountOptions_2[index]["label_1"],
-                      iconAsset: OptionButton.userAccountOptions_2[index]
-                          ["iconAsset"],
+                      label_1: OptionButton.userAccountOptions_2[index]
+                          ["label_1"],
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10, right: 15),
+                        child: WhiteContainer(
+                            iconAsset: OptionButton.userAccountOptions_2[index]
+                                ["iconAsset"]),
+                      ),
                     ),
                     child_2: IconNavigation(
                       Navigation: OptionButton.userAccountOptions_2[index]

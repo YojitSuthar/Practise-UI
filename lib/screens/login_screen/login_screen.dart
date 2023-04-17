@@ -44,11 +44,15 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CompanyDesign(),
+                DesignText(text:  StringManager.email, fontSize: 12, color: ColorManager.blackColor, padding: 0),
                 NormalTextField(
+                  topMargin: 5,
+                  borderRadius: 30,
+                  height: 40,
                     onChanged: validate.emailSignInValidate,
                     textCtrl: textEmailCtrl,
                     hintText: StringManager.enterEmail,
-                    label: StringManager.email),
+                   ),
                 Consumer<SignInValidation>(builder: (context, value, child) {
                   return Container(
                       margin: const EdgeInsets.only(left: 10),
