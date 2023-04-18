@@ -41,6 +41,9 @@ class SearchWidget extends StatelessWidget {
                     )),
                 Expanded(
                   child: TextFormField(
+                    onFieldSubmitted: (value) {
+                      onPressed();
+                    },
                     controller: textCtrl,
                     cursorHeight: 24,
                     cursorRadius: const Radius.circular(10).w,

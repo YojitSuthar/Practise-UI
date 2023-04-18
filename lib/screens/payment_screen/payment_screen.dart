@@ -2,6 +2,7 @@ import 'package:ecommerce/resources/import_resources.dart';
 import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import 'package:flutter/material.dart';
 import '../../resources/resources.dart';
+import '../home_screen/provider/bottum_navigation/bottum_navigation.dart';
 
 class PaymentScreen extends StatelessWidget {
   PaymentScreen({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class PaymentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigation = Provider.of<BottumNavigation>(context, listen: false);
     return Scaffold(
       body: SafeArea(
           child: Padding(
@@ -185,49 +187,56 @@ class PaymentScreen extends StatelessWidget {
           height: 50,
           onPressed: () {
             showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return Dialog(
-                    backgroundColor: ColorManager.whiteColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.all(const Radius.circular(20.0).w)),
-                    child: Container(
-                      padding: const EdgeInsets.all(15.0),
-                      height: 250.h,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CrcleAvatar(
-                              radius: 35,
-                              color: ColorManager.blackColor,
-                              child:
-                                  Image.asset(IconsAssets.payLogo)),
-                          DesignText(text: "Successful !", fontSize: 20, color: ColorManager.blackColor, padding: 0),
-                          Text(
-                            "You have successfully your confirm payment send!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 18.sp),
+              context: context,
+              builder: (BuildContext context) {
+                return Dialog(
+                  backgroundColor: ColorManager.whiteColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.all(const Radius.circular(20.0).w)),
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    height: 250.h,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CrcleAvatar(
+                            radius: 35,
+                            color: ColorManager.blackColor,
+                            child: Image.asset(IconsAssets.payLogo)),
+                        DesignText(
+                            text: "Successful !",
+                            fontSize: 20,
+                            color: ColorManager.blackColor,
+                            padding: 0),
+                        Text(
+                          "You have successfully your confirm payment send!",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 18.sp),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(175.w, 30.h),
+                              backgroundColor: ColorManager.blackColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20).w)),
+                          onPressed: () {
+                            navigation.selected = 0;
+                            navigation.contain.clear();
+                            navigation.add(0);
+                            Get.offAllNamed("/HomePage");
+                          },
+                          child: Text(
+                            "Continue Shopping",
+                            style: TextStyle(fontSize: 14.sp),
                           ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                fixedSize: Size(175.w, 30.h),
-                                backgroundColor: ColorManager.blackColor,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20).w)),
-                            onPressed: () {
-                              Get.offAllNamed("/HomePage");
-                            },
-                            child: Text(
-                              "Continue Shopping",
-                              style: TextStyle(fontSize: 14.sp),
-                            ),
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
-                  );
-                });
+                  ),
+                );
+              },
+            );
           },
           buttonName: "Pay",
           borderRadius: 20,

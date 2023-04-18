@@ -9,6 +9,8 @@ final List<GetPage<dynamic>> routes = [
   GetPage(
       name: "/ProfileShoppingCart", page: () => const ProfileShoppingCart()),
   GetPage(
+      name: "/DiscountScreen", page: () =>  DiscountScreen()),
+  GetPage(
       name: "/GetStartPage",
       page: () => const OnBordingScreen(),
       transition: Transition.fade,

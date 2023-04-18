@@ -49,7 +49,7 @@ class CartDelivery extends StatelessWidget {
                                 itemBuilder: (BuildContext context, index) {
                                   return Padding(
                                     padding: const EdgeInsets.only(top: 7).w,
-                                    child: RichTxt(
+                                    child: RichTwoTxt(
                                         text_1: address[index]["label"].toString(),
                                         text_2: address[index]["next"].toString(),
                                         textSize_1: 13,
@@ -171,7 +171,7 @@ class CartDelivery extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            RichTxt(
+            RichTwoTxt(
                 text_1: "Total price\n ",
                 text_2: "\$ 454",
                 textSize_1: 13,

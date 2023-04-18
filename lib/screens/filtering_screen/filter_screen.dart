@@ -74,14 +74,14 @@ class FilterScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        RichTxt(
+                        RichTwoTxt(
                             text_1: "Low Price\n",
                             text_2: value.currentRangeValues.start
                                 .round()
                                 .toString(),
                             textSize_1: 15,
                             textSize_2: 11),
-                        RichTxt(
+                        RichTwoTxt(
                             text_1: "High Price\n",
                             text_2:
                                 value.currentRangeValues.end.round().toString(),

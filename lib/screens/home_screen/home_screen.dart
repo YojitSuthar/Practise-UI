@@ -132,7 +132,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20).r,
-                        child: RichTxt(
+                        child: RichTwoTxt(
                             text_1: "Welcome\n",
                             text_2: "Our Fashions App",
                             textSize_1: 30,

@@ -5,6 +5,7 @@ import 'package:ecommerce/screens/reuse_widget/reuse_widget.dart';
 import '../../resources/resources.dart';
 import '../../listdata/data.dart';
 import '../../user_preferences/user_preferences.dart';
+import '../home_screen/provider/bottum_navigation/bottum_navigation.dart';
 
 class UserProfile extends StatelessWidget {
   UserProfile({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigation = Provider.of<BottumNavigation>(context, listen: false);
     final darkTheme = Provider.of<ThemeChange>(context, listen: false);
     return GestureDetector(
       onTap: () {
@@ -227,7 +229,9 @@ class UserProfile extends StatelessWidget {
                                 backgroundColor: ColorManager.whiteColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(const Radius.circular(20.0).w)),
-                                child: SizedBox(
+                                child: Container(
+                                  padding: const EdgeInsets.all(12).w,
+
                                   height: 100.h,
                                   child: Column(
                                     mainAxisAlignment:
@@ -248,6 +252,10 @@ class UserProfile extends StatelessWidget {
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius: BorderRadius.circular(20).w)),
                                             onPressed: () {
+                                              navigation.selected = 0;
+                                              navigation.contain.clear();
+                                              navigation.add(0);
+                                              Get.offAllNamed("/HomePage");
                                               userPreferences
                                                   .logOutsetData(context);
                                             },

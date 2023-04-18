@@ -74,5 +74,9 @@ class ProjectNetworkImage {
   static const String randomImage3 =  "https://c4.wallpaperflare.com/wallpaper/249/818/363/minimalism-simple-black-background-wallpaper-preview.jpg";
   static const String randomImage4 =  "https://c4.wallpaperflare.com/wallpaper/294/834/442/reactjs-facebook-javascript-minimalism-wallpaper-preview.jpg";
   static const String randomImage5 =  "https://c4.wallpaperflare.com/wallpaper/106/962/482/death-note-lawliet-l-black-background-simple-wallpaper-preview.jpg";
+  static const String randomImage6 =  "https://c1.wallpaperflare.com/preview/69/980/896/texture-structure-wall-background.jpg";
+  static const String randomImage7 =  "https://c4.wallpaperflare.com/wallpaper/572/458/476/grey-abstract-geometric-triangle-background-wallpaper-preview.jpg";
+  static const String randomImage8 =  "https://c4.wallpaperflare.com/wallpaper/379/104/52/abstract-minimalism-simple-simple-background-wallpaper-preview.jpg";
+  static const String randomImage9 =  "https://c4.wallpaperflare.com/wallpaper/483/576/977/abstract-hexagon-simple-minimalism-wallpaper-preview.jpg";
 }
 

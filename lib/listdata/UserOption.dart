@@ -26,7 +26,7 @@ class OptionButton {
     {
       "label_1": "Discount Offers",
       "iconAsset": IconsAssets.couponsFilledLogo,
-      "Navigation": "none"
+      "Navigation": "/DiscountScreen"
     },
     {
       "label_1": "Setting",

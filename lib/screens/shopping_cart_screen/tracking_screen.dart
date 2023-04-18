@@ -51,7 +51,7 @@ class TrackingProduct extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            RichTxt(
+                            RichTwoTxt(
                                 text_1: "5645 4517 421\n",
                                 text_2: "Ena Express",
                                 textSize_1: 13,
@@ -67,12 +67,12 @@ class TrackingProduct extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            RichTxt(
+                            RichTwoTxt(
                                 text_1: "25 June 2021\n",
                                 text_2: "Scaramnto",
                                 textSize_1: 13,
                                 textSize_2: 10),
-                            RichTxt(
+                            RichTwoTxt(
                                 text_1: "30 June 2021\n",
                                 text_2: "India",
                                 textSize_1: 13,
@@ -110,7 +110,7 @@ class TrackingProduct extends StatelessWidget {
                                             iconAsset:
                                                 IconsAssets.cargoTruckLogo),
                                       ),
-                                      RichTxt(
+                                      RichTwoTxt(
                                           text_1: "Us 5454 5454\n",
                                           text_2: "Gujarat",
                                           textSize_1: 12,

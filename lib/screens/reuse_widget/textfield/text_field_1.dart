@@ -35,6 +35,7 @@ class NormalTextField extends StatelessWidget {
         children: [
           Expanded(
               child: TextFormField(
+                textInputAction: TextInputAction.next,
                 onChanged: (val) {
                   onChanged!(val);
                 },
